@@ -6,7 +6,7 @@ import javafx.beans.value.{ChangeListener, ObservableValue}
 import javafx.collections.ObservableList
 import javafx.scene.control.{Button, Label, TextField}
 import javafx.scene.input.{KeyCode, KeyEvent}
-import javafx.scene.layout.{BorderPane, Pane, VBox}
+import javafx.scene.layout.{BorderPane, StackPane, Pane, VBox}
 import javafx.scene.media.{Media, MediaPlayer, MediaView}
 import scalafx.animation.PauseTransition
 import scalafx.geometry.Pos
@@ -20,6 +20,7 @@ import java.util.ResourceBundle
 
 @sfxml(additionalControls = List("customjavafx.scene.control", "customjavafx.scene.layout"))
 class ControllerBaccarat(
+  val root: StackPane,
   val gameBox: VBox,
   val lastWinResultLabel: LastWinResultLabel,
   val tableId: Label,
@@ -78,10 +79,13 @@ class ControllerBaccarat(
   val dynamicResult: BorderPane
 )(implicit display: fx2.io.Display, res: Option[ResourceBundle], reader: FxReader[BeadRoadResult]) {
 
+
   //Instantiate model
   val model = new BaccaratModel()
   val data: Data = model.loadData()
   val header: Header = model.loadHeader()
+
+
 
   dynamicResult.setVisible(false)
 
@@ -99,12 +103,6 @@ class ControllerBaccarat(
 
   beadRoad.Initialize(6, 11)
   bigRoad.Initialize(6, 49)
-  bigEyeRoad.Initialize(6, 38)
-  bigEyeRoadDummy.Initialize(3, 19)
-  smallRoad.Initialize(6, 38)
-  smallRoadDummy.Initialize(3, 19)
-  cockroachRoad.Initialize(12, 38)
-  cockroachRoadDummy.Initialize(6, 19)
 
   tableId.textProperty().bindBidirectional(tTableId.textProperty())
   handBetMin.textProperty().bindBidirectional(tHandBetMin.textProperty())
@@ -376,6 +374,13 @@ class ControllerBaccarat(
           case BeadRoadResult.EXIT  => display.exit()
           case BeadRoadResult.UNDO  => beadRoad.RemoveElement()
           case BeadRoadResult.CLEAR => beadRoad.Reset()
+          case BeadRoadResult.THEME => {
+            println(s"root Before  ${root.getStyleClass.sorted()}")
+            root.getStyleClass.remove("style1")
+            root.getStyleClass.add("style2")
+            println(s"root After ${root.getStyleClass.sorted()}")
+
+          }
           case _ => {
             beadRoad.AddElement(result)
           }

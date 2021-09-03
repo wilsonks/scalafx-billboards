@@ -2,3 +2,5 @@ target/
 .idea/
 .bsp/
 *.db
+*.log
+.vscode/

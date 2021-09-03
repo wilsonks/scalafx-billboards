@@ -16,20 +16,7 @@
 }
 
 
-
-.root {
-	-fx-pref-width:1920;
-	-fx-pref-height:1080;
-}
-
-.game {
-    style1-color: radial-gradient(center 50% 50%, radius 75%, #F3F2C9, #003638);
-    style2-color: radial-gradient(radius 180%, orangered, derive(white, -30%), derive(white, 30%));
-    style3-color: white;
-    style4-color: #003638;
-    style5-color: #3f6c45;
-    style6-color: black;
-
+.gameBox {
 	-fx-background-color: style1-color;
 	-fx-padding: 10 5 5 5;
 	-fx-spacing:5;
@@ -37,10 +24,6 @@
 	-fx-pref-height:1080;
 }
 
-.header {
-/*   	-fx-pref-width:1920;*/
-   /*	-fx-pref-height:200;*/
-}
 
 .bottomHBox {
 	-fx-pref-width:1910;
@@ -795,20 +778,6 @@
 
 .RegionLogo {
         -fx-background-image: url("png/logo.png");
-        -fx-background-repeat: no-repeat;
-        -fx-background-size: contain;
-        -fx-background-position: center;
-}
-
-#RegionPredictionBanker {
-        -fx-background-image: url("png/bead-road/a.png");
-        -fx-background-repeat: no-repeat;
-        -fx-background-size: contain;
-        -fx-background-position: center;
-}
-
-#RegionPredictionPlayer {
-        -fx-background-image: url("png/bead-road/e.png");
         -fx-background-repeat: no-repeat;
         -fx-background-size: contain;
         -fx-background-position: center;

@@ -29,6 +29,7 @@ public enum BeadRoadResult {
     EXIT,
     CLEAR,
     UNDO,
+    THEME,
     EMPTY;
 }
 

@@ -1,0 +1,17 @@
+.style1 {
+    style1-color: radial-gradient(center 50% 50%, radius 75%, #F3F2C9, #003638);
+    style2-color: radial-gradient(radius 180%, orangered, derive(white, -30%), derive(white, 30%));
+    style3-color: white;
+    style4-color: #003638;
+    style5-color: #3f6c45;
+    style6-color: black;
+}
+
+.style2 {
+    style1-color: radial-gradient(center 50% 50%, radius 75%, #deadb0, #cb0000);
+    style2-color: radial-gradient(radius 180%, orangered, derive(white, -30%), derive(white, 30%));
+    style3-color: white;
+    style4-color: midnightblue;
+    style5-color: #3f6c45;
+    style6-color: black;
+}

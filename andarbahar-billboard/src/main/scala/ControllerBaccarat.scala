@@ -21,7 +21,8 @@ import java.util.ResourceBundle
 @sfxml(additionalControls = List("customjavafx.scene.control", "customjavafx.scene.layout"))
 class ControllerBaccarat(
   val root: StackPane,
-  val gameBox: VBox,
+  val gameHiddenBox: VBox,
+  val gameBox: Pane,
   val lastWinResultLabel: LastWinResultLabel,
   val tableId: Label,
   val handBetMin: Label,
@@ -88,6 +89,7 @@ class ControllerBaccarat(
 
 
   dynamicResult.setVisible(false)
+  gameHiddenBox.setVisible(false)
 
   //Bind the UI Controls -> Model Properties
   tableId.textProperty().bindBidirectional(model.tableIdProperty)

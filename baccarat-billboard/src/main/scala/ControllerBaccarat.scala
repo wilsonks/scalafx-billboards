@@ -1,6 +1,5 @@
 import customjavafx.scene.control._
 import customjavafx.scene.layout._
-import fs2.io.fx.{Data, Header}
 import fx2.io.FxReader
 import javafx.beans.value.{ChangeListener, ObservableValue}
 import javafx.collections.ObservableList
@@ -14,6 +13,7 @@ import scalafx.scene.media.AudioClip
 import scalafx.util.Duration
 import scalafxml.core.macros.sfxml
 import sodium.syntax._
+import tykhe.billboard.ab.{Data, Header}
 
 import java.io.{File => JFile}
 import java.util.ResourceBundle

@@ -1,4 +1,4 @@
-package fs2.io.fx
+package tykhe.billboard.ab
 
 import customjavafx.scene.control.{BeadRoadResult}
 

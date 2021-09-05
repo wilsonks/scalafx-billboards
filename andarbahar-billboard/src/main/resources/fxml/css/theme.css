@@ -15,3 +15,11 @@
     style5-color: #3f6c45;
     style6-color: black;
 }
+
+.theme1 {
+    -fx-background-color: radial-gradient(center 50% 50%, radius 75%, #F3F2C9, #003638);
+}
+
+.theme2 {
+    -fx-background-color: radial-gradient(center 50% 50%, radius 75%, #deadb0, #cb0000);
+}

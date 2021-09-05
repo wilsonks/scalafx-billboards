@@ -1,12 +1,11 @@
 import customjavafx.scene.control._
 import customjavafx.scene.layout._
-import fs2.io.fx.{Data, Header}
 import fx2.io.FxReader
 import javafx.beans.value.{ChangeListener, ObservableValue}
 import javafx.collections.ObservableList
 import javafx.scene.control.{Button, Label, TextField}
 import javafx.scene.input.{KeyCode, KeyEvent}
-import javafx.scene.layout.{BorderPane, StackPane, Pane, VBox}
+import javafx.scene.layout.{BorderPane, HBox, Pane, StackPane, VBox}
 import javafx.scene.media.{Media, MediaPlayer, MediaView}
 import scalafx.animation.PauseTransition
 import scalafx.geometry.Pos
@@ -14,15 +13,18 @@ import scalafx.scene.media.AudioClip
 import scalafx.util.Duration
 import scalafxml.core.macros.sfxml
 import sodium.syntax._
+import tykhe.billboard.ab.{TableHistory, TableSettings}
 
 import java.io.{File => JFile}
 import java.util.ResourceBundle
 
+
 @sfxml(additionalControls = List("customjavafx.scene.control", "customjavafx.scene.layout"))
-class ControllerBaccarat(
+class AppController(
   val root: StackPane,
   val gameHiddenBox: VBox,
   val gameBox: Pane,
+  val gameHeaderBox: HBox,
   val lastWinResultLabel: LastWinResultLabel,
   val tableId: Label,
   val handBetMin: Label,
@@ -82,25 +84,20 @@ class ControllerBaccarat(
 
 
   //Instantiate model
-  val model = new BaccaratModel()
-  val data: Data = model.loadData()
-  val header: Header = model.loadHeader()
-
-
+  val model = new AppModel()
+  val data: TableHistory = model.loadData()
+  val header: TableSettings = model.loadHeader()
 
   dynamicResult.setVisible(false)
   gameHiddenBox.setVisible(false)
 
   //Bind the UI Controls -> Model Properties
   tableId.textProperty().bindBidirectional(model.tableIdProperty)
-  handBetMin.textProperty().bindBidirectional(model.handBetMinProperty)
-  handBetMax.textProperty().bindBidirectional(model.handBetMaxProperty)
-  tieBetMin.textProperty().bindBidirectional(model.tieBetMinProperty)
-  tieBetMax.textProperty().bindBidirectional(model.tieBetMaxProperty)
-  pairBetMin.textProperty().bindBidirectional(model.pairBetMinProperty)
-  pairBetMax.textProperty().bindBidirectional(model.pairBetMaxProperty)
-  superBetMin.textProperty().bindBidirectional(model.superSixBetMinProperty)
-  superBetMax.textProperty().bindBidirectional(model.superSixBetMaxProperty)
+  handBetMin.textProperty().bindBidirectional(model.firstBetMinProperty)
+  handBetMax.textProperty().bindBidirectional(model.firstBetMaxProperty)
+  tieBetMin.textProperty().bindBidirectional(model.secondBetMinProperty)
+  tieBetMax.textProperty().bindBidirectional(model.secondBetMaxProperty)
+
   beadRoad.getBeadRoadListProperty.bind(model.beadRoadListProperty)
 
   beadRoad.Initialize(6, 11)
@@ -117,14 +114,10 @@ class ControllerBaccarat(
   superBetMax.textProperty().bindBidirectional(tSuperSixBetMax.textProperty())
 
   tableId.setText(header.tableId)
-  handBetMin.setText(header.handBetMin)
-  handBetMax.setText(header.handBetMax)
-  tieBetMin.setText(header.tieBetMin)
-  tieBetMax.setText(header.tieBetMax)
-  pairBetMin.setText(header.pairBetMin)
-  pairBetMax.setText(header.pairBetMax)
-  superBetMin.setText(header.superBetMin)
-  superBetMax.setText(header.superBetMax)
+  handBetMin.setText(header.firstBetMin)
+  handBetMax.setText(header.firstBetMax)
+  tieBetMin.setText(header.secondBetMin)
+  tieBetMax.setText(header.secondBetMax)
 
   val tList = Array(
     tTableId,
@@ -377,10 +370,12 @@ class ControllerBaccarat(
           case BeadRoadResult.UNDO  => beadRoad.RemoveElement()
           case BeadRoadResult.CLEAR => beadRoad.Reset()
           case BeadRoadResult.THEME => {
-            println(s"root Before  ${root.getStyleClass.sorted()}")
-            root.getStyleClass.remove("style1")
-            root.getStyleClass.add("style2")
-            println(s"root After ${root.getStyleClass.sorted()}")
+            println(s"root Before  ${gameBox.getStyleClass.sorted()}")
+            gameBox.getStyleClass.removeAll("theme1", "theme2")
+            gameHeaderBox.getStyleClass.removeAll("theme1", "theme2")
+            gameBox.getStyleClass.add("theme2")
+            gameHeaderBox.getStyleClass.add("theme2")
+            println(s"root After ${gameBox.getStyleClass.sorted()}")
 
           }
           case _ => {

@@ -2,12 +2,12 @@
 import better.files.File
 import better.files.File._
 import customjavafx.scene.control.BeadRoadResult
-import fs2.io.fx.{Data, Header}
 import javafx.beans.property.{ListProperty, SimpleListProperty, SimpleStringProperty, StringProperty}
 import javafx.collections.FXCollections
 import javafx.scene.input.KeyCode
 import pureconfig.ConfigReader
 import pureconfig.generic.auto._
+import tykhe.billboard.ab.{Data, Header}
 
 class BaccaratModel {
 

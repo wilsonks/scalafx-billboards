@@ -1,0 +1,7 @@
+.theme1 {
+    -fx-background-color: radial-gradient(center 50% 50%, radius 75%, #F3F2C9, #003638);
+}
+
+.theme2 {
+    -fx-background-color: radial-gradient(center 50% 50%, radius 75%, #deadb0, #cb0000);
+}

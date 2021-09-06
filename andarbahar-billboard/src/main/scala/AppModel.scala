@@ -1,6 +1,6 @@
 import better.files.File
 import better.files.File._
-import customjavafx.scene.control.BeadRoadResult
+import customjavafx.scene.control.AndarBaharBeadRoadResult
 import javafx.beans.property.{ListProperty, SimpleListProperty, SimpleStringProperty, StringProperty}
 import javafx.collections.FXCollections
 import javafx.scene.input.KeyCode
@@ -19,8 +19,8 @@ class AppModel {
     pureconfig.configurable.genericMapReader(s => Right(KeyCode.valueOf(s)))
   }
 
-  implicit val beadRoadResultReader: ConfigReader[BeadRoadResult] = ConfigReader.fromNonEmptyString(s => Right(BeadRoadResult.valueOf(s)))
-  lazy val coupsMap: Map[String, BeadRoadResult] = pureconfig.loadConfigOrThrow[Map[String, BeadRoadResult]]("keyboard.coups")
+  implicit val AndarBaharBeadRoadResultReader: ConfigReader[AndarBaharBeadRoadResult] = ConfigReader.fromNonEmptyString(s => Right(AndarBaharBeadRoadResult.valueOf(s)))
+  lazy val coupsMap: Map[String, AndarBaharBeadRoadResult] = pureconfig.loadConfigOrThrow[Map[String, AndarBaharBeadRoadResult]]("keyboard.coups")
 
   //Define Data Elements & Getter Methods
   private val tableId: StringProperty = new SimpleStringProperty("")
@@ -29,7 +29,7 @@ class AppModel {
   private val secondBetMin: StringProperty = new SimpleStringProperty("")
   private val secondBetMax: StringProperty = new SimpleStringProperty("")
 
-  private val beadRoadList: ListProperty[BeadRoadResult] = new SimpleListProperty(FXCollections.observableArrayList[BeadRoadResult])
+  private val beadRoadList: ListProperty[AndarBaharBeadRoadResult] = new SimpleListProperty(FXCollections.observableArrayList[AndarBaharBeadRoadResult])
   var mediaIndex = 0
 
   def tableIdProperty: StringProperty = tableId
@@ -43,7 +43,7 @@ class AppModel {
   def secondBetMaxProperty: StringProperty = secondBetMax
 
 
-  def beadRoadListProperty: ListProperty[BeadRoadResult] = beadRoadList
+  def beadRoadListProperty: ListProperty[AndarBaharBeadRoadResult] = beadRoadList
 
   //Load Data From Database
   def loadData(): TableHistory = {
@@ -51,7 +51,7 @@ class AppModel {
       dataDB.readDeserialized[TableHistory]()
     } else {
       dataDB.createIfNotExists(asDirectory = false, createParents = true)
-      dataDB.writeSerialized(TableHistory(Seq.empty[BeadRoadResult]))
+      dataDB.writeSerialized(TableHistory(Seq.empty[AndarBaharBeadRoadResult]))
       dataDB.readDeserialized[TableHistory]()
     }
   }
@@ -103,7 +103,7 @@ class AppModel {
   import scala.collection.JavaConverters._
 
   def saveData(): Unit = {
-    dataDB.writeSerialized(TableHistory(beadRoadList.asScala.toList.filter(x => x != BeadRoadResult.EMPTY)))
+    dataDB.writeSerialized(TableHistory(beadRoadList.asScala.toList.filter(x => x != AndarBaharBeadRoadResult.EMPTY)))
   }
 
 

@@ -5,75 +5,63 @@ import javafx.beans.property.ObjectPropertyBase;
 import javafx.css.PseudoClass;
 import javafx.scene.control.Label;
 
-public class LastWinLabel extends Label {
+public class AndarBaharBigRoadLabel extends Label {
 
-
-    public LastWinLabel() {
-        this.getStyleClass().add("LastWinLabel");
+    public AndarBaharBigRoadLabel() {
+        this.getStyleClass().add("BigRoadLabel");
     }
 
-    public LastWinLabel(LastWinResult result) {
-        this.getStyleClass().add("LastWinLabel");
+    public AndarBaharBigRoadLabel(AndarBaharBigRoadResult result) {
+        this.getStyleClass().add("BigRoadLabel");
         this.setResult(result);
     }
 
-    //Add the Individual States
     private static final PseudoClass PSEUDO_CLASS_BANKER_WIN = PseudoClass.getPseudoClass("bankerWin");
-
     private static final PseudoClass PSEUDO_CLASS_PLAYER_WIN = PseudoClass.getPseudoClass("playerWin");
 
-    private static final PseudoClass PSEUDO_CLASS_TIE_WIN = PseudoClass.getPseudoClass("tieWin");
 
-    private ObjectProperty<LastWinResult> result = new ObjectPropertyBase<LastWinResult>() {
+    private ObjectProperty<AndarBaharBigRoadResult> result = new ObjectPropertyBase<AndarBaharBigRoadResult>() {
         @Override
         protected void invalidated() {
             switch (get()) {
                 case EMPTY:
                     pseudoClassStateChanged(PSEUDO_CLASS_BANKER_WIN, false);
                     pseudoClassStateChanged(PSEUDO_CLASS_PLAYER_WIN, false);
-                    pseudoClassStateChanged(PSEUDO_CLASS_TIE_WIN, false);
                     break;
-
                 case BANKER_WIN:
                     pseudoClassStateChanged(PSEUDO_CLASS_BANKER_WIN, true);
                     pseudoClassStateChanged(PSEUDO_CLASS_PLAYER_WIN, false);
-                    pseudoClassStateChanged(PSEUDO_CLASS_TIE_WIN, false);
                     break;
-
                 case PLAYER_WIN:
                     pseudoClassStateChanged(PSEUDO_CLASS_BANKER_WIN, false);
                     pseudoClassStateChanged(PSEUDO_CLASS_PLAYER_WIN, true);
-                    pseudoClassStateChanged(PSEUDO_CLASS_TIE_WIN, false);
-                    break;
-                case TIE_WIN:
-                    pseudoClassStateChanged(PSEUDO_CLASS_BANKER_WIN, false);
-                    pseudoClassStateChanged(PSEUDO_CLASS_PLAYER_WIN, false);
-                    pseudoClassStateChanged(PSEUDO_CLASS_TIE_WIN, true);
-                    break;
+
                 default:
             }
         }
 
         @Override
         public Object getBean() {
-            return LastWinLabel.this;
+            return AndarBaharBigRoadLabel.this;
         }
 
         @Override
         public String getName() {
-            return "LastWinLabel";
+            return "BigRoadLabel";
         }
+
     };
 
-    public LastWinResult getResult() {
+    public AndarBaharBigRoadResult getResult() {
         return result.get();
     }
 
-    public void setResult(LastWinResult result) {
-        this.result.set(result);
+    public ObjectProperty<AndarBaharBigRoadResult> resultProperty() {
+        return result;
     }
 
-    public ObjectProperty<LastWinResult> resultProperty() {
-        return result;
+    public void setResult(AndarBaharBigRoadResult result) {
+        this.result.set(result);
+//        this.setText("");
     }
 }

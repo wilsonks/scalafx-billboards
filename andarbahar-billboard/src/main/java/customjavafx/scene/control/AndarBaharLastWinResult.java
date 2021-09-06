@@ -1,10 +1,9 @@
 package customjavafx.scene.control;
 
 
-public enum LastWinResult {
+public enum AndarBaharLastWinResult {
     BANKER_WIN,
     PLAYER_WIN,
-    TIE_WIN,
     EMPTY;
 }
 

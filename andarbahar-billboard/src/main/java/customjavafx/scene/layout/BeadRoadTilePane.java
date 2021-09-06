@@ -1,9 +1,8 @@
 package customjavafx.scene.layout;
 
 
-import customjavafx.scene.control.BeadRoadLabel;
-import customjavafx.scene.control.BeadRoadResult;
-import customjavafx.scene.control.LastWinResult;
+import customjavafx.scene.control.AndarBaharBeadRoadLabel;
+import customjavafx.scene.control.AndarBaharBeadRoadResult;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -41,33 +40,8 @@ public class BeadRoadTilePane extends TilePane {
     }
 
 
-    private IntegerProperty tieWinCount = new SimpleIntegerProperty(0);
-
-    public IntegerProperty getTieWinCount() {
-        return tieWinCount;
-    }
-
-
-    private IntegerProperty playerPairCount = new SimpleIntegerProperty(0);
-
-    public IntegerProperty getPlayerPairCount() {
-        return playerPairCount;
-    }
-
-    private IntegerProperty bankerPairCount = new SimpleIntegerProperty(0);
-
-    public IntegerProperty getBankerPairCount() {
-        return bankerPairCount;
-    }
-
-    private IntegerProperty naturalCount = new SimpleIntegerProperty(0);
-
-    public IntegerProperty getNaturalCount() {
-        return naturalCount;
-    }
-
-    private ListProperty<BeadRoadResult> beadRoadList = new SimpleListProperty<BeadRoadResult>(FXCollections.observableList(new ArrayList<BeadRoadResult>()));
-    public ListProperty<BeadRoadResult> getBeadRoadListProperty() {
+    private ListProperty<AndarBaharBeadRoadResult> beadRoadList = new SimpleListProperty<AndarBaharBeadRoadResult>(FXCollections.observableList(new ArrayList<AndarBaharBeadRoadResult>()));
+    public ListProperty<AndarBaharBeadRoadResult> getBeadRoadListProperty() {
         return beadRoadList;
     }
 
@@ -92,145 +66,24 @@ public class BeadRoadTilePane extends TilePane {
         return (getChildren().size() == sizeLimit());
     }
 
-    private void ResultAdded(BeadRoadResult res) {
+    private void ResultAdded(AndarBaharBeadRoadResult res) {
         beadRoadList.add(res);
         count.setValue(count.getValue() + 1);
         switch (res) {
             case BANKER_WIN:
                 bankerWinCount.setValue(bankerWinCount.getValue() + 1);
                 break;
-            case BANKER_WIN_BANKER_PAIR:
-                bankerPairCount.setValue(bankerPairCount.getValue() + 1);
-                bankerWinCount.setValue(bankerWinCount.getValue() + 1);
-                break;
-            case BANKER_WIN_PLAYER_PAIR:
-                playerPairCount.setValue(playerPairCount.getValue() + 1);
-                bankerWinCount.setValue(bankerWinCount.getValue() + 1);
-                break;
-
-            case BANKER_WIN_BOTH_PAIR:
-                bankerPairCount.setValue(bankerPairCount.getValue() + 1);
-                playerPairCount.setValue(playerPairCount.getValue() + 1);
-                bankerWinCount.setValue(bankerWinCount.getValue() + 1);
-                break;
-
             case PLAYER_WIN:
                 playerWinCount.setValue(playerWinCount.getValue() + 1);
                 break;
-            case PLAYER_WIN_BANKER_PAIR:
-                bankerPairCount.setValue(bankerPairCount.getValue() + 1);
-                playerWinCount.setValue(playerWinCount.getValue() + 1);
-                break;
-            case PLAYER_WIN_PLAYER_PAIR:
-                playerPairCount.setValue(playerPairCount.getValue() + 1);
-                playerWinCount.setValue(playerWinCount.getValue() + 1);
-                break;
-
-            case PLAYER_WIN_BOTH_PAIR:
-                bankerPairCount.setValue(bankerPairCount.getValue() + 1);
-                playerPairCount.setValue(playerPairCount.getValue() + 1);
-                playerWinCount.setValue(playerWinCount.getValue() + 1);
-                break;
-            case TIE_WIN:
-                tieWinCount.setValue(tieWinCount.getValue() + 1);
-                break;
-            case TIE_WIN_BANKER_PAIR:
-                bankerPairCount.setValue(bankerPairCount.getValue() + 1);
-                tieWinCount.setValue(tieWinCount.getValue() + 1);
-                break;
-            case TIE_WIN_PLAYER_PAIR:
-                playerPairCount.setValue(playerPairCount.getValue() + 1);
-                tieWinCount.setValue(tieWinCount.getValue() + 1);
-                break;
-
-            case TIE_WIN_BOTH_PAIR:
-                bankerPairCount.setValue(bankerPairCount.getValue() + 1);
-                playerPairCount.setValue(playerPairCount.getValue() + 1);
-                tieWinCount.setValue(tieWinCount.getValue() + 1);
-                break;
-
-            case BANKER_WIN_NATURAL:
-                bankerWinCount.setValue(bankerWinCount.getValue() + 1);
-                naturalCount.setValue(naturalCount.getValue() + 1);
-                break;
-            case BANKER_WIN_BANKER_PAIR_NATURAL:
-                bankerPairCount.setValue(bankerPairCount.getValue() + 1);
-                bankerWinCount.setValue(bankerWinCount.getValue() + 1);
-                naturalCount.setValue(naturalCount.getValue() + 1);
-
-                break;
-            case BANKER_WIN_PLAYER_PAIR_NATURAL:
-                playerPairCount.setValue(playerPairCount.getValue() + 1);
-                bankerWinCount.setValue(bankerWinCount.getValue() + 1);
-                naturalCount.setValue(naturalCount.getValue() + 1);
-                break;
-
-            case BANKER_WIN_BOTH_PAIR_NATURAL:
-                bankerPairCount.setValue(bankerPairCount.getValue() + 1);
-                playerPairCount.setValue(playerPairCount.getValue() + 1);
-                bankerWinCount.setValue(bankerWinCount.getValue() + 1);
-                naturalCount.setValue(naturalCount.getValue() + 1);
-
-                break;
-
-            case PLAYER_WIN_NATURAL:
-                playerWinCount.setValue(playerWinCount.getValue() + 1);
-                naturalCount.setValue(naturalCount.getValue() + 1);
-                break;
-            case PLAYER_WIN_BANKER_PAIR_NATURAL:
-                bankerPairCount.setValue(bankerPairCount.getValue() + 1);
-                playerWinCount.setValue(playerWinCount.getValue() + 1);
-                naturalCount.setValue(naturalCount.getValue() + 1);
-
-                break;
-            case PLAYER_WIN_PLAYER_PAIR_NATURAL:
-                playerPairCount.setValue(playerPairCount.getValue() + 1);
-                playerWinCount.setValue(playerWinCount.getValue() + 1);
-                naturalCount.setValue(naturalCount.getValue() + 1);
-                break;
-
-            case PLAYER_WIN_BOTH_PAIR_NATURAL:
-                bankerPairCount.setValue(bankerPairCount.getValue() + 1);
-                playerPairCount.setValue(playerPairCount.getValue() + 1);
-                playerWinCount.setValue(playerWinCount.getValue() + 1);
-                naturalCount.setValue(naturalCount.getValue() + 1);
-                break;
-            case TIE_WIN_NATURAL:
-                tieWinCount.setValue(tieWinCount.getValue() + 1);
-                naturalCount.setValue(naturalCount.getValue() + 1);
-                break;
-            case TIE_WIN_BANKER_PAIR_NATURAL:
-                bankerPairCount.setValue(bankerPairCount.getValue() + 1);
-                tieWinCount.setValue(tieWinCount.getValue() + 1);
-                naturalCount.setValue(naturalCount.getValue() + 1);
-                break;
-            case TIE_WIN_PLAYER_PAIR_NATURAL:
-                playerPairCount.setValue(playerPairCount.getValue() + 1);
-                tieWinCount.setValue(tieWinCount.getValue() + 1);
-                naturalCount.setValue(naturalCount.getValue() + 1);
-                break;
-            case TIE_WIN_BOTH_PAIR_NATURAL:
-                bankerPairCount.setValue(bankerPairCount.getValue() + 1);
-                playerPairCount.setValue(playerPairCount.getValue() + 1);
-                tieWinCount.setValue(tieWinCount.getValue() + 1);
-                naturalCount.setValue(naturalCount.getValue() + 1);
-                break;
-
             default:
                 break;
         }
     }
 
     private boolean isCurrentWinRed() {
-        switch (((BeadRoadLabel) getChildren().get(getPosition())).getResult()) {
+        switch (((AndarBaharBeadRoadLabel) getChildren().get(getPosition())).getResult()) {
             case BANKER_WIN:
-            case BANKER_WIN_BANKER_PAIR:
-            case BANKER_WIN_PLAYER_PAIR:
-            case BANKER_WIN_BOTH_PAIR:
-            case BANKER_WIN_NATURAL:
-            case BANKER_WIN_BANKER_PAIR_NATURAL:
-            case BANKER_WIN_PLAYER_PAIR_NATURAL:
-            case BANKER_WIN_BOTH_PAIR_NATURAL:
                 return true;
             default:
                 return false;
@@ -238,140 +91,23 @@ public class BeadRoadTilePane extends TilePane {
     }
 
     private boolean isCurrentWinBlue() {
-        switch (((BeadRoadLabel) getChildren().get(getPosition())).getResult()) {
+        switch (((AndarBaharBeadRoadLabel) getChildren().get(getPosition())).getResult()) {
             case PLAYER_WIN:
-            case PLAYER_WIN_BANKER_PAIR:
-            case PLAYER_WIN_PLAYER_PAIR:
-            case PLAYER_WIN_BOTH_PAIR:
-            case PLAYER_WIN_NATURAL:
-            case PLAYER_WIN_BANKER_PAIR_NATURAL:
-            case PLAYER_WIN_PLAYER_PAIR_NATURAL:
-            case PLAYER_WIN_BOTH_PAIR_NATURAL:
                 return true;
             default:
                 return false;
         }
     }
 
-    private void ResultRemoved(BeadRoadResult res) {
+    private void ResultRemoved(AndarBaharBeadRoadResult res) {
         count.setValue(count.getValue() - 1);
         switch (res) {
             case BANKER_WIN:
                 bankerWinCount.setValue(bankerWinCount.getValue() - 1);
                 break;
-            case BANKER_WIN_BANKER_PAIR:
-                bankerPairCount.setValue(bankerPairCount.getValue() - 1);
-                bankerWinCount.setValue(bankerWinCount.getValue() - 1);
-                break;
-            case BANKER_WIN_PLAYER_PAIR:
-                playerPairCount.setValue(playerPairCount.getValue() - 1);
-                bankerWinCount.setValue(bankerWinCount.getValue() - 1);
-                break;
-
-            case BANKER_WIN_BOTH_PAIR:
-                bankerPairCount.setValue(bankerPairCount.getValue() - 1);
-                playerPairCount.setValue(playerPairCount.getValue() - 1);
-                bankerWinCount.setValue(bankerWinCount.getValue() - 1);
-                break;
 
             case PLAYER_WIN:
                 playerWinCount.setValue(playerWinCount.getValue() - 1);
-                break;
-            case PLAYER_WIN_BANKER_PAIR:
-                bankerPairCount.setValue(bankerPairCount.getValue() - 1);
-                playerWinCount.setValue(playerWinCount.getValue() - 1);
-                break;
-            case PLAYER_WIN_PLAYER_PAIR:
-                playerPairCount.setValue(playerPairCount.getValue() - 1);
-                playerWinCount.setValue(playerWinCount.getValue() - 1);
-                break;
-
-            case PLAYER_WIN_BOTH_PAIR:
-                bankerPairCount.setValue(bankerPairCount.getValue() - 1);
-                playerPairCount.setValue(playerPairCount.getValue() - 1);
-                playerWinCount.setValue(playerWinCount.getValue() - 1);
-                break;
-            case TIE_WIN:
-                tieWinCount.setValue(tieWinCount.getValue() - 1);
-                break;
-            case TIE_WIN_BANKER_PAIR:
-                bankerPairCount.setValue(bankerPairCount.getValue() - 1);
-                tieWinCount.setValue(tieWinCount.getValue() - 1);
-                break;
-            case TIE_WIN_PLAYER_PAIR:
-                playerPairCount.setValue(playerPairCount.getValue() - 1);
-                tieWinCount.setValue(tieWinCount.getValue() - 1);
-                break;
-
-            case TIE_WIN_BOTH_PAIR:
-                bankerPairCount.setValue(bankerPairCount.getValue() - 1);
-                playerPairCount.setValue(playerPairCount.getValue() - 1);
-                tieWinCount.setValue(tieWinCount.getValue() - 1);
-                break;
-
-            case BANKER_WIN_NATURAL:
-                bankerWinCount.setValue(bankerWinCount.getValue() - 1);
-                naturalCount.setValue(naturalCount.getValue() - 1);
-                break;
-            case BANKER_WIN_BANKER_PAIR_NATURAL:
-                bankerPairCount.setValue(bankerPairCount.getValue() - 1);
-                bankerWinCount.setValue(bankerWinCount.getValue() - 1);
-                naturalCount.setValue(naturalCount.getValue() - 1);
-                break;
-            case BANKER_WIN_PLAYER_PAIR_NATURAL:
-                playerPairCount.setValue(playerPairCount.getValue() - 1);
-                bankerWinCount.setValue(bankerWinCount.getValue() - 1);
-                naturalCount.setValue(naturalCount.getValue() - 1);
-                break;
-
-            case BANKER_WIN_BOTH_PAIR_NATURAL:
-                bankerPairCount.setValue(bankerPairCount.getValue() - 1);
-                playerPairCount.setValue(playerPairCount.getValue() - 1);
-                bankerWinCount.setValue(bankerWinCount.getValue() - 1);
-                naturalCount.setValue(naturalCount.getValue() - 1);
-                break;
-
-            case PLAYER_WIN_NATURAL:
-                playerWinCount.setValue(playerWinCount.getValue() - 1);
-                naturalCount.setValue(naturalCount.getValue() - 1);
-                break;
-            case PLAYER_WIN_BANKER_PAIR_NATURAL:
-                bankerPairCount.setValue(bankerPairCount.getValue() - 1);
-                playerWinCount.setValue(playerWinCount.getValue() - 1);
-                naturalCount.setValue(naturalCount.getValue() - 1);
-                break;
-            case PLAYER_WIN_PLAYER_PAIR_NATURAL:
-                playerPairCount.setValue(playerPairCount.getValue() - 1);
-                playerWinCount.setValue(playerWinCount.getValue() - 1);
-                naturalCount.setValue(naturalCount.getValue() - 1);
-                break;
-
-            case PLAYER_WIN_BOTH_PAIR_NATURAL:
-                bankerPairCount.setValue(bankerPairCount.getValue() - 1);
-                playerPairCount.setValue(playerPairCount.getValue() - 1);
-                playerWinCount.setValue(playerWinCount.getValue() - 1);
-                naturalCount.setValue(naturalCount.getValue() - 1);
-                break;
-            case TIE_WIN_NATURAL:
-                tieWinCount.setValue(tieWinCount.getValue() - 1);
-                naturalCount.setValue(naturalCount.getValue() - 1);
-                break;
-            case TIE_WIN_BANKER_PAIR_NATURAL:
-                bankerPairCount.setValue(bankerPairCount.getValue() - 1);
-                tieWinCount.setValue(tieWinCount.getValue() - 1);
-                naturalCount.setValue(naturalCount.getValue() - 1);
-                break;
-            case TIE_WIN_PLAYER_PAIR_NATURAL:
-                playerPairCount.setValue(playerPairCount.getValue() - 1);
-                tieWinCount.setValue(tieWinCount.getValue() - 1);
-                naturalCount.setValue(naturalCount.getValue() - 1);
-                break;
-
-            case TIE_WIN_BOTH_PAIR_NATURAL:
-                bankerPairCount.setValue(bankerPairCount.getValue() - 1);
-                playerPairCount.setValue(playerPairCount.getValue() - 1);
-                tieWinCount.setValue(tieWinCount.getValue() - 1);
-                naturalCount.setValue(naturalCount.getValue() - 1);
                 break;
 
             default:
@@ -380,14 +116,14 @@ public class BeadRoadTilePane extends TilePane {
     }
 
 
-    private void Update(BeadRoadResult res) {
+    private void Update(AndarBaharBeadRoadResult res) {
         MovePositionFront();
-        ((BeadRoadLabel) getChildren().get(getPosition())).setResult(res);
+        ((AndarBaharBeadRoadLabel) getChildren().get(getPosition())).setResult(res);
     }
 
     private void Insert() {
-        BeadRoadLabel temp = new BeadRoadLabel(BeadRoadResult.EMPTY);
-        temp.setResult(BeadRoadResult.EMPTY);
+        AndarBaharBeadRoadLabel temp = new AndarBaharBeadRoadLabel(AndarBaharBeadRoadResult.EMPTY);
+        temp.setResult(AndarBaharBeadRoadResult.EMPTY);
         getChildren().add(temp);
     }
 
@@ -401,32 +137,24 @@ public class BeadRoadTilePane extends TilePane {
 
     }
 
-    private void MovePostionBack() {
-        if (row == 0) {
-            column--;
-            row = getPrefRows() - 1;
-        } else {
-            row--;
-        }
+//    private void MovePostionBack() {
+//        if (row == 0) {
+//            column--;
+//            row = getPrefRows() - 1;
+//        } else {
+//            row--;
+//        }
+//
+//    }
 
-    }
-
-    public void RemoveElementOld() {
-        if (getPosition() >= 0) {
-            BeadRoadResult tmp = ((BeadRoadLabel) getChildren().get(getPosition())).getResult();
-            ((BeadRoadLabel) getChildren().get(getPosition())).setResult(BeadRoadResult.EMPTY);
-            MovePostionBack();
-            ResultRemoved(tmp);
-        }
-    }
 
     public void RemoveElement() {
         if (getPosition() >= 0) {
-            BeadRoadResult tmp = ((BeadRoadLabel) getChildren().get(getPosition())).getResult();
-            ((BeadRoadLabel) getChildren().get(getPosition())).setResult(BeadRoadResult.EMPTY);
+            AndarBaharBeadRoadResult tmp = ((AndarBaharBeadRoadLabel) getChildren().get(getPosition())).getResult();
+            ((AndarBaharBeadRoadLabel) getChildren().get(getPosition())).setResult(AndarBaharBeadRoadResult.EMPTY);
             beadRoadList.remove(beadRoadList.size() - 1);
-            getChildren().stream().map(t -> (BeadRoadLabel) t).forEach(t -> {
-                t.setResult(BeadRoadResult.EMPTY);
+            getChildren().stream().map(t -> (AndarBaharBeadRoadLabel) t).forEach(t -> {
+                t.setResult(AndarBaharBeadRoadResult.EMPTY);
             });
             column = 0;
             row = -1;
@@ -450,15 +178,12 @@ public class BeadRoadTilePane extends TilePane {
     }
 
     public String LastWinAudio() {
-        if (isCurrentWinRed()) return "/sounds/banker.mp3";
-        else if (isCurrentWinBlue()) return "/sounds/player.mp3";
-        else {
-            return "/sounds/tie.mp3";
-        }
+        if (isCurrentWinRed()) return "/sounds/bahar-won.mp3";
+        else return "/sounds/andar-won.mp3";
     }
 
-    public BeadRoadResult LastWinResult() {
-        return ((BeadRoadLabel) getChildren().get(getPosition())).getResult();
+    public AndarBaharBeadRoadResult LastWinResult() {
+        return ((AndarBaharBeadRoadLabel) getChildren().get(getPosition())).getResult();
     }
 
     public String LastWin() {
@@ -469,7 +194,7 @@ public class BeadRoadTilePane extends TilePane {
         }
     }
 
-    public void AddElement(BeadRoadResult res) {
+    public void AddElement(AndarBaharBeadRoadResult res) {
         if (getSize() >= sizeLimit()) {
             ShiftElement();
         }
@@ -487,26 +212,22 @@ public class BeadRoadTilePane extends TilePane {
         this.row = -1;
     }
 
-    public ArrayList<BeadRoadResult> getElements() {
-        ArrayList<BeadRoadResult> list = new ArrayList<BeadRoadResult>();
-        getChildren().stream().map(t -> ((BeadRoadLabel) t).getResult()).forEach(t -> {
-            if (t != BeadRoadResult.EMPTY) list.add(t);
-        });
-        return list;
-    }
+//    public ArrayList<AndarBaharBeadRoadResult> getElements() {
+//        ArrayList<AndarBaharBeadRoadResult> list = new ArrayList<AndarBaharBeadRoadResult>();
+//        getChildren().stream().map(t -> ((AndarBaharBeadRoadLabel) t).getResult()).forEach(t -> {
+//            if (t != AndarBaharBeadRoadResult.EMPTY) list.add(t);
+//        });
+//        return list;
+//    }
 
 
     public void Reset() {
-        getChildren().stream().map(t -> (BeadRoadLabel) t).forEach(t -> {
-            t.setResult(BeadRoadResult.EMPTY);
+        getChildren().stream().map(t -> (AndarBaharBeadRoadLabel) t).forEach(t -> {
+            t.setResult(AndarBaharBeadRoadResult.EMPTY);
         });
         beadRoadList.clear();
         bankerWinCount.setValue(0);
-        tieWinCount.setValue(0);
         playerWinCount.setValue(0);
-        bankerPairCount.setValue(0);
-        playerPairCount.setValue(0);
-        naturalCount.setValue(0);
         count.setValue(0);
         column = 0;
         row = -1;

@@ -25,62 +25,38 @@ class AppController(
   val gameHiddenBox: VBox,
   val gameBox: Pane,
   val gameHeaderBox: HBox,
-  val lastWinResultLabel: LastWinResultLabel,
+  val lastWinResultLabel: AndarBaharLastWinResultLabel,
+
   val tableId: Label,
-  val handBetMin: Label,
-  val handBetMax: Label,
-  val tieBetMin: Label,
-  val tieBetMax: Label,
-  val pairBetMin: Label,
-  val pairBetMax: Label,
-  val superBetMin: Label,
-  val superBetMax: Label,
-  val playerWinCount: Label,
-  val bankerWinCount: Label,
-  val tieWinCount: Label,
-  val playerPairCount: Label,
-  val bankerPairCount: Label,
-  val naturalCount: Label,
-  val totalCount: Label,
-  val b1: BigEyeRoadLabel,
-  val b2: SmallRoadLabel,
-  val b3: CockroachRoadLabel,
-  val p1: BigEyeRoadLabel,
-  val p2: SmallRoadLabel,
-  val p3: CockroachRoadLabel,
+  val firstBetMin: Label,
+  val firstBetMax: Label,
+  val secondBetMin: Label,
+  val secondBetMax: Label,
+
+//  val playerWinCount: Label,
+//  val bankerWinCount: Label,
+
   val menu: BorderPane,
   val promoPane: Pane,
   val promoMediaView: MediaView,
-  val footing: Label,
+
   val tTableId: TextField,
-  val tHandBetMin: TextField,
-  val tHandBetMax: TextField,
-  val tTieBetMin: TextField,
-  val tTieBetMax: TextField,
-  val tPairBetMin: TextField,
-  val tPairBetMax: TextField,
-  val tSuperSixBetMin: TextField,
-  val tSuperSixBetMax: TextField,
+  val tFirstBetMin: TextField,
+  val tFirstBetMax: TextField,
+  val tSecondBetMin: TextField,
+  val tSecondBetMax: TextField,
+
   val lTableId: Button,
-  val lHandBetMin: Button,
-  val lHandBetMax: Button,
-  val lTieBetMin: Button,
-  val lTieBetMax: Button,
-  val lPairBetMin: Button,
-  val lPairBetMax: Button,
-  val lSuperSixBetMin: Button,
-  val lSuperSixBetMax: Button,
+  val lFirstBetMin: Button,
+  val lFirstBetMax: Button,
+  val lSecondBetMin: Button,
+  val lSecondBetMax: Button,
+
   val info: BorderPane,
   val beadRoad: BeadRoadTilePane,
-  val bigEyeRoad: BigEyeRoadTilePane,
-  val bigEyeRoadDummy: BigEyeRoadDummyTilePane,
-  val smallRoad: SmallRoadTilePane,
-  val smallRoadDummy: SmallRoadDummyTilePane,
-  val cockroachRoad: CockroachRoadTilePane,
-  val cockroachRoadDummy: CockroachRoadDummyTilePane,
   val bigRoad: BigRoadTilePane,
   val dynamicResult: BorderPane
-)(implicit display: fx2.io.Display, res: Option[ResourceBundle], reader: FxReader[BeadRoadResult]) {
+)(implicit display: fx2.io.Display, res: Option[ResourceBundle], reader: FxReader[AndarBaharBeadRoadResult]) {
 
 
   //Instantiate model
@@ -90,13 +66,14 @@ class AppController(
 
   dynamicResult.setVisible(false)
   gameHiddenBox.setVisible(false)
+  beadRoad.setVisible(false)
 
   //Bind the UI Controls -> Model Properties
   tableId.textProperty().bindBidirectional(model.tableIdProperty)
-  handBetMin.textProperty().bindBidirectional(model.firstBetMinProperty)
-  handBetMax.textProperty().bindBidirectional(model.firstBetMaxProperty)
-  tieBetMin.textProperty().bindBidirectional(model.secondBetMinProperty)
-  tieBetMax.textProperty().bindBidirectional(model.secondBetMaxProperty)
+  firstBetMin.textProperty().bindBidirectional(model.firstBetMinProperty)
+  firstBetMax.textProperty().bindBidirectional(model.firstBetMaxProperty)
+  secondBetMin.textProperty().bindBidirectional(model.secondBetMinProperty)
+  secondBetMax.textProperty().bindBidirectional(model.secondBetMaxProperty)
 
   beadRoad.getBeadRoadListProperty.bind(model.beadRoadListProperty)
 
@@ -104,42 +81,31 @@ class AppController(
   bigRoad.Initialize(6, 49)
 
   tableId.textProperty().bindBidirectional(tTableId.textProperty())
-  handBetMin.textProperty().bindBidirectional(tHandBetMin.textProperty())
-  handBetMax.textProperty().bindBidirectional(tHandBetMax.textProperty())
-  tieBetMin.textProperty().bindBidirectional(tTieBetMin.textProperty())
-  tieBetMax.textProperty().bindBidirectional(tTieBetMax.textProperty())
-  pairBetMin.textProperty().bindBidirectional(tPairBetMin.textProperty())
-  pairBetMax.textProperty().bindBidirectional(tPairBetMax.textProperty())
-  superBetMin.textProperty().bindBidirectional(tSuperSixBetMin.textProperty())
-  superBetMax.textProperty().bindBidirectional(tSuperSixBetMax.textProperty())
+  firstBetMin.textProperty().bindBidirectional(tFirstBetMin.textProperty())
+  firstBetMax.textProperty().bindBidirectional(tFirstBetMax.textProperty())
+  secondBetMin.textProperty().bindBidirectional(tSecondBetMin.textProperty())
+  secondBetMax.textProperty().bindBidirectional(tSecondBetMax.textProperty())
 
   tableId.setText(header.tableId)
-  handBetMin.setText(header.firstBetMin)
-  handBetMax.setText(header.firstBetMax)
-  tieBetMin.setText(header.secondBetMin)
-  tieBetMax.setText(header.secondBetMax)
+  firstBetMin.setText(header.firstBetMin)
+  firstBetMax.setText(header.firstBetMax)
+  secondBetMin.setText(header.secondBetMin)
+  secondBetMax.setText(header.secondBetMax)
 
   val tList = Array(
     tTableId,
-    tHandBetMin,
-    tHandBetMax,
-    tTieBetMin,
-    tTieBetMax,
-    tPairBetMin,
-    tPairBetMax,
-    tSuperSixBetMin,
-    tSuperSixBetMax)
+    tFirstBetMin,
+    tFirstBetMax,
+    tSecondBetMin,
+    tSecondBetMax)
 
   val lList = Array(
     lTableId,
-    lHandBetMin,
-    lHandBetMax,
-    lTieBetMin,
-    lTieBetMax,
-    lPairBetMin,
-    lPairBetMax,
-    lSuperSixBetMin,
-    lSuperSixBetMax)
+    lFirstBetMin,
+    lFirstBetMax,
+    lSecondBetMin,
+    lSecondBetMax)
+
   val lastWinPause: PauseTransition = new PauseTransition(Duration(3000))
   var media: Media = null
   var mediaPlayer: MediaPlayer = null
@@ -185,7 +151,7 @@ class AppController(
 
   // callback registration
   sodium.Stream.shift(reader.valueProperty().updates).foreach { result =>
-    if(BeadRoadResult.EMPTY != result) {
+    if(AndarBaharBeadRoadResult.EMPTY != result) {
       beadRoad.AddElement(result)
       model.saveData()
     }
@@ -203,12 +169,11 @@ class AppController(
           } else {
             bigRoad.RemoveElement(beadRoad.getBeadRoadListProperty)
           }
-          totalCount.setText(String.valueOf(t2.intValue()))
+//          totalCount.setText(String.valueOf(t2.intValue()))
         } else {
           bigRoad.Reset()
-          totalCount.setText("")
+//          totalCount.setText("")
         }
-        bigRoad.UpdatePredictions(b1, b2, b3, p1, p2, p3)
       }
     })
 
@@ -217,9 +182,9 @@ class AppController(
       override def changed(observableValue: ObservableValue[_ <: Number], t1: Number, t2: Number): Unit = {
         if (t2.intValue() > 0) {
           lastWinUpdates()
-          bankerWinCount.setText(String.valueOf(t2.intValue()))
+//          bankerWinCount.setText(String.valueOf(t2.intValue()))
         } else {
-          bankerWinCount.setText("")
+//          bankerWinCount.setText("")
         }
       }
     })
@@ -229,97 +194,14 @@ class AppController(
       override def changed(observableValue: ObservableValue[_ <: Number], t1: Number, t2: Number): Unit = {
         if (t2.intValue() > 0) {
           lastWinUpdates()
-          playerWinCount.setText(String.valueOf(t2.intValue()))
+//          playerWinCount.setText(String.valueOf(t2.intValue()))
         } else {
-          playerWinCount.setText("")
+//          playerWinCount.setText("")
         }
       }
     })
 
-  beadRoad.getTieWinCount
-    .addListener(new ChangeListener[Number] {
-      override def changed(observableValue: ObservableValue[_ <: Number], t1: Number, t2: Number): Unit = {
-        if (t2.intValue() > 0) {
-          lastWinUpdates()
-          tieWinCount.setText(String.valueOf(t2.intValue()))
-        } else {
-          tieWinCount.setText("")
-        }
-      }
-    })
-
-  beadRoad.getBankerPairCount
-    .addListener(new ChangeListener[Number] {
-      override def changed(observableValue: ObservableValue[_ <: Number], t1: Number, t2: Number): Unit = {
-        if (t2.intValue() > 0) {
-          bankerPairCount.setText(String.valueOf(t2.intValue()))
-        } else {
-          bankerPairCount.setText("")
-        }
-      }
-    })
-
-  beadRoad.getPlayerPairCount
-    .addListener(new ChangeListener[Number] {
-      override def changed(observableValue: ObservableValue[_ <: Number], t1: Number, t2: Number): Unit = {
-        if (t2.intValue() > 0) {
-          playerPairCount.setText(String.valueOf(t2.intValue()))
-        } else {
-          playerPairCount.setText("")
-        }
-      }
-    })
-
-  beadRoad.getNaturalCount
-    .addListener(new ChangeListener[Number] {
-      override def changed(observableValue: ObservableValue[_ <: Number], t1: Number, t2: Number): Unit = {
-        if (t2.intValue() > 0) {
-          naturalCount.setText(String.valueOf(t2.intValue()))
-        } else {
-          naturalCount.setText("")
-        }
-      }
-    })
-
-  bigRoad.bigEyeRoadListProperty
-    .addListener(new ChangeListener[ObservableList[BigEyeRoadLabel]] {
-      override def changed(
-        observableValue: ObservableValue[_ <: ObservableList[BigEyeRoadLabel]],
-        t: ObservableList[BigEyeRoadLabel],
-        t1: ObservableList[BigEyeRoadLabel]): Unit = {
-        if (!t1.isEmpty) bigEyeRoad.ReArrangeElements(t1)
-        else {
-          bigEyeRoad.Reset()
-        }
-      }
-    })
-
-  bigRoad.smallRoadListProperty
-    .addListener(new ChangeListener[ObservableList[SmallRoadLabel]] {
-      override def changed(
-        observableValue: ObservableValue[_ <: ObservableList[SmallRoadLabel]],
-        t: ObservableList[SmallRoadLabel],
-        t1: ObservableList[SmallRoadLabel]): Unit = {
-        if (!t1.isEmpty) smallRoad.ReArrangeElements(t1)
-        else {
-          smallRoad.Reset()
-        }
-      }
-    })
-
-  bigRoad.cockroachRoadListProperty
-    .addListener(new ChangeListener[ObservableList[CockroachRoadLabel]] {
-      override def changed(
-        observableValue: ObservableValue[_ <: ObservableList[CockroachRoadLabel]],
-        t: ObservableList[CockroachRoadLabel],
-        t1: ObservableList[CockroachRoadLabel]): Unit = {
-        if (!t1.isEmpty) cockroachRoad.ReArrangeElements(t1)
-        else {
-          cockroachRoad.Reset()
-        }
-      }
-    })
-
+  
   def focusSame(): Unit = {
     lList(mIndex).requestFocus()
   }
@@ -366,10 +248,10 @@ class AppController(
     .foreach { result =>
       {
         result match {
-          case BeadRoadResult.EXIT  => display.exit()
-          case BeadRoadResult.UNDO  => beadRoad.RemoveElement()
-          case BeadRoadResult.CLEAR => beadRoad.Reset()
-          case BeadRoadResult.THEME => {
+          case AndarBaharBeadRoadResult.EXIT  => display.exit()
+          case AndarBaharBeadRoadResult.UNDO  => beadRoad.RemoveElement()
+          case AndarBaharBeadRoadResult.CLEAR => beadRoad.Reset()
+          case AndarBaharBeadRoadResult.THEME => {
             println(s"root Before  ${gameBox.getStyleClass.sorted()}")
             gameBox.getStyleClass.removeAll("theme1", "theme2")
             gameHeaderBox.getStyleClass.removeAll("theme1", "theme2")
@@ -400,7 +282,7 @@ class AppController(
     beadRoad.AddElement(result)
   }
 
-  footing.setText("Powered By Tykhe Gaming Pvt. Ltd.")
+//  footing.setText("Powered By Tykhe Gaming Pvt. Ltd.")
 
 
 

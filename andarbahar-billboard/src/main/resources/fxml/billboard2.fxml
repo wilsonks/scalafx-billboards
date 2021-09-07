@@ -194,6 +194,30 @@
                         </padding>
                     </HBox>
                 </top>
+                <center>
+                    <StackPane prefHeight="612.0" prefWidth="1893.0" BorderPane.alignment="CENTER">
+                        <children>
+<!--                            <ImageView fitHeight="585.0" fitWidth="1648.0" pickOnBounds="true">-->
+<!--                                <image>-->
+<!--                                    <Image url="@css/abpng/Big-screen-table.png" />-->
+<!--                                </image>-->
+<!--                            </ImageView>-->
+
+
+
+
+
+                            <BigRoadTilePane fx:id="bigRoad" styleClass="BigRoadTilePane" stylesheets="@css/bigroad-theme.css"/>
+
+                            <ImageView fitHeight="569.0" fitWidth="715.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@css/abpng/CasinoPrideLogo.png" />
+                                </image>
+                            </ImageView>
+
+                        </children>
+                    </StackPane>
+                </center>
                 <bottom>
                     <HBox prefHeight="312.0" prefWidth="1893.0" BorderPane.alignment="CENTER">
                         <children>
@@ -201,7 +225,7 @@
                                 <children>
                                     <ImageView fitHeight="310.0" pickOnBounds="true" preserveRatio="true">
                                         <image>
-                                            <Image url="@css/abpng/footer/Big-screen-andhar-bahar-Betting.png" />
+                                            <Image url="@css/abpng/footer/ab-footing-pane-betting-rev1.png" />
                                         </image>
                                     </ImageView>
                                     <GridPane prefHeight="312.0" prefWidth="345.0">
@@ -253,47 +277,27 @@
                             </StackPane>
                             <ImageView fitHeight="309.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
-                                    <Image url="@css/abpng/footer/Big-screen-andhar-bahar-Trend.png" />
+                                    <Image url="@css/abpng/footer/ab-footing-pane-trend.png" />
                                 </image>
                             </ImageView>
                             <ImageView fitHeight="310.0" layoutX="393.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
-                                    <Image url="@css/abpng/footer/Big-screen-andhar-bahar-Last-game.png" />
+                                    <Image url="@css/abpng/footer/ab-footing-pane-last-game.png" />
                                 </image>
                             </ImageView>
                             <ImageView fitHeight="309.0" layoutX="776.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
-                                    <Image url="@css/abpng/footer/Big-screen-andhar-bahar-game-count.png" />
+                                    <Image url="@css/abpng/footer/ab-footing-pane-game-count.png" />
                                 </image>
                             </ImageView>
                             <ImageView fitHeight="310.0" layoutX="1159.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
-                                    <Image url="@css/abpng/footer/Big-screen-andhar-bahar-legend.png" />
+                                    <Image url="@css/abpng/footer/ab-footing-pane-legend-empty.png" />
                                 </image>
                             </ImageView>
                         </children>
                     </HBox>
                 </bottom>
-                <center>
-                    <StackPane prefHeight="612.0" prefWidth="1893.0" BorderPane.alignment="CENTER">
-                        <children>
-                            <ImageView fitHeight="585.0" fitWidth="1648.0" pickOnBounds="true">
-                                <image>
-                                    <Image url="@css/abpng/Big-screen-table.png" />
-                                </image>
-                            </ImageView>
-                            <ImageView fitHeight="569.0" fitWidth="715.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
-                                <image>
-                                    <Image url="@css/abpng/CasinoPrideLogo.png" />
-                                </image>
-                            </ImageView>
-                            <Pane maxWidth="1910.0" prefHeight="235.0" prefWidth="1910.0" styleClass="BigRoadPane">
-                                <BigRoadTilePane fx:id="bigRoad" style="-fx-background-radius: 2;" styleClass="BigRoadTilePane">
-                                </BigRoadTilePane>
-                            </Pane>
-                        </children>
-                    </StackPane>
-                </center>
             </BorderPane>
         </children>
     </Pane>

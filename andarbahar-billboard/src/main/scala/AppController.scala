@@ -78,7 +78,7 @@ class AppController(
   beadRoad.getBeadRoadListProperty.bind(model.beadRoadListProperty)
 
   beadRoad.Initialize(6, 11)
-  bigRoad.Initialize(6, 49)
+  bigRoad.Initialize(10, 30)
 
   tableId.textProperty().bindBidirectional(tTableId.textProperty())
   firstBetMin.textProperty().bindBidirectional(tFirstBetMin.textProperty())

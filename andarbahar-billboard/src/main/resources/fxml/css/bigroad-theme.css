@@ -1,0 +1,40 @@
+
+.BigRoadTilePane {
+    -fx-background-radius: 2;
+	-fx-padding:40 100 0 150;
+	-fx-orientation: vertical;
+	-fx-alignment: top-left;
+	-fx-tile-alignment: top-left;
+	-fx-pref-rows:10;
+	-fx-pref-columns:30;
+	-fx-pref-tile-width:53;
+	-fx-pref-tile-height:53;
+	-fx-hgap:.5;
+	-fx-vgap:.5;
+}
+
+.BigRoadLabel {
+	-fx-background-color:rgba(255, 255, 255, 0.5);;
+	-fx-alignment:center;
+	-fx-text-overrun:center-ellipsis;
+	-fx-text-fill:white;
+	-fx-font-weight:bold;
+	-fx-pref-width:53;
+	-fx-pref-height:53;
+}
+
+
+.BigRoadLabel:bankerWin {
+    -fx-padding:2 2 2 2;
+	-fx-background-image: url("abpng/big-road/bahar.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat;
+}
+
+
+.BigRoadLabel:playerWin {
+    -fx-padding:2 2 2 2;
+	-fx-background-image: url("abpng/big-road/andar.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat;
+}

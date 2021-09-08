@@ -8,14 +8,18 @@ import javafx.scene.control.Label;
 public class AndarBaharBigRoadLabel extends Label {
 
     public AndarBaharBigRoadLabel() {
+        super();
         this.getStyleClass().add("BigRoadLabel");
+        this.setResult(AndarBaharBigRoadResult.EMPTY);
     }
 
     public AndarBaharBigRoadLabel(AndarBaharBigRoadResult result) {
+        super();
         this.getStyleClass().add("BigRoadLabel");
         this.setResult(result);
     }
 
+    private static final PseudoClass PSEUDO_CLASS_EMPTY = PseudoClass.getPseudoClass("empty");
     private static final PseudoClass PSEUDO_CLASS_BANKER_WIN = PseudoClass.getPseudoClass("bankerWin");
     private static final PseudoClass PSEUDO_CLASS_PLAYER_WIN = PseudoClass.getPseudoClass("playerWin");
 
@@ -25,14 +29,17 @@ public class AndarBaharBigRoadLabel extends Label {
         protected void invalidated() {
             switch (get()) {
                 case EMPTY:
+                    pseudoClassStateChanged(PSEUDO_CLASS_EMPTY, true);
                     pseudoClassStateChanged(PSEUDO_CLASS_BANKER_WIN, false);
                     pseudoClassStateChanged(PSEUDO_CLASS_PLAYER_WIN, false);
                     break;
                 case BANKER_WIN:
+                    pseudoClassStateChanged(PSEUDO_CLASS_EMPTY, false);
                     pseudoClassStateChanged(PSEUDO_CLASS_BANKER_WIN, true);
                     pseudoClassStateChanged(PSEUDO_CLASS_PLAYER_WIN, false);
                     break;
                 case PLAYER_WIN:
+                    pseudoClassStateChanged(PSEUDO_CLASS_EMPTY, false);
                     pseudoClassStateChanged(PSEUDO_CLASS_BANKER_WIN, false);
                     pseudoClassStateChanged(PSEUDO_CLASS_PLAYER_WIN, true);
 
@@ -62,6 +69,5 @@ public class AndarBaharBigRoadLabel extends Label {
 
     public void setResult(AndarBaharBigRoadResult result) {
         this.result.set(result);
-//        this.setText("");
     }
 }

@@ -1,12 +1,12 @@
 
 .BigRoadTilePane {
     -fx-background-radius: 2;
-	-fx-padding:40 100 0 150;
+	-fx-padding:0 0 0 0;
 	-fx-orientation: vertical;
 	-fx-alignment: top-left;
 	-fx-tile-alignment: top-left;
 	-fx-pref-rows:10;
-	-fx-pref-columns:30;
+	-fx-pref-columns:29;
 	-fx-pref-tile-width:53;
 	-fx-pref-tile-height:53;
 	-fx-hgap:.5;
@@ -23,6 +23,12 @@
 	-fx-pref-height:53;
 }
 
+
+.BigRoadLabel:empty {
+    -fx-padding:2 2 2 2;
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat;
+}
 
 .BigRoadLabel:bankerWin {
     -fx-padding:2 2 2 2;

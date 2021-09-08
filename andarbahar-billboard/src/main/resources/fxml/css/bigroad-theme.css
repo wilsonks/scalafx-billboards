@@ -35,6 +35,7 @@
 	-fx-background-image: url("abpng/big-road/bahar.png");
 	-fx-background-position: center;
 	-fx-background-repeat: no-repeat;
+	-fx-background-size: 51;
 }
 
 
@@ -43,4 +44,5 @@
 	-fx-background-image: url("abpng/big-road/andar.png");
 	-fx-background-position: center;
 	-fx-background-repeat: no-repeat;
+	-fx-background-size: 51;
 }

@@ -129,14 +129,6 @@
         </center>
     </BorderPane>
 
-
-<!--Last Win Result-->
-    <BorderPane fx:id="dynamicResult" prefHeight="200.0" prefWidth="1749.0">
-        <center>
-          <AndarBaharLastWinResultLabel fx:id="lastWinResultLabel" result="PLAYER_WIN" style="-fx-scale-x: 1.5; -fx-scale-y: 1.5;" BorderPane.alignment="CENTER" />
-        </center>
-    </BorderPane>
-
 <!--Main Content    -->
     <Pane fx:id="gameBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="theme1" stylesheets="@css/main-theme.css">
         <children>
@@ -663,7 +655,7 @@
                                <RowConstraints maxHeight="121.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
                              </rowConstraints>
                               <children>
-                                 <AndarBaharLastWinResultLabel fx:id="lastGame" contentDisplay="CENTER" prefHeight="175.0" prefWidth="150.0" result="PLAYER_WIN" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                 <AndarBaharLastWinResultLabel fx:id="lastGame" contentDisplay="CENTER" prefHeight="175.0" prefWidth="150.0" result="PLAYER_WIN" text="Bahar Won" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               </children>
                            </GridPane>
                         </children>
@@ -689,12 +681,12 @@
                                  <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
                               </rowConstraints>
                               <children>
-                                 <Label fx:id="andarCount" prefHeight="34.0" prefWidth="198.0" text="1234" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <Label fx:id="andarCount" prefHeight="34.0" prefWidth="198.0" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <font>
                                        <Font name="Arial Black" size="37.0" />
                                     </font>
                                  </Label>
-                                 <Label fx:id="baharCount" prefHeight="34.0" prefWidth="198.0" text="1234" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <Label fx:id="baharCount" prefHeight="34.0" prefWidth="198.0" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                     <font>
                                        <Font name="Arial Black" size="37.0" />
                                     </font>
@@ -744,4 +736,12 @@
             </BorderPane>
         </children>
     </Pane>
+
+
+<!--Last Win Result-->
+    <BorderPane fx:id="dynamicResult" prefHeight="200.0" prefWidth="1749.0" StackPane.alignment="CENTER">
+        <center>
+          <AndarBaharLastWinResultLabel fx:id="lastWinResultLabel" result="PLAYER_WIN" style="-fx-scale-x: 1.5; -fx-scale-y: 1.5;" text="Bahar Won" BorderPane.alignment="CENTER" />
+        </center>
+    </BorderPane>
 </StackPane>

@@ -26,6 +26,7 @@ class AppController(
   val gameBox: Pane,
   val gameHeaderBox: HBox,
   val lastWinResultLabel: AndarBaharLastWinResultLabel,
+  val lastGame: AndarBaharLastWinResultLabel,
 
   val tableId: Label,
   val firstBetMin: Label,
@@ -33,8 +34,10 @@ class AppController(
   val secondBetMin: Label,
   val secondBetMax: Label,
 
-//  val playerWinCount: Label,
-//  val bankerWinCount: Label,
+  val andarCount: Label,
+  val baharCount: Label,
+  val andarTrend: Label,
+  val baharTrend: Label,
 
   val menu: BorderPane,
   val promoPane: Pane,
@@ -169,10 +172,9 @@ class AppController(
           } else {
             bigRoad.RemoveElement(beadRoad.getBeadRoadListProperty)
           }
-//          totalCount.setText(String.valueOf(t2.intValue()))
+
         } else {
           bigRoad.Reset()
-//          totalCount.setText("")
         }
       }
     })
@@ -182,9 +184,15 @@ class AppController(
       override def changed(observableValue: ObservableValue[_ <: Number], t1: Number, t2: Number): Unit = {
         if (t2.intValue() > 0) {
           lastWinUpdates()
-//          bankerWinCount.setText(String.valueOf(t2.intValue()))
+          baharCount.setText(String.valueOf(t2.intValue()))
+          val baharTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarTrendValue = 100 - baharTrendValue
+
+          baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
+          andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
         } else {
-//          bankerWinCount.setText("")
+          baharCount.setText("")
+          baharTrend.setText("0%")
         }
       }
     })
@@ -194,9 +202,17 @@ class AppController(
       override def changed(observableValue: ObservableValue[_ <: Number], t1: Number, t2: Number): Unit = {
         if (t2.intValue() > 0) {
           lastWinUpdates()
-//          playerWinCount.setText(String.valueOf(t2.intValue()))
+          andarCount.setText(String.valueOf(t2.intValue()))
+
+          val andarTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val baharTrendValue = 100 - andarTrendValue
+
+          baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
+          andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+
         } else {
-//          playerWinCount.setText("")
+          andarCount.setText("")
+          andarTrend.setText("0%")
         }
       }
     })
@@ -275,6 +291,8 @@ class AppController(
 
   lastWinPause.setOnFinished { e =>
     dynamicResult.setVisible(false)
+    lastGame.setResult(beadRoad.LastWinResult())
+    lastGame.setText(res.get.getString(beadRoad.LastWin()))
   }
 
   //Load the saved results

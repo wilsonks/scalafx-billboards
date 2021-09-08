@@ -31,10 +31,6 @@
 
 <!--Hidden Main Content-->
     <VBox fx:id="gameHiddenBox" alignment="BOTTOM_CENTER" styleClass="gameBox">
-<!--        <Pane maxWidth="1910.0" prefHeight="235.0" prefWidth="1910.0" styleClass="BigRoadPane">-->
-<!--            <BigRoadTilePane fx:id="bigRoad" style="-fx-background-radius: 2;" styleClass="BigRoadTilePane">-->
-<!--            </BigRoadTilePane>-->
-<!--        </Pane>-->
         <HBox alignment="CENTER" maxWidth="1910.0" spacing="10.0">
         </HBox>
         <VBox alignment="TOP_CENTER" prefHeight="371.0" prefWidth="1910.0" spacing="5.0">
@@ -133,8 +129,16 @@
         </center>
     </BorderPane>
 
+
+<!--Last Win Result-->
+    <BorderPane fx:id="dynamicResult" prefHeight="200.0" prefWidth="1749.0">
+        <center>
+          <AndarBaharLastWinResultLabel fx:id="lastWinResultLabel" result="PLAYER_WIN" style="-fx-scale-x: 1.5; -fx-scale-y: 1.5;" BorderPane.alignment="CENTER" />
+        </center>
+    </BorderPane>
+
 <!--Main Content    -->
-    <Pane fx:id="gameBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="theme1" stylesheets="@css/main-theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <Pane fx:id="gameBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="theme1" stylesheets="@css/main-theme.css">
         <children>
             <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true">
                 <image>
@@ -612,35 +616,132 @@
                                                   <Image url="@css/abpng/footer/ab-footing-pane-trend.png" />
                                               </image>
                                           </ImageView>
+                           <GridPane>
+                             <columnConstraints>
+                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="155.0" />
+                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="196.0" />
+                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="57.0" />
+                             </columnConstraints>
+                             <rowConstraints>
+                               <RowConstraints maxHeight="138.0" minHeight="10.0" prefHeight="132.0" vgrow="SOMETIMES" />
+                               <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                               <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                               <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                               <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                             </rowConstraints>
+                              <children>
+                                 <Label fx:id="andarTrend" prefHeight="34.0" prefWidth="198.0" text="1234" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <font>
+                                       <Font name="Arial Black" size="37.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="baharTrend" prefHeight="34.0" prefWidth="198.0" text="1234" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                    <font>
+                                       <Font name="Arial Black" size="37.0" />
+                                    </font>
+                                 </Label>
+                              </children>
+                           </GridPane>
                                 </children>
                              </StackPane>
-                            <ImageView fitHeight="310.0" layoutX="393.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                <image>
-                                    <Image url="@css/abpng/footer/ab-footing-pane-last-game.png" />
-                                </image>
-                            </ImageView>
-                            <ImageView fitHeight="309.0" layoutX="776.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                <image>
-                                    <Image url="@css/abpng/footer/ab-footing-pane-game-count.png" />
-                                </image>
-                            </ImageView>
-                            <ImageView fitHeight="310.0" layoutX="1159.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                <image>
-                                    <Image url="@css/abpng/footer/ab-footing-pane-legend-empty.png" />
-                                </image>
-                            </ImageView>
+                     <StackPane>
+                        <children>
+                                  <ImageView fitHeight="310.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@css/abpng/footer/ab-footing-pane-last-game.png" />
+                                      </image>
+                                  </ImageView>
+                           <GridPane>
+                             <columnConstraints>
+                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.0" minWidth="7.0" prefWidth="102.33331298828125" />
+                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="365.0" minWidth="10.0" prefWidth="181.66668701171875" />
+                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="365.0" minWidth="10.0" prefWidth="95.0" />
+                             </columnConstraints>
+                             <rowConstraints>
+                               <RowConstraints maxHeight="112.0" minHeight="10.0" prefHeight="104.0" vgrow="SOMETIMES" />
+                               <RowConstraints maxHeight="196.0" minHeight="10.0" prefHeight="191.0" vgrow="SOMETIMES" />
+                               <RowConstraints maxHeight="121.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
+                             </rowConstraints>
+                              <children>
+                                 <AndarBaharLastWinResultLabel fx:id="lastGame" contentDisplay="CENTER" prefHeight="175.0" prefWidth="150.0" result="PLAYER_WIN" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              </children>
+                           </GridPane>
+                        </children>
+                     </StackPane>
+                     <StackPane>
+                        <children>
+                                  <ImageView fitHeight="309.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@css/abpng/footer/ab-footing-pane-game-count.png" />
+                                      </image>
+                                  </ImageView>
+                           <GridPane>
+                              <columnConstraints>
+                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="155.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="196.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="57.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                 <RowConstraints maxHeight="138.0" minHeight="10.0" prefHeight="132.0" vgrow="SOMETIMES" />
+                                 <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                                 <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                                 <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                                 <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <children>
+                                 <Label fx:id="andarCount" prefHeight="34.0" prefWidth="198.0" text="1234" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <font>
+                                       <Font name="Arial Black" size="37.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="baharCount" prefHeight="34.0" prefWidth="198.0" text="1234" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                    <font>
+                                       <Font name="Arial Black" size="37.0" />
+                                    </font>
+                                 </Label>
+                              </children>
+                           </GridPane>
+                        </children>
+                     </StackPane>
+                     <StackPane>
+                        <children>
+                                  <ImageView fitHeight="310.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@css/abpng/footer/ab-footing-pane-legend-empty.png" />
+                                      </image>
+                                  </ImageView>
+                           <GridPane>
+                              <columnConstraints>
+                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="121.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="223.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="38.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                 <RowConstraints maxHeight="138.0" minHeight="10.0" prefHeight="132.0" vgrow="SOMETIMES" />
+                                 <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                                 <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                                 <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                                 <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <children>
+                                 <Label fx:id="andarLegend" prefHeight="55.0" prefWidth="224.0" text="Andar Won" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <font>
+                                       <Font name="Arial Black" size="37.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="baharLegend" prefHeight="55.0" prefWidth="222.0" text="Bahar Won" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                    <font>
+                                       <Font name="Arial Black" size="37.0" />
+                                    </font>
+                                 </Label>
+                              </children>
+                           </GridPane>
+                        </children>
+                     </StackPane>
                         </children>
                     </HBox>
                 </bottom>
             </BorderPane>
         </children>
     </Pane>
-
-
-<!--Last Win Result-->
-    <BorderPane fx:id="dynamicResult" prefHeight="200.0" prefWidth="200.0">
-        <center>
-          <AndarBaharLastWinResultLabel fx:id="lastWinResultLabel" result="PLAYER_WIN" BorderPane.alignment="CENTER" />
-        </center>
-    </BorderPane>
 </StackPane>

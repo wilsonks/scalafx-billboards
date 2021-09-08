@@ -574,27 +574,27 @@
                                         <children>
                                             <Label fx:id="tableId" prefHeight="34.0" prefWidth="198.0" text="1234" textFill="#7c0707" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="1">
                                                 <font>
-                                                    <Font name="Arial Black" size="37.0" />
+                                                    <Font name="Barlow ExtraBold" size="37.0" />
                                                 </font>
                                             </Label>
                                             <Label fx:id="firstBetMin" prefHeight="36.0" prefWidth="70.0" text="100" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                                 <font>
-                                                    <Font name="Arial Black" size="30.0" />
+                                                    <Font name="Barlow ExtraBold" size="37.0" />
                                                 </font>
                                             </Label>
                                             <Label fx:id="firstBetMax" prefHeight="36.0" prefWidth="120.0" text="2000" textFill="#7c0707" GridPane.columnIndex="3" GridPane.rowIndex="3">
                                                 <font>
-                                                    <Font name="Arial Black" size="30.0" />
+                                                    <Font name="Barlow ExtraBold" size="37.0" />
                                                 </font>
                                             </Label>
                                             <Label fx:id="secondBetMin" prefHeight="36.0" prefWidth="70.0" text="100" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                                 <font>
-                                                    <Font name="Arial Black" size="30.0" />
+                                                    <Font name="Barlow ExtraBold" size="37.0" />
                                                 </font>
                                             </Label>
                                             <Label fx:id="secondBetMax" prefHeight="36.0" prefWidth="120.0" text="1000" textFill="#7c0707" GridPane.columnIndex="3" GridPane.rowIndex="5">
                                                 <font>
-                                                    <Font name="Arial Black" size="30.0" />
+                                                    <Font name="Barlow ExtraBold" size="37.0" />
                                                 </font>
                                             </Label>
                                         </children>
@@ -624,12 +624,12 @@
                               <children>
                                  <Label fx:id="andarTrend" prefHeight="34.0" prefWidth="198.0" text="1234" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <font>
-                                       <Font name="Arial Black" size="37.0" />
+                                       <Font name="Barlow ExtraBold" size="37.0" />
                                     </font>
                                  </Label>
                                  <Label fx:id="baharTrend" prefHeight="34.0" prefWidth="198.0" text="1234" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                     <font>
-                                       <Font name="Arial Black" size="37.0" />
+                                       <Font name="Barlow ExtraBold" size="37.0" />
                                     </font>
                                  </Label>
                               </children>
@@ -646,7 +646,7 @@
                            <GridPane>
                              <columnConstraints>
                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.0" minWidth="7.0" prefWidth="102.33331298828125" />
-                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="365.0" minWidth="10.0" prefWidth="181.66668701171875" />
+                               <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="365.0" minWidth="10.0" prefWidth="181.66668701171875" />
                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="365.0" minWidth="10.0" prefWidth="95.0" />
                              </columnConstraints>
                              <rowConstraints>
@@ -655,7 +655,7 @@
                                <RowConstraints maxHeight="121.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
                              </rowConstraints>
                               <children>
-                                 <AndarBaharLastWinResultLabel fx:id="lastGame" contentDisplay="CENTER" prefHeight="175.0" prefWidth="150.0" result="PLAYER_WIN" text="Bahar Won" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                 <AndarBaharLastWinResultLabel fx:id="lastGame" alignment="CENTER" contentDisplay="CENTER" prefHeight="175.0" prefWidth="150.0" result="BANKER_WIN" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               </children>
                            </GridPane>
                         </children>
@@ -683,12 +683,12 @@
                               <children>
                                  <Label fx:id="andarCount" prefHeight="34.0" prefWidth="198.0" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <font>
-                                       <Font name="Arial Black" size="37.0" />
+                                       <Font name="Barlow ExtraBold" size="37.0" />
                                     </font>
                                  </Label>
                                  <Label fx:id="baharCount" prefHeight="34.0" prefWidth="198.0" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                     <font>
-                                       <Font name="Arial Black" size="37.0" />
+                                       <Font name="Barlow ExtraBold" size="37.0" />
                                     </font>
                                  </Label>
                               </children>
@@ -718,12 +718,12 @@
                               <children>
                                  <Label fx:id="andarLegend" prefHeight="55.0" prefWidth="224.0" text="Andar Won" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <font>
-                                       <Font name="Arial Black" size="37.0" />
+                                       <Font name="Barlow ExtraBold" size="37.0" />
                                     </font>
                                  </Label>
-                                 <Label fx:id="baharLegend" prefHeight="55.0" prefWidth="222.0" text="Bahar Won" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <Label fx:id="baharLegend" prefHeight="55.0" prefWidth="222.0" text="Bahar Won" textFill="#0707f5" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                     <font>
-                                       <Font name="Arial Black" size="37.0" />
+                                       <Font name="Barlow ExtraBold" size="37.0" />
                                     </font>
                                  </Label>
                               </children>
@@ -741,7 +741,7 @@
 <!--Last Win Result-->
     <BorderPane fx:id="dynamicResult" prefHeight="200.0" prefWidth="1749.0" StackPane.alignment="CENTER">
         <center>
-          <AndarBaharLastWinResultLabel fx:id="lastWinResultLabel" result="PLAYER_WIN" style="-fx-scale-x: 1.5; -fx-scale-y: 1.5;" text="Bahar Won" BorderPane.alignment="CENTER" />
+          <AndarBaharLastWinResultLabel fx:id="lastWinResultLabel" alignment="CENTER" result="BANKER_WIN" style="-fx-scale-x: 1.5; -fx-scale-y: 1.5;" BorderPane.alignment="CENTER" />
         </center>
     </BorderPane>
 </StackPane>

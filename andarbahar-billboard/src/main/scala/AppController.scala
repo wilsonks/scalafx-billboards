@@ -128,7 +128,7 @@ class AppController(
     new AudioClip(getClass.getResource(beadRoad.LastWinAudio()).toExternalForm).play(1)
     lastWinResultLabel.setResult(beadRoad.LastWinResult())
     lastWinResultLabel.setText(res.get.getString(beadRoad.LastWin()))
-    lastWinResultLabel.setAlignment(Pos.Center)
+//    lastWinResultLabel.setAlignment(Pos.Center)
     dynamicResult.setVisible(true)
     lastWinPause.stop()
     lastWinPause.play()
@@ -293,6 +293,7 @@ class AppController(
     dynamicResult.setVisible(false)
     lastGame.setResult(beadRoad.LastWinResult())
     lastGame.setText(res.get.getString(beadRoad.LastWin()))
+//    lastGame.setAlignment(Pos.Center)
   }
 
   //Load the saved results

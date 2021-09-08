@@ -15,6 +15,14 @@
     src: url('ttf/Bodonio.ttf');
 }
 
+@font-face {
+    src: url('ttf/BarlowBold.ttf');
+}
+
+@font-face {
+    src: url('ttf/BarlowExtraBold.ttf');
+}
+
 
 .gameBox {
 	-fx-background-color: style1-color;
@@ -192,7 +200,7 @@
 
 
 .LastWinResultLabel {
-	-fx-font-family: 'Book Antiqua Bold';
+    -fx-font-family: 'Barlow';
 	-fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 1 , 0 );
 	-fx-font-size: 30;
 	-fx-text-fill: white;

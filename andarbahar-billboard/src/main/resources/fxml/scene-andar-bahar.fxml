@@ -124,7 +124,13 @@
                <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                   <children>
                      <Button fx:id="lLanguage" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Language" />
-                     <Button fx:id="language" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuSelectionLabels" text="English" />
+                     <Button fx:id="language" mnemonicParsing="false" prefHeight="38.0" prefWidth="110.0" styleClass="menuSelectionLabels" />
+                  </children>
+               </HBox>
+               <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                  <children>
+                     <Button fx:id="lTheme" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Theme" />
+                     <Button fx:id="theme" mnemonicParsing="false" prefHeight="38.0" prefWidth="110.0" styleClass="menuSelectionLabels" />
                   </children>
                </HBox>
                 </children>

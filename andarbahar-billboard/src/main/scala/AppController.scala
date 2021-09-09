@@ -49,6 +49,7 @@ class AppController(
   val tSecondBetMin: TextField,
   val tSecondBetMax: TextField,
   val language: Button,
+  val theme: Button,
 
   val lTableId: Button,
   val lFirstBetMin: Button,
@@ -56,6 +57,7 @@ class AppController(
   val lSecondBetMin: Button,
   val lSecondBetMax: Button,
   val lLanguage: Button,
+  val lTheme: Button,
 
   val info: BorderPane,
   val beadRoad: BeadRoadTilePane,
@@ -80,6 +82,7 @@ class AppController(
   secondBetMin.textProperty().bindBidirectional(model.secondBetMinProperty)
   secondBetMax.textProperty().bindBidirectional(model.secondBetMaxProperty)
 
+
   beadRoad.getBeadRoadListProperty.bind(model.beadRoadListProperty)
 
   beadRoad.Initialize(6, 11)
@@ -97,13 +100,17 @@ class AppController(
   secondBetMin.setText(header.secondBetMin)
   secondBetMax.setText(header.secondBetMax)
 
+  language.setText(header.language)
+  theme.setText(header.theme)
+
   val tList = Array(
     tTableId,
     tFirstBetMin,
     tFirstBetMax,
     tSecondBetMin,
     tSecondBetMax,
-    language)
+    language,
+    theme)
 
   val lList = Array(
     lTableId,
@@ -111,7 +118,8 @@ class AppController(
     lFirstBetMax,
     lSecondBetMin,
     lSecondBetMax,
-    lLanguage)
+    lLanguage,
+    lTheme)
 
   val lastWinPause: PauseTransition = new PauseTransition(Duration(3000))
   var media: Media = null

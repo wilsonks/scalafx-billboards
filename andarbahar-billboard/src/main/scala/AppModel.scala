@@ -7,6 +7,7 @@ import javafx.scene.input.KeyCode
 import pureconfig.ConfigReader
 import pureconfig.generic.auto._
 import tykhe.billboard.ab.{TableHistory, TableSettings}
+import scala.collection.JavaConverters._
 
 class AppModel {
 
@@ -28,9 +29,11 @@ class AppModel {
   private val firstBetMax: StringProperty = new SimpleStringProperty("")
   private val secondBetMin: StringProperty = new SimpleStringProperty("")
   private val secondBetMax: StringProperty = new SimpleStringProperty("")
+  private val language: StringProperty = new SimpleStringProperty("")
+  private val theme: StringProperty = new SimpleStringProperty("")
 
   private val beadRoadList: ListProperty[AndarBaharBeadRoadResult] = new SimpleListProperty(FXCollections.observableArrayList[AndarBaharBeadRoadResult])
-  var mediaIndex = 0
+
 
   def tableIdProperty: StringProperty = tableId
 
@@ -42,6 +45,9 @@ class AppModel {
 
   def secondBetMaxProperty: StringProperty = secondBetMax
 
+  def languageProperty: StringProperty = language
+
+  def themeProperty: StringProperty = theme
 
   def beadRoadListProperty: ListProperty[AndarBaharBeadRoadResult] = beadRoadList
 
@@ -74,16 +80,14 @@ class AppModel {
         firstBetMin.get(),
         firstBetMax.get(),
         secondBetMin.get(),
-        secondBetMax.get()
+        secondBetMax.get(),
+        language.get(),
+        theme.get(),
       ))
   }
 
-  def getPromoMedia: String = {
-    if (mediaCount != 0) {
-      getVideoFiles().toArray.apply(mediaIndex)
-    }
-    else null
-  }
+
+
 
   def mediaCount: Int = getVideoFiles(dir = home).size
 
@@ -93,6 +97,14 @@ class AppModel {
       .toList
   }
 
+  var mediaIndex = 0
+  def getPromoMedia: String = {
+    if (mediaCount != 0) {
+      getVideoFiles().toArray.apply(mediaIndex)
+    }
+    else null
+  }
+
   def nextPromoMedia(): Unit = {
     if (mediaCount != 0) {
       mediaIndex += 1
@@ -100,7 +112,25 @@ class AppModel {
     }
   }
 
-  import scala.collection.JavaConverters._
+  val languages: Array[String] = Array("English", "Hindi", "Punjabi", "Kannada")
+  var languageIndex: Int = languages.indexOf(language.get())
+
+  def selectNext(item: String = "Language"): Unit = {
+    if(item == "Language") {
+      languageIndex += 1
+      languageIndex = languageIndex % languages.length
+      language.set(languages(languageIndex))
+    }
+  }
+
+  def selectPrevious(item: String = "Language"): Unit = {
+    if(languageIndex == 0) languageIndex = languages.length
+    if(item == "Language") {
+      languageIndex -= 1
+      languageIndex = languageIndex % languages.length
+      language.set(languages(languageIndex))
+    }
+  }
 
   def saveData(): Unit = {
     dataDB.writeSerialized(TableHistory(beadRoadList.asScala.toList.filter(x => x != AndarBaharBeadRoadResult.EMPTY)))

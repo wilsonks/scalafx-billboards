@@ -8,6 +8,7 @@ public enum AndarBaharBeadRoadResult {
     CLEAR,
     UNDO,
     THEME,
+    LANGUAGE,
     EMPTY;
 }
 

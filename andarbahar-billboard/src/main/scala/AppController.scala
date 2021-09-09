@@ -103,6 +103,9 @@ class AppController(
   language.setText(header.language)
   theme.setText(header.theme)
 
+  model.languageProperty.bindBidirectional(language.textProperty())
+  model.themeProperty.bindBidirectional(theme.textProperty())
+
   val tList = Array(
     tTableId,
     tFirstBetMin,
@@ -235,10 +238,17 @@ class AppController(
   }
 
   def focusBack(): Unit = {
-    if (mIndex == 0) mIndex = 8
+    if (mIndex == 0) mIndex = lList.length
     else {
-      mIndex = (mIndex - 1) % 9
+      mIndex -= 1
+      mIndex = mIndex  % lList.length
     }
+    lList(mIndex).requestFocus()
+  }
+
+  def focusNext(): Unit = {
+    mIndex += 1
+    mIndex = mIndex  % lList.length
     lList(mIndex).requestFocus()
   }
 
@@ -277,13 +287,17 @@ class AppController(
           case AndarBaharBeadRoadResult.EXIT  => display.exit()
           case AndarBaharBeadRoadResult.UNDO  => beadRoad.RemoveElement()
           case AndarBaharBeadRoadResult.CLEAR => beadRoad.Reset()
+          case AndarBaharBeadRoadResult.LANGUAGE => {
+            model.selectPrevious("Language")
+          }
           case AndarBaharBeadRoadResult.THEME => {
-            println(s"root Before  ${gameBox.getStyleClass.sorted()}")
-            gameBox.getStyleClass.removeAll("theme1", "theme2")
-            gameHeaderBox.getStyleClass.removeAll("theme1", "theme2")
-            gameBox.getStyleClass.add("theme2")
-            gameHeaderBox.getStyleClass.add("theme2")
-            println(s"root After ${gameBox.getStyleClass.sorted()}")
+//            println(s"root Before  ${gameBox.getStyleClass.sorted()}")
+//            gameBox.getStyleClass.removeAll("theme1", "theme2")
+//            gameHeaderBox.getStyleClass.removeAll("theme1", "theme2")
+//            gameBox.getStyleClass.add("theme2")
+//            gameHeaderBox.getStyleClass.add("theme2")
+//            println(s"root After ${gameBox.getStyleClass.sorted()}")
+            model.selectNext("Theme")
 
           }
           case _ => {
@@ -294,10 +308,6 @@ class AppController(
       }
     }
 
-  def focusNext(): Unit = {
-    mIndex = (mIndex + 1) % lList.length
-    lList(mIndex).requestFocus()
-  }
 
   lastWinPause.setOnFinished { e =>
     dynamicResult.setVisible(false)

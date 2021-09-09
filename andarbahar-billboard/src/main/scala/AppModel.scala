@@ -51,6 +51,7 @@ class AppModel {
 
   def beadRoadListProperty: ListProperty[AndarBaharBeadRoadResult] = beadRoadList
 
+  var header: TableSettings = null
   //Load Data From Database
   def loadData(): TableHistory = {
     if (dataDB.exists) {
@@ -64,6 +65,7 @@ class AppModel {
 
   def loadHeader(): TableSettings = {
     //Load Data From Database
+    header =
     if (headerDB.exists) {
       headerDB.readDeserialized[TableSettings]()
     } else {
@@ -71,6 +73,8 @@ class AppModel {
       headerDB.writeSerialized(pureconfig.loadConfigOrThrow[TableSettings]("table.signup.settings"))
       headerDB.readDeserialized[TableSettings]()
     }
+
+    header
   }
 
   def saveHeader(): Unit = {
@@ -115,11 +119,18 @@ class AppModel {
   val languages: Array[String] = Array("English", "Hindi", "Punjabi", "Kannada")
   var languageIndex: Int = languages.indexOf(language.get())
 
+  val themes: Array[String] = Array("Orange", "Red", "Green")
+  var themeIndex: Int = themes.indexOf(theme.get())
+
   def selectNext(item: String = "Language"): Unit = {
     if(item == "Language") {
       languageIndex += 1
       languageIndex = languageIndex % languages.length
       language.set(languages(languageIndex))
+    } else {
+      themeIndex += 1
+      themeIndex = themeIndex % themes.length
+      theme.set(themes(themeIndex))
     }
   }
 
@@ -129,6 +140,10 @@ class AppModel {
       languageIndex -= 1
       languageIndex = languageIndex % languages.length
       language.set(languages(languageIndex))
+    } else {
+      themeIndex -= 1
+      themeIndex = themeIndex % themes.length
+      theme.set(themes(themeIndex))
     }
   }
 

@@ -222,3 +222,24 @@
     -fx-background-repeat: no-repeat;
     -fx-background-size: 180 180;
 }
+
+.bettingTexts {
+    -fx-font-family: 'Barlow';
+	-fx-font-size: 37;
+}
+
+.trendTexts {
+    -fx-font-family: 'Barlow';
+	-fx-font-size: 37;
+}
+
+.gameCountTexts {
+    -fx-font-family: 'Barlow';
+	-fx-font-size: 37;
+}
+
+.legendTexts {
+    -fx-font-family: 'Barlow';
+	-fx-font-size: 37;
+}
+

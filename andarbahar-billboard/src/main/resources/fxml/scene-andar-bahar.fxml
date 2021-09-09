@@ -572,29 +572,29 @@
                                             <RowConstraints maxHeight="161.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
                                         </rowConstraints>
                                         <children>
-                                            <Label fx:id="tableId" prefHeight="34.0" prefWidth="198.0" text="1234" textFill="#7c0707" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="1">
+                                            <Label fx:id="tableId" styleClass="bettingTexts" prefHeight="34.0" prefWidth="198.0" text="1234" textFill="#7c0707" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="1">
                                                 <font>
-                                                    <Font name="Barlow ExtraBold" size="37.0" />
+                                                    <Font name="Barlow" size="37.0" />
                                                 </font>
                                             </Label>
-                                            <Label fx:id="firstBetMin" prefHeight="36.0" prefWidth="70.0" text="100" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                            <Label fx:id="firstBetMin" styleClass="bettingTexts" prefHeight="36.0" prefWidth="70.0" text="100" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                                 <font>
-                                                    <Font name="Barlow ExtraBold" size="37.0" />
+                                                    <Font name="Barlow" size="37.0" />
                                                 </font>
                                             </Label>
-                                            <Label fx:id="firstBetMax" prefHeight="36.0" prefWidth="120.0" text="2000" textFill="#7c0707" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                            <Label fx:id="firstBetMax" styleClass="bettingTexts" prefHeight="36.0" prefWidth="120.0" text="2000" textFill="#7c0707" GridPane.columnIndex="3" GridPane.rowIndex="3">
                                                 <font>
-                                                    <Font name="Barlow ExtraBold" size="37.0" />
+                                                    <Font name="Barlow" size="37.0" />
                                                 </font>
                                             </Label>
-                                            <Label fx:id="secondBetMin" prefHeight="36.0" prefWidth="70.0" text="100" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                            <Label fx:id="secondBetMin" styleClass="bettingTexts" prefHeight="36.0" prefWidth="70.0" text="100" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                                 <font>
-                                                    <Font name="Barlow ExtraBold" size="37.0" />
+                                                    <Font name="Barlow" size="37.0" />
                                                 </font>
                                             </Label>
-                                            <Label fx:id="secondBetMax" prefHeight="36.0" prefWidth="120.0" text="1000" textFill="#7c0707" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                            <Label fx:id="secondBetMax" styleClass="bettingTexts" prefHeight="36.0" prefWidth="120.0" text="1000" textFill="#7c0707" GridPane.columnIndex="3" GridPane.rowIndex="5">
                                                 <font>
-                                                    <Font name="Barlow ExtraBold" size="37.0" />
+                                                    <Font name="Barlow" size="37.0" />
                                                 </font>
                                             </Label>
                                         </children>
@@ -622,14 +622,14 @@
                                <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
                              </rowConstraints>
                               <children>
-                                 <Label fx:id="andarTrend" prefHeight="34.0" prefWidth="198.0" text="1234" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <Label fx:id="andarTrend" styleClass="trendTexts" prefHeight="34.0" prefWidth="198.0" text="1234" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <font>
-                                       <Font name="Barlow ExtraBold" size="37.0" />
+                                       <Font name="Barlow" size="37.0" />
                                     </font>
                                  </Label>
-                                 <Label fx:id="baharTrend" prefHeight="34.0" prefWidth="198.0" text="1234" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <Label fx:id="baharTrend" styleClass="trendTexts"  prefHeight="34.0" prefWidth="198.0" text="1234" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                     <font>
-                                       <Font name="Barlow ExtraBold" size="37.0" />
+                                       <Font name="Barlow" size="37.0" />
                                     </font>
                                  </Label>
                               </children>
@@ -681,14 +681,14 @@
                                  <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
                               </rowConstraints>
                               <children>
-                                 <Label fx:id="andarCount" prefHeight="34.0" prefWidth="198.0" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <Label fx:id="andarCount" styleClass="gameCountTexts" prefHeight="34.0" prefWidth="198.0" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <font>
-                                       <Font name="Barlow ExtraBold" size="37.0" />
+                                       <Font name="Barlow" size="37.0" />
                                     </font>
                                  </Label>
-                                 <Label fx:id="baharCount" prefHeight="34.0" prefWidth="198.0" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <Label fx:id="baharCount" styleClass="gameCountTexts" prefHeight="34.0" prefWidth="198.0" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                     <font>
-                                       <Font name="Barlow ExtraBold" size="37.0" />
+                                       <Font name="Barlow" size="37.0" />
                                     </font>
                                  </Label>
                               </children>
@@ -716,14 +716,14 @@
                                  <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
                               </rowConstraints>
                               <children>
-                                 <Label fx:id="andarLegend" prefHeight="55.0" prefWidth="224.0" text="Andar Won" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <Label fx:id="andarLegend" styleClass="legendTexts" prefHeight="55.0" prefWidth="224.0" text="Andar Won" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <font>
-                                       <Font name="Barlow ExtraBold" size="37.0" />
+                                       <Font name="Barlow" size="37.0" />
                                     </font>
                                  </Label>
-                                 <Label fx:id="baharLegend" prefHeight="55.0" prefWidth="222.0" text="Bahar Won" textFill="#0707f5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <Label fx:id="baharLegend" styleClass="legendTexts" prefHeight="55.0" prefWidth="222.0" text="Bahar Won" textFill="#0707f5" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                     <font>
-                                       <Font name="Barlow ExtraBold" size="37.0" />
+                                       <Font name="Barlow" size="37.0" />
                                     </font>
                                  </Label>
                               </children>

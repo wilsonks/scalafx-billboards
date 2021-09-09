@@ -11,6 +11,8 @@ import scala.collection.JavaConverters._
 
 class AppModel {
 
+
+
   val dataDB: File = File(pureconfig.loadConfigOrThrow[String]("table.backup.history"))
   val headerDB: File = File(pureconfig.loadConfigOrThrow[String]("table.backup.settings"))
 
@@ -50,6 +52,13 @@ class AppModel {
   def themeProperty: StringProperty = theme
 
   def beadRoadListProperty: ListProperty[AndarBaharBeadRoadResult] = beadRoadList
+
+
+  val languages: Array[String] = Array("English", "Hindi", "Punjabi", "Kannada")
+  var languageIndex: Int = languages.indexOf(language.get())
+
+  val themes: Array[String] = Array("Orange", "Red", "Green")
+  var themeIndex: Int = themes.indexOf(theme.get())
 
   var header: TableSettings = null
   //Load Data From Database
@@ -116,11 +125,7 @@ class AppModel {
     }
   }
 
-  val languages: Array[String] = Array("English", "Hindi", "Punjabi", "Kannada")
-  var languageIndex: Int = languages.indexOf(language.get())
 
-  val themes: Array[String] = Array("Orange", "Red", "Green")
-  var themeIndex: Int = themes.indexOf(theme.get())
 
   def selectNext(item: String = "Language"): Unit = {
     if(item == "Language") {
@@ -134,13 +139,16 @@ class AppModel {
     }
   }
 
-  def selectPrevious(item: String = "Language"): Unit = {
-    if(languageIndex == 0) languageIndex = languages.length
+  def selectPrev(item: String = "Language"): Unit = {
     if(item == "Language") {
+      if(languageIndex <= 0) languageIndex = languages.length
+
       languageIndex -= 1
       languageIndex = languageIndex % languages.length
       language.set(languages(languageIndex))
     } else {
+      if(themeIndex <= 0) themeIndex = themes.length
+
       themeIndex -= 1
       themeIndex = themeIndex % themes.length
       theme.set(themes(themeIndex))

@@ -201,7 +201,7 @@
 .menuSelectionLabels {
         -fx-background-color: #4cb5f5;
     	-fx-text-fill: black;
-    	-fx-pref-width:105;
+    	-fx-pref-width:200;
         -fx-pref-height:42;
         -fx-alignment:top-left;
     	-fx-font-family: 'Bauhaus';

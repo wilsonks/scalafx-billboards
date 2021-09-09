@@ -16,7 +16,7 @@ import sodium.syntax._
 import tykhe.billboard.ab.{TableHistory, TableSettings}
 
 import java.io.{File => JFile}
-import java.util.ResourceBundle
+import java.util.{Locale, ResourceBundle}
 
 
 @sfxml(additionalControls = List("customjavafx.scene.control", "customjavafx.scene.layout"))
@@ -143,7 +143,6 @@ class AppController(
     new AudioClip(getClass.getResource(beadRoad.LastWinAudio()).toExternalForm).play(1)
     lastWinResultLabel.setResult(beadRoad.LastWinResult())
     lastWinResultLabel.setText(res.get.getString(beadRoad.LastWin()))
-//    lastWinResultLabel.setAlignment(Pos.Center)
     dynamicResult.setVisible(true)
     lastWinPause.stop()
     lastWinPause.play()
@@ -232,6 +231,50 @@ class AppController(
       }
     })
 
+  theme.textProperty().addListener(new ChangeListener[String] {
+    override def changed(observableValue: ObservableValue[_ <: String], t1: String, t2: String): Unit = {
+      t2 match {
+        case "Orange" => {
+          gameBox.getStyleClass.removeAll("theme1", "theme2")
+          gameHeaderBox.getStyleClass.removeAll("theme1", "theme2")
+          gameBox.getStyleClass.add("theme2")
+          gameHeaderBox.getStyleClass.add("theme2")
+        }
+        case "Red" => {
+          gameBox.getStyleClass.removeAll("theme1", "theme2")
+          gameHeaderBox.getStyleClass.removeAll("theme1", "theme2")
+          gameBox.getStyleClass.add("theme1")
+          gameHeaderBox.getStyleClass.add("theme1")
+        }
+
+        case _ => {
+
+        }
+      }
+    }
+  })
+
+  language.textProperty().addListener(new ChangeListener[String] {
+    override def changed(observableValue: ObservableValue[_ <: String], t1: String, t2: String): Unit = {
+      t2 match {
+        case "English" => {
+
+        }
+        case "Hindi" => {
+
+        }
+        case "Punjabi" => {
+
+        }
+        case "Kannada" => {
+
+        }
+        case _ => {
+
+        }
+      }
+    }
+  })
   
   def focusSame(): Unit = {
     lList(mIndex).requestFocus()
@@ -266,6 +309,8 @@ class AppController(
       case (KeyCode.ENTER, result)                   => gameBox.requestFocus(); (result, None)
       case (KeyCode.NUMPAD2, _) if menuOn && !editOn => focusNext(); (None, None)
       case (KeyCode.NUMPAD8, _) if menuOn && !editOn => focusBack(); (None, None)
+      case (KeyCode.NUMPAD4, _) if menuOn && editOn =>  model.selectPrev(lList(mIndex).textProperty().get()); (None, None)
+      case (KeyCode.NUMPAD6, _) if menuOn && editOn => model.selectNext(lList(mIndex).textProperty().get()); (None, None)
       case (KeyCode.NUM_LOCK, _) if menuOn => menuPane.toBack(); gameBox.requestFocus(); model.saveHeader(); menuOn = false; (None, None)
       case (KeyCode.NUM_LOCK, _) => menuPane.toFront(); focusSame(); menuOn = true; (None, None)
 
@@ -288,15 +333,9 @@ class AppController(
           case AndarBaharBeadRoadResult.UNDO  => beadRoad.RemoveElement()
           case AndarBaharBeadRoadResult.CLEAR => beadRoad.Reset()
           case AndarBaharBeadRoadResult.LANGUAGE => {
-            model.selectPrevious("Language")
+            model.selectPrev("Language")
           }
           case AndarBaharBeadRoadResult.THEME => {
-//            println(s"root Before  ${gameBox.getStyleClass.sorted()}")
-//            gameBox.getStyleClass.removeAll("theme1", "theme2")
-//            gameHeaderBox.getStyleClass.removeAll("theme1", "theme2")
-//            gameBox.getStyleClass.add("theme2")
-//            gameHeaderBox.getStyleClass.add("theme2")
-//            println(s"root After ${gameBox.getStyleClass.sorted()}")
             model.selectNext("Theme")
 
           }
@@ -313,7 +352,6 @@ class AppController(
     dynamicResult.setVisible(false)
     lastGame.setResult(beadRoad.LastWinResult())
     lastGame.setText(res.get.getString(beadRoad.LastWin()))
-//    lastGame.setAlignment(Pos.Center)
   }
 
   //Load the saved results

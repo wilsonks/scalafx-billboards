@@ -39,7 +39,7 @@ class AppController(
   val andarTrend: Label,
   val baharTrend: Label,
 
-  val menu: BorderPane,
+  val menuPane: BorderPane,
   val promoPane: Pane,
   val promoMediaView: MediaView,
 
@@ -48,12 +48,14 @@ class AppController(
   val tFirstBetMax: TextField,
   val tSecondBetMin: TextField,
   val tSecondBetMax: TextField,
+  val language: Button,
 
   val lTableId: Button,
   val lFirstBetMin: Button,
   val lFirstBetMax: Button,
   val lSecondBetMin: Button,
   val lSecondBetMax: Button,
+  val lLanguage: Button,
 
   val info: BorderPane,
   val beadRoad: BeadRoadTilePane,
@@ -100,14 +102,16 @@ class AppController(
     tFirstBetMin,
     tFirstBetMax,
     tSecondBetMin,
-    tSecondBetMax)
+    tSecondBetMax,
+    language)
 
   val lList = Array(
     lTableId,
     lFirstBetMin,
     lFirstBetMax,
     lSecondBetMin,
-    lSecondBetMax)
+    lSecondBetMax,
+    lLanguage)
 
   val lastWinPause: PauseTransition = new PauseTransition(Duration(3000))
   var media: Media = null
@@ -119,7 +123,7 @@ class AppController(
 
   var promoOn = false
   if (java.awt.Toolkit.getDefaultToolkit.getLockingKeyState(java.awt.event.KeyEvent.VK_NUM_LOCK)) {
-    menu.toFront()
+    menuPane.toFront()
     lList(mIndex).requestFocus()
     menuOn = true
   }
@@ -238,24 +242,22 @@ class AppController(
     .filter(key => model.keysMap.contains(key))
     .transform(Option.empty[String]) {
       case (KeyCode.ENTER, _) if promoOn             => stopPromo(); model.nextPromoMedia(); playPromo(); (None, None)
-      case (KeyCode.ENTER, _) if menuOn && editOn    => lList(mIndex).requestFocus(); editOn = !editOn; (None, None)
-      case (KeyCode.ENTER, _) if menuOn              => tList(mIndex).requestFocus(); editOn = !editOn; (None, None)
+
+      case (KeyCode.ENTER, _) if menuOn && editOn    => lList(mIndex).requestFocus(); editOn = false; (None, None)
+      case (KeyCode.ENTER, _) if menuOn              => tList(mIndex).requestFocus(); editOn = true; (None, None)
       case (KeyCode.ENTER, result)                   => gameBox.requestFocus(); (result, None)
       case (KeyCode.NUMPAD2, _) if menuOn && !editOn => focusNext(); (None, None)
       case (KeyCode.NUMPAD8, _) if menuOn && !editOn => focusBack(); (None, None)
-      case (KeyCode.NUM_LOCK, _) if menuOn =>
-        menu.toBack(); gameBox.requestFocus(); model.saveHeader(); menuOn = false; (None, None)
-      case (KeyCode.NUM_LOCK, _) => menu.toFront(); focusSame(); menuOn = true; (None, None)
-      case (KeyCode.DIVIDE, _) if promoOn =>
-        stopPromo(); promoPane.toBack(); gameBox.requestFocus(); promoOn = false; (None, None)
-      case (KeyCode.DIVIDE, _) =>
-        promoPane.toFront(); playPromo(); promoPane.requestFocus(); promoOn = true; (None, None)
+      case (KeyCode.NUM_LOCK, _) if menuOn => menuPane.toBack(); gameBox.requestFocus(); model.saveHeader(); menuOn = false; (None, None)
+      case (KeyCode.NUM_LOCK, _) => menuPane.toFront(); focusSame(); menuOn = true; (None, None)
+
+      case (KeyCode.DIVIDE, _) if promoOn => stopPromo(); promoPane.toBack(); gameBox.requestFocus(); promoOn = false; (None, None)
+      case (KeyCode.DIVIDE, _) => promoPane.toFront(); playPromo(); promoPane.requestFocus(); promoOn = true; (None, None)
       case (KeyCode.MULTIPLY, _) if infoOn                   => info.toBack(); gameBox.requestFocus(); infoOn = false; (None, None)
       case (KeyCode.MULTIPLY, _)                             => info.toFront(); info.requestFocus(); infoOn = true; (None, None)
       case (key, result) if result.isEmpty                   => (None, Some(model.keysMap(key)))
       case (key, result) if result.get eq model.keysMap(key) => (None, None)
-      case (key, result) if result.get.contains(model.keysMap(key)) =>
-        (None, Some(result.get.replaceAll(model.keysMap(key), "")))
+      case (key, result) if result.get.contains(model.keysMap(key)) => (None, Some(result.get.replaceAll(model.keysMap(key), "")))
       case (key, result) => (None, Some((result.get + model.keysMap(key)).toCharArray.sorted.mkString))
     } unNone)
     .map(model.coupsMap.get)
@@ -285,7 +287,7 @@ class AppController(
     }
 
   def focusNext(): Unit = {
-    mIndex = (mIndex + 1) % 9
+    mIndex = (mIndex + 1) % lList.length
     lList(mIndex).requestFocus()
   }
 

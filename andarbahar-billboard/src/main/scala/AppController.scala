@@ -188,6 +188,8 @@ class AppController(
 
         } else {
           bigRoad.Reset()
+          lastGame.setResult(AndarBaharBeadRoadResult.EMPTY)
+          lastGame.setText("")
         }
       }
     })

@@ -26,7 +26,7 @@
 
 <!--Style Sheets-->
     <stylesheets>
-        <URL value="@css/billboard.css" />
+        <URL value="@css/main.css" />
     </stylesheets>
 
 
@@ -122,21 +122,21 @@
     </BorderPane>
 
 <!--Main Content    -->
-    <Pane fx:id="gameBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="gameBox" stylesheets="@css/main-theme.css">
+    <Pane fx:id="gameBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="gameBox" stylesheets="@css/game-box.css">
         <children>
             <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true">
                 <image>
-                    <Image url="@css/abpng/Big-screen-andhar-bahar-BG-Frame.png" />
+                    <Image url="@images/Big-screen-andhar-bahar-BG-Frame.png" />
                 </image>
             </ImageView>
             <ImageView fitHeight="1058.0" fitWidth="1893.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" />
             <BorderPane layoutX="13.0" layoutY="12.0" prefHeight="1058.0" prefWidth="1894.0">
                 <top>
-                    <HBox fx:id="gameHeaderBox" fillHeight="false" prefHeight="134.0" prefWidth="1829.0" spacing="300.0" styleClass="theme1" stylesheets="@css/header-theme.css" BorderPane.alignment="CENTER">
+                    <HBox fx:id="gameHeaderBox" fillHeight="false" prefHeight="134.0" prefWidth="1829.0" spacing="300.0" styleClass="gameHeaderBox" stylesheets="@css/header.css" BorderPane.alignment="CENTER">
                         <children>
                             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
-                                    <Image url="@css/abpng/CasinoPrideLogo.png" />
+                                    <Image url="@images/CasinoPrideLogo.png" />
                                 </image>
                                 <HBox.margin>
                                     <Insets bottom="10.0" top="10.0" />
@@ -144,7 +144,7 @@
                             </ImageView>
                             <ImageView fitHeight="127.0" fitWidth="649.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
-                                    <Image url="@css/abpng/AndharBahar.png" />
+                                    <Image url="@images/AndharBahar.png" />
                                 </image>
                                 <HBox.margin>
                                     <Insets />
@@ -152,7 +152,7 @@
                             </ImageView>
                             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
-                                    <Image url="@css/abpng/CasinoPrideLogo.png" />
+                                    <Image url="@images/CasinoPrideLogo.png" />
                                 </image>
                                 <HBox.margin>
                                     <Insets bottom="10.0" top="10.0" />
@@ -173,7 +173,7 @@
                             </BeadRoadTilePane>
 
 
-                            <BigRoadTilePane fx:id="bigRoad" styleClass="BigRoadTilePane" stylesheets="@css/bigroad-theme.css">
+                            <BigRoadTilePane fx:id="bigRoad" styleClass="BigRoadTilePane" stylesheets="@css/bigroad.css">
                                 <children>
                            <AndarBaharBigRoadLabel result="EMPTY" />
                            <AndarBaharBigRoadLabel result="EMPTY" />
@@ -529,7 +529,7 @@
 
                             <ImageView fitHeight="569.0" fitWidth="715.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
                                 <image>
-                                    <Image url="@css/abpng/CasinoPrideLogo.png" />
+                                    <Image url="@images/CasinoPrideLogo.png" />
                                 </image>
                             </ImageView>
                         </children>
@@ -542,7 +542,7 @@
                                 <children>
                                     <ImageView fitHeight="310.0" pickOnBounds="true" preserveRatio="true">
                                         <image>
-                                            <Image url="@css/abpng/footer/ab-footing-pane-betting-rev1.png" />
+                                            <Image url="@images/footer/ab-footing-pane-betting-rev1.png" />
                                         </image>
                                     </ImageView>
                                     <GridPane prefHeight="312.0" prefWidth="345.0">
@@ -596,7 +596,7 @@
                                 <children>
                                           <ImageView fitHeight="309.0" pickOnBounds="true" preserveRatio="true">
                                               <image>
-                                                  <Image url="@css/abpng/footer/ab-footing-pane-trend.png" />
+                                                  <Image url="@images/footer/ab-footing-pane-trend.png" />
                                               </image>
                                           </ImageView>
                            <GridPane>
@@ -631,7 +631,7 @@
                         <children>
                                   <ImageView fitHeight="310.0" pickOnBounds="true" preserveRatio="true">
                                       <image>
-                                          <Image url="@css/abpng/footer/ab-footing-pane-last-game.png" />
+                                          <Image url="@images/footer/ab-footing-pane-last-game.png" />
                                       </image>
                                   </ImageView>
                            <GridPane>
@@ -655,7 +655,7 @@
                         <children>
                                   <ImageView fitHeight="309.0" pickOnBounds="true" preserveRatio="true">
                                       <image>
-                                          <Image url="@css/abpng/footer/ab-footing-pane-game-count.png" />
+                                          <Image url="@images/footer/ab-footing-pane-game-count.png" />
                                       </image>
                                   </ImageView>
                            <GridPane>
@@ -690,7 +690,7 @@
                         <children>
                                   <ImageView fitHeight="310.0" pickOnBounds="true" preserveRatio="true">
                                       <image>
-                                          <Image url="@css/abpng/footer/ab-footing-pane-legend-empty.png" />
+                                          <Image url="@images/footer/ab-footing-pane-legend-empty.png" />
                                       </image>
                                   </ImageView>
                            <GridPane>

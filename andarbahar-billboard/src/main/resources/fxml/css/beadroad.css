@@ -30,14 +30,14 @@
 }
 
 .BeadRoadLabel:bankerWin {
-    -fx-background-image: url("png/bead-road/a.png");
+    -fx-background-image: url("../images/bead-road/a.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
     	-fx-background-size: 56 56;
 }
 
 .BeadRoadLabel:playerWin {
-    -fx-background-image: url("png/bead-road/e.png");
+    -fx-background-image: url("../images/bead-road/e.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
     	-fx-background-size: 56 56;

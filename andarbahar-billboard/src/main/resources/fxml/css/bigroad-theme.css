@@ -1,5 +1,6 @@
 
 .BigRoadTilePane {
+    -fx-background-color: bigroad-bg-color;
     -fx-background-radius: 2;
 	-fx-padding:0 0 0 0;
 	-fx-orientation: vertical;
@@ -14,7 +15,7 @@
 }
 
 .BigRoadLabel {
-	-fx-background-color:rgba(255, 255, 255, 0.5);;
+	-fx-background-color:bigroad-tile-color;
 	-fx-alignment:center;
 	-fx-text-overrun:center-ellipsis;
 	-fx-text-fill:white;

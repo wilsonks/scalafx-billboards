@@ -22,35 +22,12 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="root" styleClass="style1" stylesheets="@css/theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppController">
+<StackPane fx:id="root" styleClass="theme1" stylesheets="@css/theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppController">
 
 <!--Style Sheets-->
     <stylesheets>
         <URL value="@css/billboard.css" />
     </stylesheets>
-    <stylesheets>
-        <URL value="@css/result.css" />
-    </stylesheets>
-
-<!--Hidden Main Content-->
-    <VBox fx:id="gameHiddenBox" alignment="BOTTOM_CENTER" styleClass="gameBox">
-        <HBox alignment="CENTER" maxWidth="1910.0" spacing="10.0">
-        </HBox>
-        <VBox alignment="TOP_CENTER" prefHeight="371.0" prefWidth="1910.0" spacing="5.0">
-            <HBox prefHeight="360.0" prefWidth="1909.0" spacing="10.0" styleClass="top" VBox.vgrow="ALWAYS">
-                <children>
-                    <Pane maxHeight="359.0" prefHeight="343.0" prefWidth="629.0" styleClass="BeadRoadPane">
-                        <children>
-                            <BeadRoadTilePane fx:id="beadRoad" styleClass="BeadRoadTilePane">
-                            </BeadRoadTilePane>
-                        </children>
-                    </Pane>
-                </children>
-            </HBox>
-        </VBox>
-        <VBox alignment="BOTTOM_CENTER" minHeight="30.0" prefHeight="30.0" prefWidth="1910.0">
-        </VBox>
-    </VBox>
 
 
 <!--Promotional Video-->
@@ -145,7 +122,7 @@
     </BorderPane>
 
 <!--Main Content    -->
-    <Pane fx:id="gameBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="theme1" stylesheets="@css/main-theme.css">
+    <Pane fx:id="gameBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="gameBox" stylesheets="@css/main-theme.css">
         <children>
             <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true">
                 <image>
@@ -190,18 +167,14 @@
                 <center>
                     <StackPane prefHeight="612.0" prefWidth="1893.0" BorderPane.alignment="CENTER">
                         <children>
-<!--                            <ImageView fitHeight="585.0" fitWidth="1648.0" pickOnBounds="true">-->
-<!--                                <image>-->
-<!--                                    <Image url="@css/abpng/Big-screen-table.png" />-->
-<!--                                </image>-->
-<!--                            </ImageView>-->
+
+<!-- TODO: The future plan is to show either Big Road or Bead Road                            -->
+                            <BeadRoadTilePane fx:id="beadRoad" styleClass="BeadRoadTilePane" stylesheets="@css/beadroad.css">
+                            </BeadRoadTilePane>
 
 
-
-
-
-                            <BigRoadTilePane fx:id="bigRoad" prefHeight="472.0" prefWidth="1644.0" style="-fx-background-color: brown;" styleClass="BigRoadTilePane" stylesheets="@css/bigroad-theme.css">
-                        <children>
+                            <BigRoadTilePane fx:id="bigRoad" styleClass="BigRoadTilePane" stylesheets="@css/bigroad-theme.css">
+                                <children>
                            <AndarBaharBigRoadLabel result="EMPTY" />
                            <AndarBaharBigRoadLabel result="EMPTY" />
                            <AndarBaharBigRoadLabel result="EMPTY" />
@@ -547,9 +520,12 @@
                            <AndarBaharBigRoadLabel result="EMPTY" />
 
                         </children>
-                        <StackPane.margin>
-                           <Insets bottom="32.0" left="165.0" right="165.0" top="40.0" />
-                        </StackPane.margin></BigRoadTilePane>
+                                <StackPane.margin>
+                                    <Insets bottom="33.0" left="165.0" right="165.0" top="40.0" />
+                                </StackPane.margin>
+                            </BigRoadTilePane>
+
+
 
                             <ImageView fitHeight="569.0" fitWidth="715.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -670,7 +646,7 @@
                                <RowConstraints maxHeight="121.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
                              </rowConstraints>
                               <children>
-                                 <AndarBaharLastWinResultLabel fx:id="lastGame" alignment="CENTER" contentDisplay="CENTER" prefHeight="175.0" prefWidth="150.0" result="EMPTY" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                 <AndarBaharLastWinResultLabel fx:id="lastGame" alignment="CENTER" contentDisplay="CENTER" prefHeight="175.0" prefWidth="150.0" result="EMPTY" stylesheets="@css/last.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               </children>
                            </GridPane>
                         </children>
@@ -757,7 +733,7 @@
     <BorderPane fx:id="dynamicResult" prefHeight="200.0" prefWidth="1749.0" StackPane.alignment="CENTER">
         <center>
 <!--            Scaling of 1.5 used here to show the result -->
-          <AndarBaharLastWinResultLabel fx:id="lastWinResultLabel" style="-fx-scale-x: 1.5; -fx-scale-y: 1.5;" alignment="CENTER" BorderPane.alignment="CENTER" />
+          <AndarBaharLastWinResultLabel fx:id="lastWinResultLabel" alignment="CENTER" stylesheets="@css/result.css" BorderPane.alignment="CENTER" />
         </center>
     </BorderPane>
 </StackPane>

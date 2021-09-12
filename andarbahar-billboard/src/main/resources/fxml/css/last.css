@@ -6,21 +6,18 @@
 	-fx-text-alignment: center;
     -fx-pref-height: 180;
     -fx-pref-width: 180;
-    -fx-scale-x: 1.5; -fx-scale-y: 1.5;
 }
 
 .LastWinResultLabel:none {
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
     -fx-background-size: 180 180;
-    -fx-scale-x: 1.5; -fx-scale-y: 1.5;
 }
 .LastWinResultLabel:bankerWin {
     -fx-background-image: url("abpng/wins/bahar.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
     -fx-background-size: 180 180;
-    -fx-scale-x: 1.5; -fx-scale-y: 1.5;
 }
 
 .LastWinResultLabel:playerWin {
@@ -28,5 +25,4 @@
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
     -fx-background-size: 180 180;
-    -fx-scale-x: 1.5; -fx-scale-y: 1.5;
 }

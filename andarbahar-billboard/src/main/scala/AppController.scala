@@ -22,7 +22,7 @@ import java.util.{Locale, ResourceBundle}
 @sfxml(additionalControls = List("customjavafx.scene.control", "customjavafx.scene.layout"))
 class AppController(
   val root: StackPane,
-  val gameHiddenBox: VBox,
+//  val gameHiddenBox: VBox,
   val gameBox: Pane,
   val gameHeaderBox: HBox,
   val lastWinResultLabel: AndarBaharLastWinResultLabel,
@@ -72,7 +72,6 @@ class AppController(
   val header: TableSettings = model.loadHeader()
 
   dynamicResult.setVisible(false)
-  gameHiddenBox.setVisible(false)
   beadRoad.setVisible(false)
 
   //Bind the UI Controls -> Model Properties

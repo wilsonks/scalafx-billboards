@@ -24,22 +24,6 @@
 }
 
 
-.gameBox {
-	-fx-background-color: style1-color;
-	-fx-padding: 10 5 5 5;
-	-fx-spacing:5;
-	-fx-pref-width:1920;
-	-fx-pref-height:1080;
-}
-
-
-.bottomHBox {
-	-fx-pref-width:1910;
-	-fx-spacing:11;
-}
-
-
-
 .BeadRoadPane {
 	-fx-background-color: rgb(108,116,118,.5);
 	-fx-padding:0 0 0 0;
@@ -65,7 +49,7 @@
 }
 
 .BeadRoadLabel {
-    -fx-background-color:style3-color;
+    -fx-background-color:white;
 /*    -fx-padding:1,1,1,1;*/
     -fx-pref-height: 59;
     -fx-pref-width: 56;

@@ -1,17 +1,24 @@
-.style1 {
+.theme1 {
     style1-color: radial-gradient(center 50% 50%, radius 75%, #F3F2C9, #003638);
     style2-color: radial-gradient(radius 180%, orangered, derive(white, -30%), derive(white, 30%));
     style3-color: white;
     style4-color: #003638;
     style5-color: #3f6c45;
     style6-color: black;
+    game-box-color: radial-gradient(center 50% 50%, radius 75%, #F3F2C9, #003638);
+    bigroad-bg-color: brown;
+    bigroad-tile-color: rgba(255, 255, 255, 0.5);
 }
 
-.style2 {
+.theme2 {
     style1-color: radial-gradient(center 50% 50%, radius 75%, #deadb0, #cb0000);
     style2-color: radial-gradient(radius 180%, orangered, derive(white, -30%), derive(white, 30%));
     style3-color: white;
     style4-color: midnightblue;
     style5-color: #3f6c45;
     style6-color: black;
+    game-box-color: radial-gradient(center 50% 50%, radius 75%, #F3F2C9, #003638);
+    bigroad-bg-color: midnightblue;
+    bigroad-tile-color: rgba(255, 255, 255, 0.5);
+
 }

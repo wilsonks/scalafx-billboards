@@ -84,7 +84,7 @@ class BaccaratModel {
       settingsDB.readDeserialized[Header]()
     } else {
       settingsDB.createIfNotExists(asDirectory = false, createParents = true)
-      settingsDB.writeSerialized(pureconfig.loadConfigOrThrow[Header]("game.menu"))
+      settingsDB.writeSerialized(pureconfig.loadConfigOrThrow[Header]("table.signup.settings"))
       settingsDB.readDeserialized[Header]()
     }
   }

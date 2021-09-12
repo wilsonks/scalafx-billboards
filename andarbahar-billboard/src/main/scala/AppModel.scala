@@ -11,8 +11,6 @@ import scala.collection.JavaConverters._
 
 class AppModel {
 
-
-
   val dataDB: File = File(pureconfig.loadConfigOrThrow[String]("table.backup.history"))
   val headerDB: File = File(pureconfig.loadConfigOrThrow[String]("table.backup.settings"))
 

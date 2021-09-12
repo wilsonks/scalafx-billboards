@@ -8,20 +8,23 @@ import javafx.scene.input.KeyCode
 import pureconfig.ConfigReader
 import pureconfig.generic.auto._
 import tykhe.billboard.ab.{Data, Header}
+import scala.collection.JavaConverters._
+
 
 class BaccaratModel {
 
-  val dataDB: File = File(pureconfig.loadConfigOrThrow[String]("game.database.data"))
-  val headerDB: File = File(pureconfig.loadConfigOrThrow[String]("game.database.menu"))
-  val keysMap: Map[KeyCode, String] = pureconfig.loadConfigOrThrow[Map[KeyCode, String]]("keyboard.keys")
-  lazy val coupsMap: Map[String, BeadRoadResult] = pureconfig.loadConfigOrThrow[Map[String, BeadRoadResult]]("keyboard.coups")
-
-  implicit val beadRoadResultReader: ConfigReader[BeadRoadResult] = ConfigReader.fromNonEmptyString(s => Right(BeadRoadResult.valueOf(s)))
+  val historyDB: File = File(pureconfig.loadConfigOrThrow[String]("table.backup.history"))
+  val settingsDB: File = File(pureconfig.loadConfigOrThrow[String]("table.backup.settings"))
 
   //Load KeyBoard Information from reference.conf
+  val keysMap: Map[KeyCode, String] = pureconfig.loadConfigOrThrow[Map[KeyCode, String]]("keyboard.keys")
   implicit def keyCodeReader: pureconfig.ConfigReader[Map[KeyCode, String]] = {
     pureconfig.configurable.genericMapReader(s => Right(KeyCode.valueOf(s)))
   }
+
+  implicit val beadRoadResultReader: ConfigReader[BeadRoadResult] = ConfigReader.fromNonEmptyString(s => Right(BeadRoadResult.valueOf(s)))
+  lazy val coupsMap: Map[String, BeadRoadResult] = pureconfig.loadConfigOrThrow[Map[String, BeadRoadResult]]("keyboard.coups")
+
 
   //Define Data Elements & Getter Methods
   private val tableId: StringProperty = new SimpleStringProperty("")
@@ -34,7 +37,8 @@ class BaccaratModel {
   private val superSixBetMin: StringProperty = new SimpleStringProperty("")
   private val superSixBetMax: StringProperty = new SimpleStringProperty("")
   private val beadRoadList: ListProperty[BeadRoadResult] = new SimpleListProperty(FXCollections.observableArrayList[BeadRoadResult])
-  var mediaIndex = 0
+  private val language: StringProperty = new SimpleStringProperty("")
+  private val theme: StringProperty = new SimpleStringProperty("")
 
   def tableIdProperty: StringProperty = tableId
 
@@ -56,30 +60,37 @@ class BaccaratModel {
 
   def beadRoadListProperty: ListProperty[BeadRoadResult] = beadRoadList
 
+  val languages: Array[String] = Array("English", "Hindi", "Punjabi", "Kannada")
+  var languageIndex: Int = languages.indexOf(language.get())
+
+  val themes: Array[String] = Array("Orange", "Red", "Green")
+  var themeIndex: Int = themes.indexOf(theme.get())
+
+
   //Load Data From Database
   def loadData(): Data = {
-    if (dataDB.exists) {
-      dataDB.readDeserialized[Data]()
+    if (historyDB.exists) {
+      historyDB.readDeserialized[Data]()
     } else {
-      dataDB.createIfNotExists(asDirectory = false, createParents = true)
-      dataDB.writeSerialized(Data(Seq.empty[BeadRoadResult]))
-      dataDB.readDeserialized[Data]()
+      historyDB.createIfNotExists(asDirectory = false, createParents = true)
+      historyDB.writeSerialized(Data(Seq.empty[BeadRoadResult]))
+      historyDB.readDeserialized[Data]()
     }
   }
 
   def loadHeader(): Header = {
     //Load Data From Database
-    if (headerDB.exists) {
-      headerDB.readDeserialized[Header]()
+    if (settingsDB.exists) {
+      settingsDB.readDeserialized[Header]()
     } else {
-      headerDB.createIfNotExists(asDirectory = false, createParents = true)
-      headerDB.writeSerialized(pureconfig.loadConfigOrThrow[Header]("game.menu"))
-      headerDB.readDeserialized[Header]()
+      settingsDB.createIfNotExists(asDirectory = false, createParents = true)
+      settingsDB.writeSerialized(pureconfig.loadConfigOrThrow[Header]("game.menu"))
+      settingsDB.readDeserialized[Header]()
     }
   }
 
   def saveHeader(): Unit = {
-    headerDB.writeSerialized(
+    settingsDB.writeSerialized(
       Header(
         tableId.get(),
         handBetMin.get(),
@@ -93,19 +104,20 @@ class BaccaratModel {
       ))
   }
 
-  def getPromoMedia: String = {
-    if (mediaCount != 0) {
-      getVideoFiles().toArray.apply(mediaIndex)
-    }
-    else null
-  }
-
   def mediaCount: Int = getVideoFiles(dir = home).size
 
   def getVideoFiles(dir: File = home): List[String] = {
     dir.list.filter(f => f.extension.contains(".mp4") || f.extension.contains(".avi"))
       .map(f => f.path.toString)
       .toList
+  }
+
+  var mediaIndex = 0
+  def getPromoMedia: String = {
+    if (mediaCount != 0) {
+      getVideoFiles().toArray.apply(mediaIndex)
+    }
+    else null
   }
 
   def nextPromoMedia(): Unit = {
@@ -115,10 +127,39 @@ class BaccaratModel {
     }
   }
 
-  import scala.collection.JavaConverters._
+
+
+  def selectNext(item: String = "Language"): Unit = {
+    if(item == "Language") {
+      languageIndex += 1
+      languageIndex = languageIndex % languages.length
+      language.set(languages(languageIndex))
+    } else {
+      themeIndex += 1
+      themeIndex = themeIndex % themes.length
+      theme.set(themes(themeIndex))
+    }
+  }
+
+  def selectPrev(item: String = "Language"): Unit = {
+    if(item == "Language") {
+      if(languageIndex <= 0) languageIndex = languages.length
+
+      languageIndex -= 1
+      languageIndex = languageIndex % languages.length
+      language.set(languages(languageIndex))
+    } else {
+      if(themeIndex <= 0) themeIndex = themes.length
+
+      themeIndex -= 1
+      themeIndex = themeIndex % themes.length
+      theme.set(themes(themeIndex))
+    }
+  }
+
 
   def saveData(): Unit = {
-    dataDB.writeSerialized(Data(beadRoadList.asScala.toList.filter(x => x != BeadRoadResult.EMPTY)))
+    historyDB.writeSerialized(Data(beadRoadList.asScala.toList.filter(x => x != BeadRoadResult.EMPTY)))
   }
 
 

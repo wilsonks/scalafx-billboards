@@ -26,8 +26,9 @@ object BaccaratApp extends IOApp with Display.App with SecureApp {
     //In case locale resource is missing in the resource bundle , no worry it will return the default bundle
     //In case a string definition is missing in the resource bundle , no worry it will fetch from default bundle
     //So, for a new locale resource you just add only those strings that are relevant for that language!
+    english: Locale = new Locale(Locale.US.getLanguage, Locale.US.getCountry)
     simplifiedChinese: Locale = new Locale(Locale.SIMPLIFIED_CHINESE.getLanguage, Locale.SIMPLIFIED_CHINESE.getCountry)
-    resBundle = ResourceBundle.getBundle("Bundle", simplifiedChinese)
+    resBundle = ResourceBundle.getBundle("Bundle", english)
 
     reader <- watch(Paths.get(pureconfig.loadConfigOrThrow[String]("result"))).fxReader
 

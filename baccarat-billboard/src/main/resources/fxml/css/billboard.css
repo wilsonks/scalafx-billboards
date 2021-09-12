@@ -1,18 +1,18 @@
 
 @font-face {
-    src: url('ANTQUAB.TTF');
+    src: url('../ttf/ANTQUAB.TTF');
 }
 
 @font-face {
-    src: url('ANTQUA.ttf');
+    src: url('../ttf/ANTQUA.ttf');
 }
 
 @font-face {
-    src: url('Bauhaus.ttf');
+    src: url('../ttf/Bauhaus.ttf');
 }
 
 @font-face {
-    src: url('Bodonio.ttf');
+    src: url('../ttf/Bodonio.ttf');
 }
 
 

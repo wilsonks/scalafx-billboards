@@ -1,6 +1,6 @@
-package tykhe.billboard.ab
+package tykhe.billboard.baccarat
 
-case class Header(
+case class TableSettings(
   tableId: String,
   handBetMin: String,
   handBetMax: String,

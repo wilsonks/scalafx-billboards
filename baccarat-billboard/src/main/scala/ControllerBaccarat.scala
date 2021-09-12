@@ -13,7 +13,7 @@ import scalafx.scene.media.AudioClip
 import scalafx.util.Duration
 import scalafxml.core.macros.sfxml
 import sodium.syntax._
-import tykhe.billboard.ab.{Data, Header}
+import tykhe.billboard.baccarat.{TableHistory, TableSettings}
 
 import java.io.{File => JFile}
 import java.util.ResourceBundle
@@ -80,8 +80,8 @@ class ControllerBaccarat(
 
   //Instantiate model
   val model = new BaccaratModel()
-  val data: Data = model.loadData()
-  val header: Header = model.loadHeader()
+  val data: TableHistory = model.loadData()
+  val header: TableSettings = model.loadHeader()
 
   dynamicResult.setVisible(false)
 

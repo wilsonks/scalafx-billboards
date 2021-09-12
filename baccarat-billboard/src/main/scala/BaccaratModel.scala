@@ -7,7 +7,8 @@ import javafx.collections.FXCollections
 import javafx.scene.input.KeyCode
 import pureconfig.ConfigReader
 import pureconfig.generic.auto._
-import tykhe.billboard.ab.{Data, Header}
+import tykhe.billboard.baccarat.{TableHistory, TableSettings}
+
 import scala.collection.JavaConverters._
 
 
@@ -68,30 +69,30 @@ class BaccaratModel {
 
 
   //Load Data From Database
-  def loadData(): Data = {
+  def loadData(): TableHistory = {
     if (historyDB.exists) {
-      historyDB.readDeserialized[Data]()
+      historyDB.readDeserialized[TableHistory]()
     } else {
       historyDB.createIfNotExists(asDirectory = false, createParents = true)
-      historyDB.writeSerialized(Data(Seq.empty[BeadRoadResult]))
-      historyDB.readDeserialized[Data]()
+      historyDB.writeSerialized(TableHistory(Seq.empty[BeadRoadResult]))
+      historyDB.readDeserialized[TableHistory]()
     }
   }
 
-  def loadHeader(): Header = {
+  def loadHeader(): TableSettings = {
     //Load Data From Database
     if (settingsDB.exists) {
-      settingsDB.readDeserialized[Header]()
+      settingsDB.readDeserialized[TableSettings]()
     } else {
       settingsDB.createIfNotExists(asDirectory = false, createParents = true)
-      settingsDB.writeSerialized(pureconfig.loadConfigOrThrow[Header]("table.signup.settings"))
-      settingsDB.readDeserialized[Header]()
+      settingsDB.writeSerialized(pureconfig.loadConfigOrThrow[TableSettings]("table.signup.settings"))
+      settingsDB.readDeserialized[TableSettings]()
     }
   }
 
   def saveHeader(): Unit = {
     settingsDB.writeSerialized(
-      Header(
+      TableSettings(
         tableId.get(),
         handBetMin.get(),
         handBetMax.get(),
@@ -159,7 +160,7 @@ class BaccaratModel {
 
 
   def saveData(): Unit = {
-    historyDB.writeSerialized(Data(beadRoadList.asScala.toList.filter(x => x != BeadRoadResult.EMPTY)))
+    historyDB.writeSerialized(TableHistory(beadRoadList.asScala.toList.filter(x => x != BeadRoadResult.EMPTY)))
   }
 
 

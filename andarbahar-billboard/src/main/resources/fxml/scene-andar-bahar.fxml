@@ -26,7 +26,7 @@
 
 <!--Style Sheets-->
     <stylesheets>
-        <URL value="@css/main.css" />
+        <URL value="@css/fonts.css" />
     </stylesheets>
 
 
@@ -46,7 +46,7 @@
     </BorderPane>
 
 <!--Menu-->
-    <BorderPane fx:id="menuPane">
+    <BorderPane fx:id="menuPane" stylesheets="@css/menu.css">
         <center>
             <VBox maxHeight="370.0" maxWidth="330.0" prefWidth="385.0" spacing="5.0" styleClass="menuBox" BorderPane.alignment="CENTER">
                 <children>
@@ -536,7 +536,7 @@
                     </StackPane>
                 </center>
                 <bottom>
-                    <HBox prefHeight="312.0" prefWidth="1893.0" BorderPane.alignment="CENTER">
+                    <HBox stylesheets="@css/footer.css" prefHeight="312.0" prefWidth="1893.0" BorderPane.alignment="CENTER">
                         <children>
                             <StackPane>
                                 <children>
@@ -613,12 +613,12 @@
                                <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
                              </rowConstraints>
                               <children>
-                                 <Label fx:id="andarTrend" prefHeight="34.0" prefWidth="198.0" styleClass="trendTexts" text="1234" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <Label fx:id="andarTrend" prefHeight="34.0" prefWidth="198.0" styleClass="trendTexts" text="0%" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <font>
                                        <Font name="Barlow" size="37.0" />
                                     </font>
                                  </Label>
-                                 <Label fx:id="baharTrend" prefHeight="34.0" prefWidth="198.0" styleClass="trendTexts" text="1234" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <Label fx:id="baharTrend" prefHeight="34.0" prefWidth="198.0" styleClass="trendTexts" text="0%" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                     <font>
                                        <Font name="Barlow" size="37.0" />
                                     </font>
@@ -672,12 +672,12 @@
                                  <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
                               </rowConstraints>
                               <children>
-                                 <Label fx:id="andarCount" prefHeight="34.0" prefWidth="198.0" styleClass="gameCountTexts" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <Label fx:id="andarCount" prefHeight="34.0" prefWidth="198.0" styleClass="gameCountTexts"  text="0" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <font>
                                        <Font name="Barlow" size="37.0" />
                                     </font>
                                  </Label>
-                                 <Label fx:id="baharCount" prefHeight="34.0" prefWidth="198.0" styleClass="gameCountTexts" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <Label fx:id="baharCount" prefHeight="34.0" prefWidth="198.0" styleClass="gameCountTexts"  text="0" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                     <font>
                                        <Font name="Barlow" size="37.0" />
                                     </font>

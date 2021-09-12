@@ -1,29 +1,4 @@
 
-@font-face {
-    src: url('../fonts/ANTQUAB.TTF');
-}
-
-@font-face {
-    src: url('../fonts/ANTQUA.ttf');
-}
-
-@font-face {
-    src: url('../fonts/Bauhaus.ttf');
-}
-
-@font-face {
-    src: url('../fonts/Bodonio.ttf');
-}
-
-@font-face {
-    src: url('../fonts/BarlowBold.ttf');
-}
-
-@font-face {
-    src: url('../fonts/BarlowExtraBold.ttf');
-}
-
-
 .menuBox {
         -fx-background-color: #43585c;
         -fx-background-color: #00293c;
@@ -84,28 +59,5 @@
         -fx-alignment:top-left;
     	-fx-font-family: 'Bauhaus';
     	-fx-font-size: 20;
-}
-
-
-
-
-.bettingTexts {
-    -fx-font-family: 'Barlow';
-	-fx-font-size: 37;
-}
-
-.trendTexts {
-    -fx-font-family: 'Barlow';
-	-fx-font-size: 37;
-}
-
-.gameCountTexts {
-    -fx-font-family: 'Barlow';
-	-fx-font-size: 37;
-}
-
-.legendTexts {
-    -fx-font-family: 'Barlow';
-	-fx-font-size: 37;
 }
 

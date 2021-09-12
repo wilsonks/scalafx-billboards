@@ -28,6 +28,9 @@
     <stylesheets>
         <URL value="@css/billboard.css" />
     </stylesheets>
+    <stylesheets>
+        <URL value="@css/result.css" />
+    </stylesheets>
 
 <!--Hidden Main Content-->
     <VBox fx:id="gameHiddenBox" alignment="BOTTOM_CENTER" styleClass="gameBox">
@@ -60,7 +63,7 @@
     <BorderPane fx:id="info" prefHeight="200.0" prefWidth="200.0">
         <right>
             <ImageView fitHeight="444.0" fitWidth="388.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="BOTTOM_CENTER">
-                <Image url="@css/png/keypad.png" />
+                <Image url="@images/keypad.png" />
             </ImageView>
         </right>
     </BorderPane>
@@ -667,7 +670,7 @@
                                <RowConstraints maxHeight="121.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
                              </rowConstraints>
                               <children>
-                                 <AndarBaharLastWinResultLabel fx:id="lastGame" alignment="CENTER" contentDisplay="CENTER" prefHeight="175.0" prefWidth="150.0" result="BANKER_WIN" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                 <AndarBaharLastWinResultLabel fx:id="lastGame" alignment="CENTER" contentDisplay="CENTER" prefHeight="175.0" prefWidth="150.0" result="EMPTY" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               </children>
                            </GridPane>
                         </children>
@@ -753,7 +756,8 @@
 <!--Last Win Result-->
     <BorderPane fx:id="dynamicResult" prefHeight="200.0" prefWidth="1749.0" StackPane.alignment="CENTER">
         <center>
-          <AndarBaharLastWinResultLabel fx:id="lastWinResultLabel" alignment="CENTER" result="BANKER_WIN" style="-fx-scale-x: 1.5; -fx-scale-y: 1.5;" BorderPane.alignment="CENTER" />
+<!--            Scaling of 1.5 used here to show the result -->
+          <AndarBaharLastWinResultLabel fx:id="lastWinResultLabel" style="-fx-scale-x: 1.5; -fx-scale-y: 1.5;" alignment="CENTER" BorderPane.alignment="CENTER" />
         </center>
     </BorderPane>
 </StackPane>

@@ -1,26 +1,26 @@
 
 @font-face {
-    src: url('ttf/ANTQUAB.TTF');
+    src: url('../fonts/ANTQUAB.TTF');
 }
 
 @font-face {
-    src: url('ttf/ANTQUA.ttf');
+    src: url('../fonts/ANTQUA.ttf');
 }
 
 @font-face {
-    src: url('ttf/Bauhaus.ttf');
+    src: url('../fonts/Bauhaus.ttf');
 }
 
 @font-face {
-    src: url('ttf/Bodonio.ttf');
+    src: url('../fonts/Bodonio.ttf');
 }
 
 @font-face {
-    src: url('ttf/BarlowBold.ttf');
+    src: url('../fonts/BarlowBold.ttf');
 }
 
 @font-face {
-    src: url('ttf/BarlowExtraBold.ttf');
+    src: url('../fonts/BarlowExtraBold.ttf');
 }
 
 
@@ -78,83 +78,12 @@
     	-fx-background-size: 56 56;
 }
 
-.BeadRoadLabel:bankerWinBankerPair {
-    -fx-background-image: url("png/bead-road/b.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    	-fx-background-size: 56 56;
-}
-
-.BeadRoadLabel:bankerWinPlayerPair {
-    -fx-background-image: url("png/bead-road/c.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    	-fx-background-size: 56 56;
-}
-
-.BeadRoadLabel:bankerWinBothPair {
-    -fx-background-image: url("png/bead-road/d.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    	-fx-background-size: 56 56;
-}
-
 .BeadRoadLabel:playerWin {
     -fx-background-image: url("png/bead-road/e.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
     	-fx-background-size: 56 56;
 }
-
-.BeadRoadLabel:playerWinBankerPair {
-    -fx-background-image: url("png/bead-road/f.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    	-fx-background-size: 56 56;
-}
-
-.BeadRoadLabel:playerWinPlayerPair {
-    -fx-background-image: url("png/bead-road/g.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    	-fx-background-size: 56 56;
-}
-
-.BeadRoadLabel:playerWinBothPair {
-    -fx-background-image: url("png/bead-road/h.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    	-fx-background-size: 56 56;
-}
-
-.BeadRoadLabel:tieWin {
-    -fx-background-image: url("png/bead-road/i.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    	-fx-background-size: 56 56;
-}
-
-.BeadRoadLabel:tieWinBankerPair {
-    -fx-background-image: url("png/bead-road/j.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    	-fx-background-size: 56 56;
-}
-
-.BeadRoadLabel:tieWinPlayerPair {
-    -fx-background-image: url("png/bead-road/k.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    	-fx-background-size: 56 56;
-}
-
-.BeadRoadLabel:tieWinBothPair {
-    -fx-background-image: url("png/bead-road/l.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    	-fx-background-size: 56 56;
-}
-
 
 
 .menuBox {
@@ -220,29 +149,7 @@
 }
 
 
-.LastWinResultLabel {
-    -fx-font-family: 'Barlow';
-	-fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 1 , 0 );
-	-fx-font-size: 30;
-	-fx-text-fill: white;
-	-fx-text-alignment: center;
-    -fx-pref-height: 180;
-    -fx-pref-width: 180;
-}
 
-.LastWinResultLabel:bankerWin {
-    -fx-background-image: url("abpng/wins/bahar.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    -fx-background-size: 180 180;
-}
-
-.LastWinResultLabel:playerWin {
-    -fx-background-image: url("abpng/wins/andar.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    -fx-background-size: 180 180;
-}
 
 .bettingTexts {
     -fx-font-family: 'Barlow';

@@ -1,20 +1,27 @@
 
 @font-face {
-    src: url('../ttf/ANTQUAB.TTF');
+    src: url('../fonts/ANTQUAB.TTF');
 }
 
 @font-face {
-    src: url('../ttf/ANTQUA.ttf');
+    src: url('../fonts/ANTQUA.ttf');
 }
 
 @font-face {
-    src: url('../ttf/Bauhaus.ttf');
+    src: url('../fonts/Bauhaus.ttf');
 }
 
 @font-face {
-    src: url('../ttf/Bodonio.ttf');
+    src: url('../fonts/Bodonio.ttf');
 }
 
+@font-face {
+    src: url('../fonts/BarlowBold.ttf');
+}
+
+@font-face {
+    src: url('../fonts/BarlowExtraBold.ttf');
+}
 
 
 .root {

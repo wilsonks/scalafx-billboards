@@ -1,0 +1,28 @@
+.LastWinResultLabel {
+    -fx-font-family: 'Barlow';
+	-fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 1 , 0 );
+	-fx-font-size: 30;
+	-fx-text-fill: white;
+	-fx-text-alignment: center;
+    -fx-pref-height: 180;
+    -fx-pref-width: 180;
+}
+
+.LastWinResultLabel:none {
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 180 180;
+}
+.LastWinResultLabel:bankerWin {
+    -fx-background-image: url("abpng/wins/bahar.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 180 180;
+}
+
+.LastWinResultLabel:playerWin {
+    -fx-background-image: url("abpng/wins/andar.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 180 180;
+}

@@ -23,24 +23,3 @@
     src: url('../fonts/BarlowExtraBold.ttf');
 }
 
-
-.bettingTexts {
-    -fx-font-family: 'Barlow';
-	-fx-font-size: 37;
-}
-
-.trendTexts {
-    -fx-font-family: 'Barlow';
-	-fx-font-size: 37;
-}
-
-.gameCountTexts {
-    -fx-font-family: 'Barlow';
-	-fx-font-size: 37;
-}
-
-.legendTexts {
-    -fx-font-family: 'Barlow';
-	-fx-font-size: 37;
-}
-

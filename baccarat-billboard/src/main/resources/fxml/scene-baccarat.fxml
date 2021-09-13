@@ -12,6 +12,7 @@
 <?import customjavafx.scene.layout.CockroachRoadTilePane?>
 <?import customjavafx.scene.layout.SmallRoadDummyTilePane?>
 <?import customjavafx.scene.layout.SmallRoadTilePane?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -26,7 +27,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
-<?import java.net.URL?>
 
 <StackPane fx:id="root" styleClass="Theme1" stylesheets="@css/theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerBaccarat">
 
@@ -52,6 +52,125 @@
         <StackPane.margin>
             <Insets bottom="40.0" right="10.0" />
         </StackPane.margin>
+    </BorderPane>
+
+<!--Menu-->
+    <BorderPane fx:id="menuPane" stylesheets="@css/menu.css">
+        <center>
+            <VBox maxHeight="370.0" maxWidth="330.0" prefWidth="385.0" spacing="5.0" styleClass="menuBox" BorderPane.alignment="CENTER">
+                <children>
+                    <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="341.0" styleClass="menuTitle" text="Menu" />
+                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                        <children>
+                            <Button fx:id="lTableId" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Table ID" />
+                            <TextField fx:id="tTableId" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="00">
+                                <font>
+                                    <Font name="Bauhaus" size="20.0" />
+                                </font>
+                            </TextField>
+                        </children>
+                    </HBox>
+                    <HBox layoutX="10.0" layoutY="63.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                        <children>
+                            <Button fx:id="lHandBetMin" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Hand Bet Min" />
+                            <TextField fx:id="tHandBetMin" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="100">
+                                <font>
+                                    <Font name="Bauhaus" size="20.0" />
+                                </font>
+                            </TextField>
+                        </children>
+                    </HBox>
+                    <HBox layoutX="10.0" layoutY="168.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                        <children>
+                            <Button fx:id="lHandBetMax" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Hand Bet Max" />
+                            <TextField fx:id="tHandBetMax" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="10000">
+                                <font>
+                                    <Font name="Bauhaus" size="20.0" />
+                                </font>
+                            </TextField>
+                        </children>
+                    </HBox>
+                    <HBox layoutX="10.0" layoutY="267.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                        <children>
+                            <Button fx:id="lTieBetMin" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Tie Bet Min" />
+                            <TextField fx:id="tTieBetMin" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="100">
+                                <font>
+                                    <Font name="Bauhaus" size="20.0" />
+                                </font>
+                            </TextField>
+                        </children>
+                    </HBox>
+                    <HBox layoutX="10.0" layoutY="292.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                        <children>
+                            <Button fx:id="lTieBetMax" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Tie Bet Max" />
+                            <TextField fx:id="tTieBetMax" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="10000">
+                                <font>
+                                    <Font name="Bauhaus" size="20.0" />
+                                </font>
+                            </TextField>
+                        </children>
+                    </HBox>
+                    <HBox layoutX="10.0" layoutY="307.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                        <children>
+                            <Button fx:id="lPairBetMin" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Pair Bet Min" />
+                            <TextField fx:id="tPairBetMin" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="500">
+                                <font>
+                                    <Font name="Bauhaus" size="20.0" />
+                                </font>
+                            </TextField>
+                        </children>
+                    </HBox>
+                    <HBox layoutX="10.0" layoutY="318.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                        <children>
+                            <Button fx:id="lPairBetMax" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Pair Bet Max" />
+                            <TextField fx:id="tPairBetMax" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="5000">
+                                <font>
+                                    <Font name="Bauhaus" size="20.0" />
+                                </font>
+                            </TextField>
+                        </children>
+                    </HBox>
+                    <HBox layoutX="20.0" layoutY="324.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                        <children>
+                            <Button fx:id="lSuperSixBetMin" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Super Six Bet Min" />
+                            <TextField fx:id="tSuperSixBetMin" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="5000">
+                                <font>
+                                    <Font name="Bauhaus" size="20.0" />
+                                </font>
+                            </TextField>
+                        </children>
+                    </HBox>
+                    <HBox layoutX="20.0" layoutY="331.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                        <children>
+                            <Button fx:id="lSuperSixBetMax" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Super Six Bet Max" />
+                            <TextField fx:id="tSuperSixBetMax" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="5000">
+                                <font>
+                                    <Font name="Bauhaus" size="20.0" />
+                                </font>
+                            </TextField>
+                        </children>
+                    </HBox>
+                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                        <children>
+                            <Button fx:id="lLanguage" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Language" />
+                            <Button fx:id="language" mnemonicParsing="false" prefHeight="38.0" prefWidth="110.0" styleClass="menuSelectionLabels" />
+                        </children>
+                    </HBox>
+                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                        <children>
+                            <Button fx:id="lTheme" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Theme" />
+                            <Button fx:id="theme" mnemonicParsing="false" prefHeight="38.0" prefWidth="110.0" styleClass="menuSelectionLabels" />
+                        </children>
+                    </HBox>
+                </children>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+            <BorderPane.margin>
+               <Insets bottom="300.0" />
+            </BorderPane.margin>
+            </VBox>
+        </center>
     </BorderPane>
 
     <VBox fx:id="gameBox" alignment="BOTTOM_CENTER" styleClass="game">
@@ -405,125 +524,6 @@
     <BorderPane fx:id="dynamicResult" prefHeight="200.0" prefWidth="200.0">
         <center>
           <LastWinResultLabel fx:id="lastWinResultLabel" result="PLAYER_WIN" BorderPane.alignment="CENTER" />
-        </center>
-    </BorderPane>
-
-<!--Menu-->
-    <BorderPane fx:id="menuPane" stylesheets="@css/menu.css">
-        <center>
-            <VBox maxHeight="370.0" maxWidth="330.0" prefWidth="385.0" spacing="5.0" styleClass="menuBox" BorderPane.alignment="CENTER">
-                <children>
-                    <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="341.0" styleClass="menuTitle" text="Menu" />
-                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                        <children>
-                            <Button fx:id="lTableId" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Table ID" />
-                            <TextField fx:id="tTableId" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="00">
-                                <font>
-                                    <Font name="Bauhaus" size="20.0" />
-                                </font>
-                            </TextField>
-                        </children>
-                    </HBox>
-                    <HBox layoutX="10.0" layoutY="63.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                        <children>
-                            <Button fx:id="lHandBetMin" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Hand Bet Min" />
-                            <TextField fx:id="tHandBetMin" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="100">
-                                <font>
-                                    <Font name="Bauhaus" size="20.0" />
-                                </font>
-                            </TextField>
-                        </children>
-                    </HBox>
-                    <HBox layoutX="10.0" layoutY="168.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                        <children>
-                            <Button fx:id="lHandBetMax" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Hand Bet Max" />
-                            <TextField fx:id="tHandBetMax" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="10000">
-                                <font>
-                                    <Font name="Bauhaus" size="20.0" />
-                                </font>
-                            </TextField>
-                        </children>
-                    </HBox>
-                    <HBox layoutX="10.0" layoutY="267.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                        <children>
-                            <Button fx:id="lTieBetMin" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Tie Bet Min" />
-                            <TextField fx:id="tTieBetMin" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="100">
-                                <font>
-                                    <Font name="Bauhaus" size="20.0" />
-                                </font>
-                            </TextField>
-                        </children>
-                    </HBox>
-                    <HBox layoutX="10.0" layoutY="292.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                        <children>
-                            <Button fx:id="lTieBetMax" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Tie Bet Max" />
-                            <TextField fx:id="tTieBetMax" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="10000">
-                                <font>
-                                    <Font name="Bauhaus" size="20.0" />
-                                </font>
-                            </TextField>
-                        </children>
-                    </HBox>
-                    <HBox layoutX="10.0" layoutY="307.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                        <children>
-                            <Button fx:id="lPairBetMin" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Pair Bet Min" />
-                            <TextField fx:id="tPairBetMin" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="500">
-                                <font>
-                                    <Font name="Bauhaus" size="20.0" />
-                                </font>
-                            </TextField>
-                        </children>
-                    </HBox>
-                    <HBox layoutX="10.0" layoutY="318.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                        <children>
-                            <Button fx:id="lPairBetMax" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Pair Bet Max" />
-                            <TextField fx:id="tPairBetMax" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="5000">
-                                <font>
-                                    <Font name="Bauhaus" size="20.0" />
-                                </font>
-                            </TextField>
-                        </children>
-                    </HBox>
-                    <HBox layoutX="20.0" layoutY="324.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                        <children>
-                            <Button fx:id="lSuperSixBetMin" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Super Six Bet Min" />
-                            <TextField fx:id="tSuperSixBetMin" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="5000">
-                                <font>
-                                    <Font name="Bauhaus" size="20.0" />
-                                </font>
-                            </TextField>
-                        </children>
-                    </HBox>
-                    <HBox layoutX="20.0" layoutY="331.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                        <children>
-                            <Button fx:id="lSuperSixBetMax" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Super Six Bet Max" />
-                            <TextField fx:id="tSuperSixBetMax" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="5000">
-                                <font>
-                                    <Font name="Bauhaus" size="20.0" />
-                                </font>
-                            </TextField>
-                        </children>
-                    </HBox>
-                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                        <children>
-                            <Button fx:id="lLanguage" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Language" />
-                            <Button fx:id="language" mnemonicParsing="false" prefHeight="38.0" prefWidth="110.0" styleClass="menuSelectionLabels" />
-                        </children>
-                    </HBox>
-                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                        <children>
-                            <Button fx:id="lTheme" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Theme" />
-                            <Button fx:id="theme" mnemonicParsing="false" prefHeight="38.0" prefWidth="110.0" styleClass="menuSelectionLabels" />
-                        </children>
-                    </HBox>
-                </children>
-                <padding>
-                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                </padding>
-            <BorderPane.margin>
-               <Insets bottom="300.0" />
-            </BorderPane.margin>
-            </VBox>
         </center>
     </BorderPane>
 </StackPane>

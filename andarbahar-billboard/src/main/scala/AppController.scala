@@ -22,7 +22,7 @@ import java.util.{Locale, ResourceBundle}
 @sfxml(additionalControls = List("customjavafx.scene.control", "customjavafx.scene.layout"))
 class AppController(
   val root: StackPane,
-//  val gameHiddenBox: VBox,
+
   val gameBox: Pane,
   val gameHeaderBox: HBox,
   val lastWinResultLabel: AndarBaharLastWinResultLabel,
@@ -244,17 +244,20 @@ class AppController(
   theme.textProperty().addListener(new ChangeListener[String] {
     override def changed(observableValue: ObservableValue[_ <: String], t1: String, t2: String): Unit = {
       t2 match {
-        case "Orange" => {
-          gameBox.getStyleClass.removeAll("theme1", "theme2")
-          gameHeaderBox.getStyleClass.removeAll("theme1", "theme2")
-          gameBox.getStyleClass.add("theme2")
-          gameHeaderBox.getStyleClass.add("theme2")
+        case "Theme1" => {
+
         }
-        case "Red" => {
-          gameBox.getStyleClass.removeAll("theme1", "theme2")
-          gameHeaderBox.getStyleClass.removeAll("theme1", "theme2")
-          gameBox.getStyleClass.add("theme1")
-          gameHeaderBox.getStyleClass.add("theme1")
+        case "Theme2" => {
+
+        }
+        case "Theme3" => {
+
+        }
+        case "Theme4" => {
+
+        }
+        case "Theme5" => {
+
         }
 
         case _ => {
@@ -291,7 +294,7 @@ class AppController(
   }
 
   def focusBack(): Unit = {
-    if (mIndex == 0) mIndex = lList.length
+    if (mIndex <= 0) mIndex = lList.length
     else {
       mIndex -= 1
       mIndex = mIndex  % lList.length
@@ -342,13 +345,6 @@ class AppController(
           case AndarBaharBeadRoadResult.EXIT  => display.exit()
           case AndarBaharBeadRoadResult.UNDO  => beadRoad.RemoveElement()
           case AndarBaharBeadRoadResult.CLEAR => beadRoad.Reset()
-          case AndarBaharBeadRoadResult.LANGUAGE => {
-            model.selectPrev("Language")
-          }
-          case AndarBaharBeadRoadResult.THEME => {
-            model.selectNext("Theme")
-
-          }
           case _ => {
             beadRoad.AddElement(result)
           }

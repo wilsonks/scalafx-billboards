@@ -1,0 +1,13 @@
+.theme1 {
+    game-box-color: radial-gradient(center 50% 50%, radius 75%, #F3F2C9, #003638);
+    bigroad-bg-color: brown;
+    bigroad-tile-color: rgba(255, 255, 255, 0.5);
+    header-bg-color: #550000;
+}
+
+.theme2 {
+    game-box-color: radial-gradient(center 50% 50%, radius 75%, #F3F2C9, #003638);
+    bigroad-bg-color: midnightblue;
+    bigroad-tile-color: rgba(255, 255, 255, 0.5);
+    header-bg-color: #990000;
+}

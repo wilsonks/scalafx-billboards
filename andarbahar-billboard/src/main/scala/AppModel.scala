@@ -55,7 +55,7 @@ class AppModel {
   val languages: Array[String] = Array("English", "Hindi", "Punjabi", "Kannada")
   var languageIndex: Int = languages.indexOf(language.get())
 
-  val themes: Array[String] = Array("Orange", "Red", "Green")
+  val themes: Array[String] = Array("Theme1", "Theme2", "Theme3", "Theme4", "Theme5")
   var themeIndex: Int = themes.indexOf(theme.get())
 
   var header: TableSettings = null

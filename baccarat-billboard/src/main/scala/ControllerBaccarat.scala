@@ -5,7 +5,7 @@ import javafx.beans.value.{ChangeListener, ObservableValue}
 import javafx.collections.ObservableList
 import javafx.scene.control.{Button, Label, TextField}
 import javafx.scene.input.{KeyCode, KeyEvent}
-import javafx.scene.layout.{BorderPane, Pane, VBox}
+import javafx.scene.layout.{BorderPane, Pane, StackPane, VBox}
 import javafx.scene.media.{Media, MediaPlayer, MediaView}
 import scalafx.animation.PauseTransition
 import scalafx.geometry.Pos
@@ -20,8 +20,12 @@ import java.util.ResourceBundle
 
 @sfxml(additionalControls = List("customjavafx.scene.control", "customjavafx.scene.layout"))
 class ControllerBaccarat(
+  val root: StackPane,
+
   val gameBox: VBox,
   val lastWinResultLabel: LastWinResultLabel,
+
+
   val tableId: Label,
   val handBetMin: Label,
   val handBetMax: Label,
@@ -31,6 +35,7 @@ class ControllerBaccarat(
   val pairBetMax: Label,
   val superBetMin: Label,
   val superBetMax: Label,
+
   val playerWinCount: Label,
   val bankerWinCount: Label,
   val tieWinCount: Label,
@@ -38,16 +43,20 @@ class ControllerBaccarat(
   val bankerPairCount: Label,
   val naturalCount: Label,
   val totalCount: Label,
+
   val b1: BigEyeRoadLabel,
   val b2: SmallRoadLabel,
   val b3: CockroachRoadLabel,
   val p1: BigEyeRoadLabel,
   val p2: SmallRoadLabel,
   val p3: CockroachRoadLabel,
-  val menu: BorderPane,
+
+  val menuPane: BorderPane,
   val promoPane: Pane,
   val promoMediaView: MediaView,
+
   val footing: Label,
+
   val tTableId: TextField,
   val tHandBetMin: TextField,
   val tHandBetMax: TextField,
@@ -57,6 +66,9 @@ class ControllerBaccarat(
   val tPairBetMax: TextField,
   val tSuperSixBetMin: TextField,
   val tSuperSixBetMax: TextField,
+  val language: Button,
+  val theme: Button,
+
   val lTableId: Button,
   val lHandBetMin: Button,
   val lHandBetMax: Button,
@@ -66,6 +78,9 @@ class ControllerBaccarat(
   val lPairBetMax: Button,
   val lSuperSixBetMin: Button,
   val lSuperSixBetMax: Button,
+  val lLanguage: Button,
+  val lTheme: Button,
+
   val info: BorderPane,
   val beadRoad: BeadRoadTilePane,
   val bigEyeRoad: BigEyeRoadTilePane,
@@ -76,6 +91,7 @@ class ControllerBaccarat(
   val cockroachRoadDummy: CockroachRoadDummyTilePane,
   val bigRoad: BigRoadTilePane,
   val dynamicResult: BorderPane
+
 )(implicit display: fx2.io.Display, res: Option[ResourceBundle], reader: FxReader[BeadRoadResult]) {
 
   //Instantiate model
@@ -126,6 +142,12 @@ class ControllerBaccarat(
   superBetMin.setText(header.superBetMin)
   superBetMax.setText(header.superBetMax)
 
+  language.setText(header.language)
+  theme.setText(header.theme)
+
+  model.languageProperty.bindBidirectional(language.textProperty())
+  model.themeProperty.bindBidirectional(theme.textProperty())
+
   val tList = Array(
     tTableId,
     tHandBetMin,
@@ -135,7 +157,9 @@ class ControllerBaccarat(
     tPairBetMin,
     tPairBetMax,
     tSuperSixBetMin,
-    tSuperSixBetMax)
+    tSuperSixBetMax,
+    language,
+    theme)
 
   val lList = Array(
     lTableId,
@@ -146,7 +170,10 @@ class ControllerBaccarat(
     lPairBetMin,
     lPairBetMax,
     lSuperSixBetMin,
-    lSuperSixBetMax)
+    lSuperSixBetMax,
+    lLanguage,
+    lTheme)
+
   val lastWinPause: PauseTransition = new PauseTransition(Duration(3000))
   var media: Media = null
   var mediaPlayer: MediaPlayer = null
@@ -157,13 +184,22 @@ class ControllerBaccarat(
 
   var promoOn = false
   if (java.awt.Toolkit.getDefaultToolkit.getLockingKeyState(java.awt.event.KeyEvent.VK_NUM_LOCK)) {
-    menu.toFront()
+    menuPane.toFront()
     lList(mIndex).requestFocus()
     menuOn = true
   }
 
   def lastWinUpdates(): Unit = {
-    new AudioClip(getClass.getResource(beadRoad.LastWinAudio()).toExternalForm).play(1)
+    var lastWin = beadRoad.LastWinAudio()
+    language.textProperty().get() match {
+      case "Hindi" => lastWin = s"/sounds/Hindi/${lastWin}"
+      case "Kannada" => lastWin = s"/sounds/Kannada/${lastWin}"
+      case "Punjabi" => lastWin = s"/sounds/Punjabi/${lastWin}"
+      case _ => lastWin = s"/sounds/English/${lastWin}"
+    }
+
+    new AudioClip(getClass.getResource(lastWin).toExternalForm).play(1)
+
     lastWinResultLabel.setResult(beadRoad.LastWinResult())
     lastWinResultLabel.setText(res.get.getString(beadRoad.LastWin()))
     lastWinResultLabel.setAlignment(Pos.Center)
@@ -327,18 +363,70 @@ class ControllerBaccarat(
       }
     })
 
+  theme.textProperty().addListener(new ChangeListener[String] {
+    override def changed(observableValue: ObservableValue[_ <: String], t1: String, t2: String): Unit = {
+      t2 match {
+        case "Theme1" => {
+
+        }
+        case "Theme2" => {
+
+        }
+        case "Theme3" => {
+
+        }
+        case "Theme4" => {
+
+        }
+        case "Theme5" => {
+
+        }
+
+        case _ => {
+
+        }
+      }
+    }
+  })
+
+  language.textProperty().addListener(new ChangeListener[String] {
+    override def changed(observableValue: ObservableValue[_ <: String], t1: String, t2: String): Unit = {
+      t2 match {
+        case "English" => {
+
+        }
+        case "Hindi" => {
+
+        }
+        case "Punjabi" => {
+
+        }
+        case "Kannada" => {
+
+        }
+        case _ => {
+
+        }
+      }
+    }
+  })
+
   def focusSame(): Unit = {
     lList(mIndex).requestFocus()
   }
 
   def focusBack(): Unit = {
-    if (mIndex == 0) mIndex = 8
-    else {
-      mIndex = (mIndex - 1) % 9
-    }
+    if (mIndex <= 0) mIndex = lList.length
+    mIndex -= 1
+    mIndex = mIndex  % lList.length
     lList(mIndex).requestFocus()
   }
 
+  def focusNext(): Unit = {
+    mIndex += 1
+    mIndex = mIndex  % lList.length
+    lList(mIndex).requestFocus()
+  }
 
 
   (display.root
@@ -347,18 +435,19 @@ class ControllerBaccarat(
     .filter(key => model.keysMap.contains(key))
     .transform(Option.empty[String]) {
       case (KeyCode.ENTER, _) if promoOn             => stopPromo(); model.nextPromoMedia(); playPromo(); (None, None)
+
       case (KeyCode.ENTER, _) if menuOn && editOn    => lList(mIndex).requestFocus(); editOn = !editOn; (None, None)
       case (KeyCode.ENTER, _) if menuOn              => tList(mIndex).requestFocus(); editOn = !editOn; (None, None)
       case (KeyCode.ENTER, result)                   => gameBox.requestFocus(); (result, None)
       case (KeyCode.NUMPAD2, _) if menuOn && !editOn => focusNext(); (None, None)
       case (KeyCode.NUMPAD8, _) if menuOn && !editOn => focusBack(); (None, None)
-      case (KeyCode.NUM_LOCK, _) if menuOn =>
-        menu.toBack(); gameBox.requestFocus(); model.saveHeader(); menuOn = false; (None, None)
-      case (KeyCode.NUM_LOCK, _) => menu.toFront(); focusSame(); menuOn = true; (None, None)
-      case (KeyCode.DIVIDE, _) if promoOn =>
-        stopPromo(); promoPane.toBack(); gameBox.requestFocus(); promoOn = false; (None, None)
-      case (KeyCode.DIVIDE, _) =>
-        promoPane.toFront(); playPromo(); promoPane.requestFocus(); promoOn = true; (None, None)
+      case (KeyCode.NUMPAD4, _) if menuOn && editOn =>  model.selectPrev(lList(mIndex).textProperty().get()); (None, None)
+      case (KeyCode.NUMPAD6, _) if menuOn && editOn => model.selectNext(lList(mIndex).textProperty().get()); (None, None)
+      case (KeyCode.NUM_LOCK, _) if menuOn => menuPane.toBack(); gameBox.requestFocus(); model.saveHeader(); menuOn = false; (None, None)
+      case (KeyCode.NUM_LOCK, _) => menuPane.toFront(); focusSame(); menuOn = true; (None, None)
+
+      case (KeyCode.DIVIDE, _) if promoOn =>stopPromo(); promoPane.toBack(); gameBox.requestFocus(); promoOn = false; (None, None)
+      case (KeyCode.DIVIDE, _) => promoPane.toFront(); playPromo(); promoPane.requestFocus(); promoOn = true; (None, None)
       case (KeyCode.MULTIPLY, _) if infoOn                   => info.toBack(); gameBox.requestFocus(); infoOn = false; (None, None)
       case (KeyCode.MULTIPLY, _)                             => info.toFront(); info.requestFocus(); infoOn = true; (None, None)
       case (key, result) if result.isEmpty                   => (None, Some(model.keysMap(key)))
@@ -383,11 +472,6 @@ class ControllerBaccarat(
         model.saveData()
       }
     }
-
-  def focusNext(): Unit = {
-    mIndex = (mIndex + 1) % 9
-    lList(mIndex).requestFocus()
-  }
 
   lastWinPause.setOnFinished { e =>
     dynamicResult.setVisible(false)

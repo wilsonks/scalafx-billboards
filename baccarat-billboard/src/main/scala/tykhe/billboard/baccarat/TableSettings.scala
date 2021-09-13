@@ -9,6 +9,8 @@ case class TableSettings(
   pairBetMin: String,
   pairBetMax: String,
   superBetMin: String,
-  superBetMax: String)
+  superBetMax: String,
+  language: String,
+  theme: String)
 
 

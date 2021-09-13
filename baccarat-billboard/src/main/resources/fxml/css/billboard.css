@@ -761,46 +761,6 @@
 }
 
 
-.menuBox {
-        -fx-background-color: #43585c;
-        -fx-background-color: #00293c;
-        -fx-border-radius: 5 5 5 5;
-            	-fx-text-fill: white;
-            	-fx-pref-width:310;
-                -fx-pref-height:354;
-}
-
-.menuTitle {
-        -fx-background-color: #4cb5f5;
-    	-fx-text-fill: white;
-    	-fx-pref-width:320;
-        -fx-pref-height:42;
-        -fx-alignment:center;
-    	-fx-font-family: 'Bauhaus';
-    	-fx-font-size: 25;
-}
-
-.menuLabels {
-        -fx-background-color: #aac1c6;
-        -fx-background-color: #f1f3ce;
-    	-fx-text-fill: black;
-    	-fx-pref-width:200;
-        -fx-pref-height:42;
-        -fx-alignment:top-left;
-    	-fx-font-family: 'Bauhaus';
-    	-fx-font-size: 20;
-}
-
-.menuLabels:focused {
-        -fx-background-color: #34675c;
-        -fx-background-color: #f62a00;
-    	-fx-text-fill: black;
-    	-fx-pref-width:200;
-        -fx-pref-height:42;
-        -fx-alignment:top-left;
-    	-fx-font-family: 'Bauhaus';
-    	-fx-font-size: 20;
-}
 
 .RegionLogo {
         -fx-background-image: url("../images/logo.png");

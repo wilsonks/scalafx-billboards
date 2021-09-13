@@ -59,12 +59,16 @@ class BaccaratModel {
 
   def superSixBetMaxProperty: StringProperty = superSixBetMax
 
+  def languageProperty: StringProperty = language
+
+  def themeProperty: StringProperty = theme
+
   def beadRoadListProperty: ListProperty[BeadRoadResult] = beadRoadList
 
   val languages: Array[String] = Array("English", "Hindi", "Punjabi", "Kannada")
   var languageIndex: Int = languages.indexOf(language.get())
 
-  val themes: Array[String] = Array("Orange", "Red", "Green")
+  val themes: Array[String] = Array("Theme1", "Theme2", "Theme3", "Theme4", "Theme5")
   var themeIndex: Int = themes.indexOf(theme.get())
 
 
@@ -101,7 +105,9 @@ class BaccaratModel {
         pairBetMin.get(),
         pairBetMax.get(),
         superSixBetMin.get(),
-        superSixBetMax.get()
+        superSixBetMax.get(),
+        language.get(),
+        theme.get(),
       ))
   }
 

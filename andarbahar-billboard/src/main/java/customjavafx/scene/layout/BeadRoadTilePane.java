@@ -178,8 +178,8 @@ public class BeadRoadTilePane extends TilePane {
     }
 
     public String LastWinAudio() {
-        if (isCurrentWinRed()) return "/sounds/bahar-won.mp3";
-        else return "/sounds/andar-won.mp3";
+        if (isCurrentWinRed()) return "bahar-won.mp3";
+        else return "andar-won.mp3";
     }
 
     public AndarBaharBeadRoadResult LastWinResult() {

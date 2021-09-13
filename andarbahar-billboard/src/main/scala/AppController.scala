@@ -139,7 +139,16 @@ class AppController(
   }
 
   def lastWinUpdates(): Unit = {
-    new AudioClip(getClass.getResource(beadRoad.LastWinAudio()).toExternalForm).play(1)
+    var lastWin = beadRoad.LastWinAudio()
+    language.textProperty().get() match {
+      case "Hindi" => lastWin = s"/sounds/Hindi/${lastWin}"
+      case "Kannada" => lastWin = s"/sounds/Kannada/${lastWin}"
+      case "Punjabi" => lastWin = s"/sounds/Punjabi/${lastWin}"
+      case _ => lastWin = s"/sounds/English/${lastWin}"
+    }
+
+    new AudioClip(getClass.getResource(lastWin).toExternalForm).play(1)
+
     lastWinResultLabel.setResult(beadRoad.LastWinResult())
     lastWinResultLabel.setText(res.get.getString(beadRoad.LastWin()))
     dynamicResult.setVisible(true)

@@ -1,13 +1,34 @@
-.theme1 {
+.Theme1 {
     game-box-color: radial-gradient(center 50% 50%, radius 75%, #F3F2C9, #003638);
     bigroad-bg-color: brown;
     bigroad-tile-color: rgba(255, 255, 255, 0.5);
     header-bg-color: #550000;
 }
 
-.theme2 {
+.Theme2 {
     game-box-color: radial-gradient(center 50% 50%, radius 75%, #F3F2C9, #003638);
-    bigroad-bg-color: midnightblue;
+    bigroad-bg-color: blue;
     bigroad-tile-color: rgba(255, 255, 255, 0.5);
-    header-bg-color: #990000;
+    header-bg-color: #005500;
+}
+
+.Theme3 {
+    game-box-color: radial-gradient(center 50% 50%, radius 75%, #F3F2C9, #003638);
+    bigroad-bg-color: red;
+    bigroad-tile-color: rgba(255, 255, 255, 0.5);
+    header-bg-color: #000055;
+}
+
+.Theme4 {
+    game-box-color: radial-gradient(center 50% 50%, radius 75%, #F3F2C9, #003638);
+    bigroad-bg-color: orange;
+    bigroad-tile-color: rgba(255, 255, 255, 0.5);
+    header-bg-color: #555500;
+}
+
+.Theme5 {
+    game-box-color: radial-gradient(center 50% 50%, radius 75%, #F3F2C9, #003638);
+    bigroad-bg-color: purple;
+    bigroad-tile-color: rgba(255, 255, 255, 0.5);
+    header-bg-color: #005555;
 }

@@ -245,25 +245,38 @@ class AppController(
     override def changed(observableValue: ObservableValue[_ <: String], t1: String, t2: String): Unit = {
       t2 match {
         case "Theme1" => {
-
+          println("Theme1 Selected")
+          root.getStyleClass().removeAll("Theme1", "Theme2", "Theme3", "Theme4", "Theme5")
+          root.getStyleClass().add("Theme1")
         }
         case "Theme2" => {
-
+          println("Theme2 Selected")
+          root.getStyleClass().removeAll("Theme1", "Theme2", "Theme3", "Theme4", "Theme5")
+          root.getStyleClass().add("Theme2")
         }
         case "Theme3" => {
+          println("Theme3 Selected")
 
+          root.getStyleClass().removeAll("Theme1", "Theme2", "Theme3", "Theme4", "Theme5")
+          root.getStyleClass().add("Theme3")
         }
         case "Theme4" => {
-
+          println("Theme4 Selected")
+          root.getStyleClass().removeAll("Theme1", "Theme2", "Theme3", "Theme4", "Theme5")
+          root.getStyleClass().add("Theme4")
         }
         case "Theme5" => {
+          println("Theme5 Selected")
 
+          root.getStyleClass().removeAll("Theme1", "Theme2", "Theme3", "Theme4", "Theme5")
+          root.getStyleClass().add("Theme5")
         }
 
         case _ => {
 
         }
       }
+      model.saveHeader()
     }
   })
 
@@ -286,6 +299,7 @@ class AppController(
 
         }
       }
+      model.saveHeader()
     }
   })
   

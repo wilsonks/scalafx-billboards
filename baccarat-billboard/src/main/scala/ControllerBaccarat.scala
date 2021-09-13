@@ -148,6 +148,36 @@ class ControllerBaccarat(
   model.languageProperty.bindBidirectional(language.textProperty())
   model.themeProperty.bindBidirectional(theme.textProperty())
 
+
+  model.themeProperty.get() match {
+    case "Theme1" => {
+      root.getStyleClass().removeAll("Theme1", "Theme2", "Theme3", "Theme4", "Theme5")
+      root.getStyleClass().add("Theme1")
+    }
+    case "Theme2" => {
+      root.getStyleClass().removeAll("Theme1", "Theme2", "Theme3", "Theme4", "Theme5")
+      root.getStyleClass().add("Theme2")
+    }
+    case "Theme3" => {
+
+      root.getStyleClass().removeAll("Theme1", "Theme2", "Theme3", "Theme4", "Theme5")
+      root.getStyleClass().add("Theme3")
+    }
+    case "Theme4" => {
+      root.getStyleClass().removeAll("Theme1", "Theme2", "Theme3", "Theme4", "Theme5")
+      root.getStyleClass().add("Theme4")
+    }
+    case "Theme5" => {
+
+      root.getStyleClass().removeAll("Theme1", "Theme2", "Theme3", "Theme4", "Theme5")
+      root.getStyleClass().add("Theme5")
+    }
+
+    case _ => {
+
+    }
+  }
+
   val tList = Array(
     tTableId,
     tHandBetMin,

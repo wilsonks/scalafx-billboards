@@ -1,5 +1,6 @@
 # Repo for Tykhe ScalaFX Based Billboards 
-
+### Version 1.0
+#### Date: 13/09/2021
 An Operator Friendly Billboards.
 
 ## 3rd Party Libraries
@@ -31,8 +32,8 @@ An Operator Friendly Billboards.
 - Full HD on-screen graphics.
 - Video Advertisements Anytime via on-screen Menu.
 - Multi-Language Support via on-screen Menu. 
-- Customizable with 10 different Color Theme.[NO]
-- Customizable with 10 Separate Screen Layouts.[NO]
+- Multi-theme support via on-screen Menu.
+- Customizable with 5 Separate Screen Layouts.[NO]
 - Customizable with Different arrangement for baccarat roads.[NO]
 
 ### Connectivity Features
@@ -45,8 +46,6 @@ An Operator Friendly Billboards.
 - Animation Graphics Customization via on-screen user menu.[NO]
 
 #### Output
-- Remote Game Logging and Data Capture
-- Live Data export to 3rd party systems
 
 ### On Demand Features
 - Bee Tek Electronic Card Shoe Integration

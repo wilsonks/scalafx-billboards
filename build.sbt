@@ -46,7 +46,7 @@ lazy val `baccarat-billboard` = project
   .settings(libraryDependencies += "com.tykhe.host" %% "host-security" % "0.0.2-bacc779")
   .settings(
     mainClass in assembly := Some("BaccaratApp"),
-    assemblyJarName in assembly := "baccaratElectronic.jar")
+    assemblyJarName in assembly := "baccarat.jar")
   .enablePlugins(JavaAppPackaging)
 
 lazy val `andarbahar-billboard` = project
@@ -65,7 +65,7 @@ lazy val `andarbahar-billboard` = project
   .settings(libraryDependencies += "com.tykhe.host" %% "host-security" % "0.0.2-bacc779")
   .settings(
     mainClass in assembly := Some("AndarBaharApp"),
-    assemblyJarName in assembly := "andarbaharElectronic.jar")
+    assemblyJarName in assembly := "andarbahar.jar")
   .enablePlugins(JavaAppPackaging)
 
 

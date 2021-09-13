@@ -1,0 +1,21 @@
+.gameHeader {
+	-fx-font-family: 'Bauhaus';
+	-fx-font-family: 'Book Antiqua Bold';
+	-fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 3 , 0 );
+	-fx-font-size: 50;
+	-fx-text-fill: header-text-color;
+    -fx-padding: 0 20 0 20;
+}
+
+.tableName,.tableId {
+	-fx-font-family: 'Book Antiqua Bold';
+	-fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 1 , 0 );
+	-fx-font-size: 40;
+	-fx-text-fill: header-text-color;
+    -fx-padding: 0 0 0 0;
+}
+
+.tableName {
+	-fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 1 , 0 );
+    -fx-padding: 0 5 0 20;
+}

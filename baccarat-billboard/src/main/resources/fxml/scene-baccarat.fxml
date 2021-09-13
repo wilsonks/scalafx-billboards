@@ -32,7 +32,7 @@
 
 <!--Style Sheets-->
     <stylesheets>
-        <URL value="@css/billboard.css" />
+        <URL value="@css/fonts.css" />
     </stylesheets>
 
 
@@ -173,16 +173,16 @@
         </center>
     </BorderPane>
 
-    <VBox fx:id="gameBox" alignment="BOTTOM_CENTER" styleClass="game">
+    <VBox fx:id="gameBox" alignment="BOTTOM_CENTER" styleClass="gameBox" stylesheets="@css/game-box.css">
         <children>
-            <HBox alignment="CENTER_LEFT" maxHeight="75.0" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" maxHeight="75.0" prefHeight="100.0" prefWidth="200.0" stylesheets="@css/header.css">
                 <children>
                     <Label fx:id="nameLabel" styleClass="tableName" text="%nameLabel" />
                     <Label fx:id="tableId" layoutX="822.0" layoutY="13.0" minWidth="600.0" styleClass="tableId" text="001" />
                     <Label layoutX="10.0" layoutY="13.0" styleClass="gameHeader" text="%gameName" />
                 </children>
             </HBox>
-            <Pane maxWidth="1910.0" prefHeight="235.0" prefWidth="1910.0" styleClass="BigRoadPane">
+            <Pane maxWidth="1910.0" prefHeight="235.0" prefWidth="1910.0" styleClass="BigRoadPane" stylesheets="@css/bigroad.css">
                 <children>
                     <BigRoadTilePane fx:id="bigRoad" style="-fx-background-radius: 2;" styleClass="BigRoadTilePane">
                     </BigRoadTilePane>
@@ -198,7 +198,7 @@
                 <children>
                     <VBox prefHeight="200.0" prefWidth="100.0" spacing="24.0">
                         <children>
-                            <Pane prefHeight="186.0" prefWidth="950.0" styleClass="BigEyeRoadPane">
+                            <Pane prefHeight="186.0" prefWidth="950.0" styleClass="BigEyeRoadPane" stylesheets="@css/bigeyeroad.css">
                                 <children>
                                     <StackPane prefHeight="150.0" prefWidth="950.0">
                                         <children>
@@ -208,7 +208,7 @@
                                     </StackPane>
                                 </children>
                             </Pane>
-                            <Pane styleClass="SmallRoadPane">
+                            <Pane styleClass="SmallRoadPane" stylesheets="@css/smallroad.css">
                                 <children>
                                     <StackPane prefHeight="150.0" prefWidth="950.0">
                                         <children>
@@ -223,7 +223,7 @@
                             <Insets bottom="10.0" top="10.0" />
                         </HBox.margin>
                     </VBox>
-                    <Pane styleClass="CockroachRoadPane">
+                    <Pane styleClass="CockroachRoadPane" stylesheets="@css/cockroachroad.css">
                         <children>
                             <StackPane prefHeight="324.0" prefWidth="950.0">
                                 <children>
@@ -245,13 +245,13 @@
                 <children>
                     <HBox prefHeight="360.0" prefWidth="1909.0" spacing="10.0" styleClass="top" VBox.vgrow="ALWAYS">
                         <children>
-                            <Pane maxHeight="359.0" prefHeight="343.0" prefWidth="629.0" styleClass="BeadRoadPane">
+                            <Pane maxHeight="359.0" prefHeight="343.0" prefWidth="629.0" stylesheets="@css/beadroad.css" styleClass="BeadRoadPane">
                                 <children>
                                     <BeadRoadTilePane fx:id="beadRoad" styleClass="BeadRoadTilePane">
                                     </BeadRoadTilePane>
                                 </children>
                             </Pane>
-                            <VBox alignment="TOP_CENTER" styleClass="betsRow" HBox.hgrow="ALWAYS">
+                            <VBox alignment="TOP_CENTER" styleClass="betsRow" stylesheets="@css/paytable.css" HBox.hgrow="ALWAYS">
                                 <HBox styleClass="betsRow">
                                     <Label styleClass="betsHeader,betsLogo" />
                                     <Label fx:id="minLabel" styleClass="betsRange" text="%minLabel" />
@@ -278,7 +278,7 @@
                                     <Label fx:id="superBetMax" styleClass="betValue" text="500" />
                                 </HBox>
                             </VBox>
-                            <VBox maxHeight="359.0" prefHeight="200.0" prefWidth="450.0">
+                            <VBox maxHeight="359.0" prefHeight="200.0" prefWidth="450.0" stylesheets="@css/statistics.css">
                                 <children>
                                     <StackPane prefHeight="359.0" prefWidth="400.0">
                                         <children>
@@ -467,27 +467,27 @@
                                     </StackPane>
                                 </children>
                             </VBox>
-                            <VBox maxHeight="359.0" prefHeight="200.0" prefWidth="150.0" spacing="1.0">
+                            <VBox maxHeight="359.0" prefHeight="200.0" prefWidth="150.0" spacing="1.0" >
                                 <children>
-                                    <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0">
+                                    <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0" stylesheets="@css/prediction.css">
                                         <children>
                                             <Region fx:id="RegionPredictionBanker" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" />
                                             <Region fx:id="RegionPredictionPlayer" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" />
                                         </children>
                                     </HBox>
-                                    <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0">
+                                    <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0" stylesheets="@css/bigeyeroad.css">
                                         <children>
                                             <BigEyeRoadLabel fx:id="b1" layoutX="10.0" layoutY="10.0" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
                                             <BigEyeRoadLabel fx:id="p1" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
                                         </children>
                                     </HBox>
-                                    <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0">
+                                    <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0" stylesheets="@css/smallroad.css">
                                         <children>
                                             <SmallRoadLabel fx:id="b2" layoutX="10.0" layoutY="10.0" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
                                             <SmallRoadLabel fx:id="p2" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
                                         </children>
                                     </HBox>
-                                    <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0">
+                                    <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0" stylesheets="@css/cockroachroad.css">
                                         <children>
                                             <CockroachRoadLabel fx:id="b3" layoutX="10.0" layoutY="10.0" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
                                             <CockroachRoadLabel fx:id="p3" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
@@ -505,7 +505,7 @@
                     <Insets left="1.0" right="5.0" />
                 </VBox.margin>
             </VBox>
-            <VBox alignment="BOTTOM_CENTER" minHeight="30.0" prefHeight="30.0" prefWidth="1910.0">
+            <VBox alignment="BOTTOM_CENTER" minHeight="30.0" prefHeight="30.0" prefWidth="1910.0" stylesheets="@css/footer.css">
                 <Label fx:id="footing" prefHeight="35.0" styleClass="FootLabel" text="Powered By Tykhe Gaming Pvt. Ltd.">
                     <padding>
                         <Insets bottom="5.0" />
@@ -521,7 +521,7 @@
         </StackPane.margin>
     </VBox>
 
-    <BorderPane fx:id="dynamicResult" prefHeight="200.0" prefWidth="200.0">
+    <BorderPane fx:id="dynamicResult" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/lastwin.css">
         <center>
           <LastWinResultLabel fx:id="lastWinResultLabel" result="PLAYER_WIN" BorderPane.alignment="CENTER" />
         </center>

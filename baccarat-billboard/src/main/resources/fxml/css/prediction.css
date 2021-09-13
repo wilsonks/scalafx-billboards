@@ -1,0 +1,13 @@
+#RegionPredictionBanker {
+        -fx-background-image: url("../images/bead-road/a.png");
+        -fx-background-repeat: no-repeat;
+        -fx-background-size: contain;
+        -fx-background-position: center;
+}
+
+#RegionPredictionPlayer {
+        -fx-background-image: url("../images/bead-road/e.png");
+        -fx-background-repeat: no-repeat;
+        -fx-background-size: contain;
+        -fx-background-position: center;
+}

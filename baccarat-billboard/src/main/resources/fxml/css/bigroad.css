@@ -1,0 +1,241 @@
+
+.BigRoadPane {
+	-fx-background-color: bigroad-bg-color;
+	-fx-padding:0 0 0 0;
+	-fx-background-radius:0,0,0,0;
+	-fx-border-color:rgb(108,116,118);
+	-fx-border-width:0,0,0,0;
+	-fx-border-radius:0,0,0,0;
+	/*-fx-pref-height:233;*/
+	-fx-pref-width:1920;
+}
+
+
+.BigRoadTilePane {
+	-fx-padding:0 0 0 0;
+	-fx-orientation: vertical;
+	-fx-alignment: top-left;
+	-fx-tile-alignment: top-left;
+	-fx-pref-rows:6;
+	-fx-pref-columns:49;
+	-fx-pref-tile-width:37.1;
+	-fx-pref-tile-height:37.1;
+	-fx-hgap:.5;
+	-fx-vgap:.5;
+}
+
+.BigRoadLabel {
+	-fx-background-color:bigroad-tile-color;
+	-fx-alignment:center;
+	-fx-text-overrun:center-ellipsis;
+	-fx-text-fill:white;
+	-fx-font-weight:bold;
+	-fx-pref-width:37.1;
+	-fx-pref-height:37.1;
+}
+
+.BigRoadLabel:tieWin {
+	-fx-background-image: url("../images/big-road/21.png");
+	-fx-background-position: center,12 14;
+	-fx-background-repeat: no-repeat, no-repeat;
+}
+
+.BigRoadLabel:bankerWin {
+	-fx-background-image: url("../images/big-road/1.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat, stretch;
+}
+
+.BigRoadLabel:bankerWinBeforeTie {
+	-fx-background-image: url("../images/big-road/1.png"),url(../images/big-road/21.png);
+	-fx-background-position: center,12 14;
+	-fx-background-repeat: no-repeat, no-repeat;
+}
+
+.BigRoadLabel:bankerWinBankerPair {
+	-fx-background-image: url("../images/big-road/2.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat, stretch;
+}
+
+.BigRoadLabel:bankerWinBankerPairBeforeTie {
+	-fx-background-image: url("../images/big-road/2.png"),url(../images/big-road/21.png);
+	-fx-background-position: center,12 14;
+	-fx-background-repeat: no-repeat, no-repeat;
+}
+
+.BigRoadLabel:bankerWinPlayerPair {
+	-fx-background-image: url("../images/big-road/3.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat, stretch;
+}
+
+.BigRoadLabel:bankerWinPlayerPairBeforeTie {
+	-fx-background-image: url("../images/big-road/3.png"),url(../images/big-road/21.png);
+	-fx-background-position: center,12 14;
+	-fx-background-repeat: no-repeat, no-repeat;
+}
+
+.BigRoadLabel:bankerWinBothPair {
+	-fx-background-image: url("../images/big-road/4.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat, stretch;
+}
+
+.BigRoadLabel:bankerWinBothPairBeforeTie {
+	-fx-background-image: url("../images/big-road/4.png"),url(../images/big-road/21.png);
+	-fx-background-position: center,12 14;
+	-fx-background-repeat: no-repeat, no-repeat;
+}
+
+.BigRoadLabel:playerWin {
+	-fx-background-image: url("../images/big-road/5.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat, stretch;
+}
+
+.BigRoadLabel:playerWinBeforeTie {
+	-fx-background-image: url("../images/big-road/5.png"),url(../images/big-road/21.png);
+	-fx-background-position: center,12 14;
+	-fx-background-repeat: no-repeat, no-repeat;
+}
+
+.BigRoadLabel:playerWinBankerPair {
+	-fx-background-image: url("../images/big-road/6.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat, stretch;
+}
+
+.BigRoadLabel:playerWinBankerPairBeforeTie {
+	-fx-background-image: url("../images/big-road/6.png"),url(../images/big-road/21.png);
+	-fx-background-position: center,12 14;
+	-fx-background-repeat: no-repeat, no-repeat;
+}
+
+.BigRoadLabel:playerWinPlayerPair {
+	-fx-background-image: url("../images/big-road/7.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat, stretch;
+}
+
+.BigRoadLabel:playerWinPlayerPairBeforeTie {
+	-fx-background-image: url("../images/big-road/7.png"),url(../images/big-road/21.png);
+	-fx-background-position: center,12 14;
+	-fx-background-repeat: no-repeat, no-repeat;
+}
+
+.BigRoadLabel:playerWinBothPair {
+	-fx-background-image: url("../images/big-road/8.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat, stretch;
+}
+
+.BigRoadLabel:playerWinBothPairBeforeTie {
+	-fx-background-image: url("../images/big-road/8.png"),url(../images/big-road/21.png);
+	-fx-background-position: center,12 14;
+	-fx-background-repeat: no-repeat, no-repeat;
+}
+.BigRoadLabel:tieWinNatural {
+	-fx-background-image: url("../images/big-road/natural.png"),url("../images/big-road/21.png");
+	-fx-background-position: center,12 14;
+	-fx-background-repeat: no-repeat, no-repeat;
+}
+
+
+
+
+.BigRoadLabel:bankerWinNatural {
+	-fx-background-image: url("../images/big-road/13.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat, stretch;
+}
+
+.BigRoadLabel:bankerWinBeforeTieNatural {
+	-fx-background-image: url("../images/big-road/13.png"),url(../images/big-road/21.png);
+	-fx-background-position: center,12 14;
+	-fx-background-repeat: no-repeat, no-repeat;
+}
+
+.BigRoadLabel:bankerWinBankerPairNatural {
+	-fx-background-image: url("../images/big-road/14.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat, stretch;
+}
+
+.BigRoadLabel:bankerWinBankerPairBeforeTieNatural {
+	-fx-background-image: url("../images/big-road/14.png"),url(../images/big-road/21.png);
+	-fx-background-position: center,12 14;
+	-fx-background-repeat: no-repeat, no-repeat;
+}
+
+.BigRoadLabel:bankerWinPlayerPairNatural {
+	-fx-background-image: url("../images/big-road/15.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat, stretch;
+}
+
+.BigRoadLabel:bankerWinPlayerPairBeforeTieNatural {
+	-fx-background-image: url("../images/big-road/15.png"),url(../images/big-road/21.png);
+	-fx-background-position: center,12 14;
+	-fx-background-repeat: no-repeat, no-repeat;
+}
+
+.BigRoadLabel:bankerWinBothPairNatural {
+	-fx-background-image: url("../images/big-road/16.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat, stretch;
+}
+
+.BigRoadLabel:bankerWinBothPairBeforeTieNatural {
+	-fx-background-image: url("../images/big-road/16.png"),url(../images/big-road/21.png);
+	-fx-background-position: center,12 14;
+	-fx-background-repeat: no-repeat, no-repeat;
+}
+
+.BigRoadLabel:playerWinNatural {
+	-fx-background-image: url("../images/big-road/17.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat, stretch;
+}
+
+.BigRoadLabel:playerWinBeforeTieNatural {
+	-fx-background-image: url("../images/big-road/17.png"),url(../images/big-road/21.png);
+	-fx-background-position: center,12 14;
+	-fx-background-repeat: no-repeat, no-repeat;
+}
+
+.BigRoadLabel:playerWinBankerPairNatural {
+	-fx-background-image: url("../images/big-road/18.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat, stretch;
+}
+
+.BigRoadLabel:playerWinBankerPairBeforeTieNatural {
+	-fx-background-image: url("../images/big-road/18.png"),url(../images/big-road/21.png);
+	-fx-background-position: center,12 14;
+	-fx-background-repeat: no-repeat, no-repeat;
+}
+
+.BigRoadLabel:playerWinPlayerPairNatural {
+	-fx-background-image: url("../images/big-road/19.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat, stretch;
+}
+
+.BigRoadLabel:playerWinPlayerPairBeforeTieNatural {
+	-fx-background-image: url("../images/big-road/19.png"),url(../images/big-road/21.png);
+	-fx-background-position: center,12 14;
+	-fx-background-repeat: no-repeat, no-repeat;
+}
+
+.BigRoadLabel:playerWinBothPairNatural {
+	-fx-background-image: url("../images/big-road/20.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat, stretch;
+}
+
+.BigRoadLabel:playerWinBothPairBeforeTieNatural {
+	-fx-background-image: url("../images/big-road/20.png"),url(../images/big-road/21.png);
+	-fx-background-position: center,12 14;
+	-fx-background-repeat: no-repeat, no-repeat;
+}

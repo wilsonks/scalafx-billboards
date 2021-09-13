@@ -1,0 +1,8 @@
+
+.gameBox {
+	-fx-background-color: game-box-color;
+	-fx-padding: 10 5 5 5;
+	-fx-spacing:5;
+	-fx-pref-width:1920;
+	-fx-pref-height:1080;
+}

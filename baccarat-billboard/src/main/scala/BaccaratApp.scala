@@ -19,7 +19,7 @@ object BaccaratApp extends IOApp with Display.App with SecureApp {
 
 
   override def run(args: List[String]): IO[ExitCode] = for {
-    // _ <- verifyHost[IO]
+     _ <- verifyHost[IO]
     _ <- IO(println("starting billboard..."))
 
 

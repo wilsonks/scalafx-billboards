@@ -1,9 +1,14 @@
 System Requirements
 ===================
 
+Update the package index:
+sudo apt-get update
+
 sudo apt-get install openjdk-8-jre
 sudo apt-get install openjfx
 
+
 sudo apt-get install libavcodec-dev
 sudo apt-get install libavcodec-extra
+
 ln -s /usr/lib/x86_64-linux-gnu/libavcodec.so /usr/lib/x86_64-linux-gnu/libavcodec.so.53

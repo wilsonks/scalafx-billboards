@@ -1,6 +1,10 @@
 System Requirements
 ===================
 
+
+Update the package index:
+sudo apt-get update
+
 sudo apt-get install openjdk-8-jre
 sudo apt-get install openjfx
 

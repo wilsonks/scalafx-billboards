@@ -44,6 +44,7 @@ lazy val `baccarat-billboard` = project
   .settings(libraryDependencies += "co.fs2" %% "fs2-io" % "1.0.3")
   .settings(libraryDependencies += "org.scalafx" %% "scalafxml-core-sfx8" % "0.4")
   .settings(libraryDependencies += "com.tykhe.host" %% "host-security" % "0.0.2-bacc779")
+  .settings(libraryDependencies += "org.slf4j" % "slf4j-nop" % "1.7.25" % Test)
   .settings(
     mainClass in assembly := Some("BaccaratApp"),
     assemblyJarName in assembly := "baccarat.jar")
@@ -63,6 +64,7 @@ lazy val `andarbahar-billboard` = project
   .settings(libraryDependencies += "co.fs2" %% "fs2-io" % "1.0.3")
   .settings(libraryDependencies += "org.scalafx" %% "scalafxml-core-sfx8" % "0.4")
   .settings(libraryDependencies += "com.tykhe.host" %% "host-security" % "0.0.2-bacc779")
+  .settings(libraryDependencies += "org.slf4j" % "slf4j-nop" % "1.7.25" % Test)
   .settings(
     mainClass in assembly := Some("AndarBaharApp"),
     assemblyJarName in assembly := "andarbahar.jar")

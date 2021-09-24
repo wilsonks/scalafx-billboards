@@ -6,10 +6,10 @@
 }
 
 .Theme2 {
-    game-box-color: radial-gradient(center 50% 50%, radius 75%, #F3F2C9, #003638);
+    game-box-color: #373B44;
     bigroad-bg-color: brown;
     bigroad-tile-color: rgba(255, 255, 255, 0.5);
-    header-bg-color: #550000;
+    header-bg-color: #770000;
 }
 
 .Theme3 {

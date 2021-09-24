@@ -1,5 +1,5 @@
 .Theme1 {
-    game-box-color: radial-gradient(center 50% 50%, radius 75%, #deadb0, #cb0000);
+    game-box-color: linear-gradient(to top, #ff8008, #ffc837);
     header-text-color: black;
 
     beadroad-bg-color: rgb(108,116,118,.5);
@@ -13,7 +13,7 @@
     cockroachroad-bg-color: rgb(108,116,118,.5);
     cockroachroad-tile-color: white;
 
-    paytable-bg-color: midnightblue;
+    paytable-bg-color: #2D4350;
     paytable-header-text-color: goldenrod;
     paytable-text-color: white;
 
@@ -24,7 +24,7 @@
 }
 
 .Theme2 {
-    game-box-color: radial-gradient(center 50% 50%, radius 75%, #F3F2C9, #003638);
+    game-box-color: linear-gradient(to bottom, #ff5f6d, #ffc371);
     header-text-color: black;
 
 
@@ -39,7 +39,7 @@
     cockroachroad-bg-color: rgb(108,116,118,.5);
     cockroachroad-tile-color: white;
 
-    paytable-bg-color: midnightblue;
+    paytable-bg-color: #2D4350;
     paytable-header-text-color: goldenrod;
     paytable-text-color: white;
 
@@ -49,7 +49,7 @@
 }
 
 .Theme3 {
-    game-box-color: radial-gradient(radius 180%, orangered, derive(white, -30%), derive(white, 30%));
+    game-box-color: linear-gradient(to bottom, #d1913c, #ffd194);
     header-text-color: black;
 
 
@@ -64,7 +64,7 @@
     cockroachroad-bg-color: rgb(108,116,118,.5);
     cockroachroad-tile-color: white;
 
-    paytable-bg-color: midnightblue;
+    paytable-bg-color: #2D4350;
     paytable-header-text-color: goldenrod;
     paytable-text-color: white;
 
@@ -74,7 +74,7 @@
 }
 
 .Theme4 {
-    game-box-color: radial-gradient(center 50% 50%, radius 75%, #F3F2C9, #003638);
+    game-box-color: linear-gradient(to bottom, #ffb75e, #ed8f03);
     header-text-color: black;
 
 
@@ -89,7 +89,7 @@
     cockroachroad-bg-color: rgb(108,116,118,.5);
     cockroachroad-tile-color: white;
 
-    paytable-bg-color: midnightblue;
+    paytable-bg-color: #2D4350;
     paytable-header-text-color: goldenrod;
     paytable-text-color: white;
 
@@ -99,7 +99,7 @@
 }
 
 .Theme5 {
-    game-box-color: radial-gradient(center 50% 50%, radius 75%, #F3F2C9, #003638);
+    game-box-color: linear-gradient(to bottom, #fd746c, #ff9068);
     header-text-color: black;
 
 
@@ -114,7 +114,7 @@
     cockroachroad-bg-color: rgb(108,116,118,.5);
     cockroachroad-tile-color: white;
 
-    paytable-bg-color: midnightblue;
+    paytable-bg-color: #2D4350;
     paytable-header-text-color: goldenrod;
     paytable-text-color: white;
 

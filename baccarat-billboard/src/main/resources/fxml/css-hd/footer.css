@@ -1,0 +1,15 @@
+.FootLabel {
+    -fx-background-color: footer-bg-color;
+    -fx-padding: 0 0 0 0;
+    -fx-border-color: footer-border-color;
+    -fx-border-width: 1;
+    -fx-border-radius: 5 5 5 5;
+    -fx-background-radius: 5 5 5 5;
+    -fx-text-fill: footer-text-color;
+    /* -fx-pref-width:1910; */
+    /* -fx-pref-height:21; */
+    -fx-alignment:center;
+    -fx-font-family: 'Bodonio';
+    -fx-font-size: 12;
+
+}

@@ -1,0 +1,61 @@
+
+
+.BigEyeRoadPane {
+	-fx-background-color:bigeyeroad-bg-color;
+	/*
+	-fx-min-width:791;
+	-fx-min-height:125;
+	*/
+}
+
+.BigEyeRoadDummyTilePane {
+	-fx-scale-x:1;
+	-fx-scale-y:1;
+    -fx-alignment: top-left;
+    -fx-tile-alignment: top-left;
+	-fx-pref-rows:3;
+	-fx-pref-columns:15;
+	-fx-hgap:1;
+	-fx-vgap:1;
+	-fx-pref-tile-width:41;
+	-fx-pref-tile-height:41;
+}
+
+.BigEyeRoadDummyLabel {
+	-fx-background-color:bigeyeroad-tile-color;
+	-fx-pref-width:41;
+	-fx-pref-height:41;
+}
+
+
+.BigEyeRoadTilePane {
+	-fx-scale-x:1;
+	-fx-scale-y:1;
+    -fx-alignment: top-left;
+    -fx-tile-alignment: top-left;
+	-fx-pref-rows:6;
+	-fx-pref-columns:38;
+	-fx-hgap:1;
+	-fx-vgap:1;
+	-fx-pref-tile-width:20;
+	-fx-pref-tile-height:20;
+}
+
+.BigEyeRoadLabel {
+	-fx-pref-width:20;
+	-fx-pref-height:20;
+}
+
+.BigEyeRoadLabel:red {
+	-fx-background-image: url("../images/big-eye-road/1.png");
+	-fx-background-position:center;
+	-fx-background-repeat: no-repeat ;
+	-fx-background-size: contain;
+}
+
+.BigEyeRoadLabel:blue {
+	-fx-background-image: url("../images/big-eye-road/2.png");
+	-fx-background-position:center;
+	-fx-background-repeat: no-repeat ;
+	-fx-background-size: contain;
+}

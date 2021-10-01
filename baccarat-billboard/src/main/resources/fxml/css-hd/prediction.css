@@ -1,0 +1,62 @@
+#RegionPredictionBanker {
+        -fx-background-image: url("../images/bead-road/a.png");
+        -fx-background-repeat: no-repeat;
+        -fx-background-size: contain;
+        -fx-background-position: center;
+        -fx-min-width:70;
+        -fx-min-height:75;
+        -fx-background-color: white;
+
+}
+
+#RegionPredictionPlayer {
+        -fx-background-image: url("../images/bead-road/e.png");
+        -fx-background-repeat: no-repeat;
+        -fx-background-size: contain;
+        -fx-background-position: center;
+        -fx-min-width:70;
+        -fx-min-height:75;
+        -fx-background-color: white;
+}
+
+#b1 {
+    -fx-min-width:70;
+    -fx-min-height:70;
+    -fx-background-color: white;
+    -fx-background-size: 38px;
+}
+
+#p1 {
+    -fx-min-width:70;
+    -fx-min-height:70;
+    -fx-background-color: white;
+    -fx-background-size: 38px;
+}
+
+#b2 {
+    -fx-min-width:70;
+    -fx-min-height:70;
+    -fx-background-color: white;
+    -fx-background-size: 38px;
+}
+
+#p2 {
+    -fx-min-width:70;
+    -fx-min-height:70;
+    -fx-background-color: white;
+    -fx-background-size: 38px;
+}
+
+#b3 {
+    -fx-min-width:70;
+    -fx-min-height:70;
+    -fx-background-color: white;
+    -fx-background-size: 38px;
+}
+
+#p3 {
+    -fx-min-width:70;
+    -fx-min-height:70;
+    -fx-background-color: white;
+    -fx-background-size: 38px;
+}

@@ -28,7 +28,7 @@ object BaccaratApp extends IOApp with Display.App with SecureApp {
     //So, for a new locale resource you just add only those strings that are relevant for that language!
     english: Locale = new Locale(Locale.US.getLanguage, Locale.US.getCountry)
     simplifiedChinese: Locale = new Locale(Locale.SIMPLIFIED_CHINESE.getLanguage, Locale.SIMPLIFIED_CHINESE.getCountry)
-    resBundle = ResourceBundle.getBundle("Bundle", english)
+    resBundle = ResourceBundle.getBundle("Bundle", simplifiedChinese)
 
     reader <- watch(Paths.get(pureconfig.loadConfigOrThrow[String]("result"))).fxReader
 

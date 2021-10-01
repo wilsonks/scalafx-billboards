@@ -1,0 +1,95 @@
+
+
+.LastWinResultLabel {
+	-fx-font-family: 'Book Antiqua Bold';
+	-fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 1 , 0 );
+	-fx-font-size: 35;
+	-fx-text-fill: white;
+	-fx-text-alignment: center;
+    -fx-pref-height: 250;
+    -fx-pref-width: 250;
+}
+
+.LastWinResultLabel:bankerWin {
+    -fx-background-image: url("../images/last-win/a.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 250 250;
+}
+
+.LastWinResultLabel:bankerWinBankerPair {
+    -fx-background-image: url("../images/last-win/b.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 250 250;
+}
+
+.LastWinResultLabel:bankerWinPlayerPair {
+    -fx-background-image: url("../images/last-win/c.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 250 250;
+}
+
+.LastWinResultLabel:bankerWinBothPair {
+    -fx-background-image: url("../images/last-win/d.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 250 250;
+}
+
+.LastWinResultLabel:playerWin {
+    -fx-background-image: url("../images/last-win/e.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 250 250;
+}
+
+.LastWinResultLabel:playerWinBankerPair {
+    -fx-background-image: url("../images/last-win/f.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 250 250;
+}
+
+.LastWinResultLabel:playerWinPlayerPair {
+    -fx-background-image: url("../images/last-win/g.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 250 250;
+}
+
+.LastWinResultLabel:playerWinBothPair {
+    -fx-background-image: url("../images/last-win/h.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 250 250;
+}
+
+.LastWinResultLabel:tieWin {
+    -fx-background-image: url("../images/last-win/i.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 250 250;
+}
+
+.LastWinResultLabel:tieWinBankerPair {
+    -fx-background-image: url("../images/last-win/j.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 250 250;
+}
+
+.LastWinResultLabel:tieWinPlayerPair {
+    -fx-background-image: url("../images/last-win/k.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 250 250;
+}
+
+.LastWinResultLabel:tieWinBothPair {
+    -fx-background-image: url("../images/last-win/l.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 250 250;
+}

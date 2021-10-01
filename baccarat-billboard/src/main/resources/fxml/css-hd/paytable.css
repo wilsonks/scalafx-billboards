@@ -6,8 +6,8 @@
 	-fx-background-position:center;
 	-fx-background-repeat: no-repeat ;
 	-fx-background-size: contain;
-	-fx-min-width:248;
-    -fx-min-height:82;
+	-fx-min-width:206;
+    -fx-min-height:52;
 }
 
 .betsRow {
@@ -18,35 +18,35 @@
 .betsHeader, .betsType, .betsRange {
     -fx-background-color: paytable-bg-color;
     -fx-alignment: center;
-    -fx-pref-height: 68;
+    -fx-pref-height: 52;
    	-fx-text-fill: paytable-header-text-color;
    	-fx-font-family: 'Bauhaus';
    	-fx-font-family: 'Book Antiqua Bold';
-   	-fx-font-size: 30;
+   	-fx-font-size: 26;
 }
 
 .betsHeader, .betsType {
-    -fx-pref-width: 248;
+    -fx-pref-width: 206;
 }
 
 .betsHeader, .betsRange {
-    -fx-pref-height: 82;
+    -fx-pref-height: 76;
 }
 
 .betsRange {
-    -fx-pref-width: 200;
+    -fx-pref-width: 166;
     -fx-alignment:center-right;
     -fx-padding: 0 10 0 0;
 }
 
 .betValue {
-    -fx-pref-height: 68;
+    -fx-pref-height: 52;
     -fx-background-color: paytable-bg-color;
    	-fx-font-family: 'Bauhaus';
    	-fx-font-family: 'Book Antiqua Bold';
-   	-fx-font-size: 30;
+   	-fx-font-size: 26;
     -fx-alignment: center-right;
-    -fx-pref-width: 200;
+    -fx-pref-width: 166;
    	-fx-text-fill: paytable-text-color;
    	-fx-font-size: 40;
    	-fx-padding: 0 10 0 0;

@@ -1,0 +1,113 @@
+
+.BeadRoadPane {
+	-fx-background-color: beadroad-bg-color;
+	-fx-padding:0 0 0 0;
+	-fx-background-radius:0,0,0,0;
+	-fx-border-color:rgb(108,116,118);
+	-fx-border-width:0,0,0,0;
+	-fx-border-radius:0,0,0,0;
+}
+
+
+.BeadRoadTilePane {
+    -fx-padding:0,0,0,0;
+	-fx-tile-alignment: top-left;
+	-fx-pref-rows: 6;
+	-fx-pref-columns: 11;
+	-fx-pref-tile-width: 45;
+	-fx-pref-tile-height: 47;
+	-fx-hgap: .5;
+	-fx-vgap: .5;
+
+}
+
+.BeadRoadLabel {
+    -fx-background-color: beadroad-tile-color;
+/*    -fx-padding:1,1,1,1;*/
+    -fx-pref-height: 47;
+    -fx-pref-width: 45;
+}
+
+.BeadRoadLabel:bankerWin {
+    -fx-background-image: url("../images/bead-road/a.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 45 45;
+}
+
+.BeadRoadLabel:bankerWinBankerPair {
+    -fx-background-image: url("../images/bead-road/b.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 45 45;
+}
+
+.BeadRoadLabel:bankerWinPlayerPair {
+    -fx-background-image: url("../images/bead-road/c.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 45 45;
+}
+
+.BeadRoadLabel:bankerWinBothPair {
+    -fx-background-image: url("../images/bead-road/d.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 45 45;
+}
+
+.BeadRoadLabel:playerWin {
+    -fx-background-image: url("../images/bead-road/e.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 45 45;
+}
+
+.BeadRoadLabel:playerWinBankerPair {
+    -fx-background-image: url("../images/bead-road/f.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 45 45;
+}
+
+.BeadRoadLabel:playerWinPlayerPair {
+    -fx-background-image: url("../images/bead-road/g.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 45 45;
+}
+
+.BeadRoadLabel:playerWinBothPair {
+    -fx-background-image: url("../images/bead-road/h.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 45 45;
+}
+
+.BeadRoadLabel:tieWin {
+    -fx-background-image: url("../images/bead-road/i.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 45 45;
+}
+
+.BeadRoadLabel:tieWinBankerPair {
+    -fx-background-image: url("../images/bead-road/j.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 45 45;
+}
+
+.BeadRoadLabel:tieWinPlayerPair {
+    -fx-background-image: url("../images/bead-road/k.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 45 45;
+}
+
+.BeadRoadLabel:tieWinBothPair {
+    -fx-background-image: url("../images/bead-road/l.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 45 45;
+}

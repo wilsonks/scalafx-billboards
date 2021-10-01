@@ -1,0 +1,59 @@
+
+.CockroachRoadPane {
+	-fx-background-color: cockroachroad-bg-color;
+	/*
+	-fx-min-width:791;
+	-fx-min-height:125;
+	*/
+}
+
+.CockroachRoadDummyTilePane {
+	-fx-scale-x:1;
+	-fx-scale-y:1;
+    -fx-alignment: top-left;
+    -fx-tile-alignment: top-left;
+	-fx-pref-rows:6;
+	-fx-pref-columns:19;
+	-fx-hgap:1;
+	-fx-vgap:1;
+	-fx-pref-tile-width:39;
+	-fx-pref-tile-height:45;
+}
+
+.CockroachRoadDummyLabel {
+	-fx-background-color:cockroachroad-tile-color;
+	-fx-pref-width:39;
+	-fx-pref-height:45;
+}
+
+.CockroachRoadTilePane {
+	-fx-scale-x:1;
+	-fx-scale-y:1;
+    -fx-alignment: top-left;
+    -fx-tile-alignment: top-left;
+	-fx-pref-rows:12;
+	-fx-pref-columns:38;
+	-fx-hgap:1;
+	-fx-vgap:1;
+	-fx-pref-tile-width:19;
+	-fx-pref-tile-height:22;
+}
+
+.CockroachRoadLabel {
+	-fx-pref-width:19;
+	-fx-pref-height:22;
+}
+
+.CockroachRoadLabel:red {
+	-fx-background-image: url("../images/cockroach-road/1.png");
+	-fx-background-position:center;
+	-fx-background-repeat: no-repeat ;
+	-fx-background-size: contain;
+}
+
+.CockroachRoadLabel:blue {
+	-fx-background-image: url("../images/cockroach-road/2.png");
+	-fx-background-position:center;
+	-fx-background-repeat: no-repeat ;
+	-fx-background-size: contain;
+}

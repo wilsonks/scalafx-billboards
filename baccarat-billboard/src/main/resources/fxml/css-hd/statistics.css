@@ -1,0 +1,108 @@
+
+#totalCount {
+    -fx-text-fill:black;
+    -fx-font-family: 'Book Antiqua Bold';
+    -fx-font-size: 21;
+}
+
+#bankerWinCount {
+    -fx-text-fill:black;
+    -fx-font-family: 'Book Antiqua Bold';
+    -fx-font-size: 21;
+}
+
+#playerWinCount {
+    -fx-text-fill:black;
+    -fx-font-family: 'Book Antiqua Bold';
+    -fx-font-size: 21;
+}
+
+#tieWinCount {
+    -fx-text-fill:black;
+    -fx-font-family: 'Book Antiqua Bold';
+    -fx-font-size: 21;
+}
+
+#bankerPairCount {
+    -fx-text-fill:black;
+    -fx-font-family: 'Book Antiqua Bold';
+    -fx-font-size: 21;
+}
+
+#playerPairCount {
+    -fx-text-fill:black;
+    -fx-font-family: 'Book Antiqua Bold';
+    -fx-font-size: 21;
+}
+
+#naturalCount {
+    -fx-pref-width: 208;
+    -fx-text-fill:black;
+    -fx-font-family: 'Book Antiqua Bold';
+    -fx-font-size: 21;
+}
+
+
+#tLabel {
+    -fx-pref-width: 208;
+    -fx-text-fill:black;
+    -fx-alignment:center-left;
+    -fx-font-family: 'Book Antiqua Bold';
+    -fx-font-size: 18;
+}
+
+#bLabel {
+    -fx-pref-width: 208;
+    -fx-text-fill:black;
+    -fx-alignment:center-left;
+    -fx-font-family: 'Book Antiqua Bold';
+    -fx-font-size: 18;
+}
+
+#pLabel {
+    -fx-pref-width: 208;
+    -fx-text-fill:black;
+    -fx-alignment:center-left;
+    -fx-font-family: "Book Antiqua Bold";
+    -fx-font-size: 18;
+}
+
+#tieLabel {
+    -fx-pref-width: 208;
+    -fx-text-fill:black;
+    -fx-alignment:center-left;
+    -fx-font-family: "Book Antiqua Bold";
+    -fx-font-size: 18;
+}
+
+#bpLabel {
+    -fx-pref-width: 208;
+    -fx-text-fill:black;
+    -fx-alignment:center-left;
+    -fx-font-family: "Book Antiqua Bold";
+    -fx-font-size: 18;
+}
+
+#ppLabel {
+    -fx-pref-width: 208;
+    -fx-text-fill:black;
+    -fx-alignment:center-left;
+    -fx-font-family: 'Book Antiqua Bold';
+    -fx-font-size: 18;
+}
+
+#nLabel {
+    -fx-pref-width: 208;
+    -fx-text-fill:black;
+    -fx-alignment:center-left;
+    -fx-font-family: 'Book Antiqua Bold';
+    -fx-font-size: 18;
+}
+
+#gameLabel {
+    -fx-pref-width: 208;
+    -fx-text-fill:black;
+    -fx-alignment:center-left;
+    -fx-font-family: 'Book Antiqua Bold';
+    -fx-font-size: 18;
+}

@@ -66,10 +66,12 @@ class BaccaratModel {
   def beadRoadListProperty: ListProperty[BeadRoadResult] = beadRoadList
 
   val languages: Array[String] = Array("English", "Hindi", "Punjabi", "Kannada")
-  var languageIndex: Int = languages.indexOf(language.get())
+//  var languageIndex: Int = languages.indexOf(language.get())
+  var languageIndex: Int = 0
 
   val themes: Array[String] = Array("Theme1", "Theme2", "Theme3", "Theme4", "Theme5")
-  var themeIndex: Int = themes.indexOf(theme.get())
+//  var themeIndex: Int = themes.indexOf(theme.get())
+  var themeIndex: Int = 0
 
 
   //Load Data From Database

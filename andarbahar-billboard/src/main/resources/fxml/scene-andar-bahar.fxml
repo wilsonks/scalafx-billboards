@@ -22,12 +22,7 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="root"
-           styleClass="Theme1"
-           stylesheets="@css/theme.css"
-           xmlns="http://javafx.com/javafx/8.0.171"
-           xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="AppController">
+<StackPane fx:id="root" styleClass="Theme1" stylesheets="@css/theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppController">
 
 <!--Style Sheets-->
     <stylesheets>
@@ -524,9 +519,64 @@
                            <AndarBaharBigRoadLabel result="EMPTY" />
                            <AndarBaharBigRoadLabel result="EMPTY" />
 
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+                           <AndarBaharBigRoadLabel result="EMPTY" />
+
                         </children>
                                 <StackPane.margin>
-                                    <Insets bottom="33.0" left="165.0" right="165.0" top="40.0" />
+                                    <Insets bottom="33.0" left="29.0" right="29.0" top="40.0" />
                                 </StackPane.margin>
                             </BigRoadTilePane>
 
@@ -541,7 +591,7 @@
                     </StackPane>
                 </center>
                 <bottom>
-                    <HBox stylesheets="@css/footer.css" prefHeight="312.0" prefWidth="1893.0" BorderPane.alignment="CENTER">
+                    <HBox prefHeight="312.0" prefWidth="1893.0" stylesheets="@css/footer.css" BorderPane.alignment="CENTER">
                         <children>
                             <StackPane>
                                 <children>
@@ -677,12 +727,12 @@
                                  <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
                               </rowConstraints>
                               <children>
-                                 <Label fx:id="andarCount" prefHeight="34.0" prefWidth="198.0" styleClass="gameCountTexts"  text="0" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <Label fx:id="andarCount" prefHeight="34.0" prefWidth="198.0" styleClass="gameCountTexts" text="0" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <font>
                                        <Font name="Barlow" size="37.0" />
                                     </font>
                                  </Label>
-                                 <Label fx:id="baharCount" prefHeight="34.0" prefWidth="198.0" styleClass="gameCountTexts"  text="0" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <Label fx:id="baharCount" prefHeight="34.0" prefWidth="198.0" styleClass="gameCountTexts" text="0" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                     <font>
                                        <Font name="Barlow" size="37.0" />
                                     </font>

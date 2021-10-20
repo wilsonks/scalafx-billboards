@@ -385,6 +385,7 @@ class AppController(
           case AndarBaharBeadRoadResult.CLEAR => beadRoad.Reset()
           case _ => {
             beadRoad.AddElement(result)
+            println(s"Adding ${result}")
           }
         }
         model.saveData()

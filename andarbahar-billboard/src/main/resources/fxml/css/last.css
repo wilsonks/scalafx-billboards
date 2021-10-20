@@ -13,14 +13,40 @@
     -fx-background-repeat: no-repeat;
     -fx-background-size: 180 180;
 }
-.LastWinResultLabel:bankerWin {
+.LastWinResultLabel:baharWin {
     -fx-background-image: url("../images/wins/bahar.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
     -fx-background-size: 180 180;
 }
 
-.LastWinResultLabel:playerWin {
+.LastWinResultLabel:andarWin {
+    -fx-background-image: url("../images/wins/andar.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 180 180;
+}
+.LastWinResultLabel:baharFirstWin {
+    -fx-background-image: url("../images/wins/bahar.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 180 180;
+}
+
+.LastWinResultLabel:andarFirstWin {
+    -fx-background-image: url("../images/wins/andar.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 180 180;
+}
+.LastWinResultLabel:baharSecondWin {
+    -fx-background-image: url("../images/wins/bahar.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 180 180;
+}
+
+.LastWinResultLabel:andarSecondWin {
     -fx-background-image: url("../images/wins/andar.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;

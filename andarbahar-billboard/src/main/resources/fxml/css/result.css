@@ -15,7 +15,7 @@
     -fx-background-size: 180 180;
     -fx-scale-x: 1.5; -fx-scale-y: 1.5;
 }
-.LastWinResultLabel:bankerWin {
+.LastWinResultLabel:baharWin {
     -fx-background-image: url("../images/wins/bahar.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
@@ -23,7 +23,37 @@
     -fx-scale-x: 1.5; -fx-scale-y: 1.5;
 }
 
-.LastWinResultLabel:playerWin {
+.LastWinResultLabel:andarWin {
+    -fx-background-image: url("../images/wins/andar.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 180 180;
+    -fx-scale-x: 1.5; -fx-scale-y: 1.5;
+}
+.LastWinResultLabel:baharFirstWin {
+    -fx-background-image: url("../images/wins/bahar.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 180 180;
+    -fx-scale-x: 1.5; -fx-scale-y: 1.5;
+}
+
+.LastWinResultLabel:andarFirstWin {
+    -fx-background-image: url("../images/wins/andar.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 180 180;
+    -fx-scale-x: 1.5; -fx-scale-y: 1.5;
+}
+.LastWinResultLabel:baharSecondWin {
+    -fx-background-image: url("../images/wins/bahar.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 180 180;
+    -fx-scale-x: 1.5; -fx-scale-y: 1.5;
+}
+
+.LastWinResultLabel:andarSecondWin {
     -fx-background-image: url("../images/wins/andar.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;

@@ -84,6 +84,8 @@ public class BeadRoadTilePane extends TilePane {
     private boolean isCurrentWinRed() {
         switch (((AndarBaharBeadRoadLabel) getChildren().get(getPosition())).getResult()) {
             case BANKER_WIN:
+            case BANKER_WIN_FIRST:
+            case BANKER_WIN_SECOND:
                 return true;
             default:
                 return false;
@@ -93,6 +95,8 @@ public class BeadRoadTilePane extends TilePane {
     private boolean isCurrentWinBlue() {
         switch (((AndarBaharBeadRoadLabel) getChildren().get(getPosition())).getResult()) {
             case PLAYER_WIN:
+            case PLAYER_WIN_FIRST:
+            case PLAYER_WIN_SECOND:
                 return true;
             default:
                 return false;
@@ -136,16 +140,6 @@ public class BeadRoadTilePane extends TilePane {
         }
 
     }
-
-//    private void MovePostionBack() {
-//        if (row == 0) {
-//            column--;
-//            row = getPrefRows() - 1;
-//        } else {
-//            row--;
-//        }
-//
-//    }
 
 
     public void RemoveElement() {
@@ -211,15 +205,6 @@ public class BeadRoadTilePane extends TilePane {
         this.column = 0;
         this.row = -1;
     }
-
-//    public ArrayList<AndarBaharBeadRoadResult> getElements() {
-//        ArrayList<AndarBaharBeadRoadResult> list = new ArrayList<AndarBaharBeadRoadResult>();
-//        getChildren().stream().map(t -> ((AndarBaharBeadRoadLabel) t).getResult()).forEach(t -> {
-//            if (t != AndarBaharBeadRoadResult.EMPTY) list.add(t);
-//        });
-//        return list;
-//    }
-
 
     public void Reset() {
         getChildren().stream().map(t -> (AndarBaharBeadRoadLabel) t).forEach(t -> {

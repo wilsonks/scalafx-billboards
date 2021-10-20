@@ -31,18 +31,54 @@
 	-fx-background-repeat: no-repeat;
 }
 
-.BigRoadLabel:bankerWin {
+
+.BigRoadLabel:baharWin {
     -fx-padding:2 2 2 2;
-	-fx-background-image: url("../images/big-road/bahar.png");
+	-fx-background-image: url("../images/big-road/bahar-win.png");
 	-fx-background-position: center;
 	-fx-background-repeat: no-repeat;
 	-fx-background-size: 51;
 }
 
 
-.BigRoadLabel:playerWin {
+.BigRoadLabel:andarWin {
     -fx-padding:2 2 2 2;
-	-fx-background-image: url("../images/big-road/andar.png");
+	-fx-background-image: url("../images/big-road/andar-win.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: 51;
+}
+
+
+.BigRoadLabel:baharFirstWin {
+    -fx-padding:2 2 2 2;
+	-fx-background-image: url("../images/big-road/bahar-first-win.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: 51;
+}
+
+
+.BigRoadLabel:andarFirstWin {
+    -fx-padding:2 2 2 2;
+	-fx-background-image: url("../images/big-road/andar-first-win.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: 51;
+}
+
+.BigRoadLabel:baharSecondWin {
+    -fx-padding:2 2 2 2;
+	-fx-background-image: url("../images/big-road/bahar-second-win.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: 51;
+}
+
+
+.BigRoadLabel:andarSecondWin {
+    -fx-padding:2 2 2 2;
+	-fx-background-image: url("../images/big-road/andar-second-win.png");
 	-fx-background-position: center;
 	-fx-background-repeat: no-repeat;
 	-fx-background-size: 51;

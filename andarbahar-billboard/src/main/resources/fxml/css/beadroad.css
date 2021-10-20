@@ -24,23 +24,56 @@
 
 .BeadRoadLabel {
     -fx-background-color:white;
-/*    -fx-padding:1,1,1,1;*/
     -fx-pref-height: 59;
     -fx-pref-width: 56;
 }
 
-.BeadRoadLabel:bankerWin {
+.BeadRoadLabel:empty {
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 56 56;
+}
+
+.BeadRoadLabel:baharWin {
     -fx-background-image: url("../images/bead-road/a.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 56 56;
+    -fx-background-size: 56 56;
 }
 
-.BeadRoadLabel:playerWin {
+.BeadRoadLabel:andarWin {
     -fx-background-image: url("../images/bead-road/e.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 56 56;
+    -fx-background-size: 56 56;
+}
+
+.BeadRoadLabel:baharFirstWin {
+    -fx-background-image: url("../images/bead-road/a.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 56 56;
+}
+
+.BeadRoadLabel:andarFirstWin {
+    -fx-background-image: url("../images/bead-road/e.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 56 56;
+}
+
+.BeadRoadLabel:baharSecondWin {
+    -fx-background-image: url("../images/bead-road/a.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 56 56;
+}
+
+.BeadRoadLabel:andarSecondWin {
+    -fx-background-image: url("../images/bead-road/e.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 56 56;
 }
 
 

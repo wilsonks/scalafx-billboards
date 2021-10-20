@@ -40,8 +40,13 @@ class AppController(
   val baharFirstCount: Label,
   val andarSecondCount: Label,
   val baharSecondCount: Label,
+
   val andarTrend: Label,
   val baharTrend: Label,
+  val andarFirstTrend: Label,
+  val baharFirstTrend: Label,
+  val andarSecondTrend: Label,
+  val baharSecondTrend: Label,
 
   val menuPane: BorderPane,
   val promoPane: Pane,
@@ -284,11 +289,11 @@ class AppController(
           val andarTrendValue = 100 - baharTrendValue
 
           baharFirstCount.setText(String.valueOf(t2.intValue()))
-//          baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
-//          andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+          baharFirstTrend.setText(String.valueOf(baharTrendValue).concat("%"))
+          andarFirstTrend.setText(String.valueOf(andarTrendValue).concat("%"))
         } else {
           baharFirstCount.setText("0")
-//          baharTrend.setText("0%")
+          baharFirstTrend.setText("0%")
         }
       }
     })
@@ -303,12 +308,12 @@ class AppController(
           val baharTrendValue = 100 - andarTrendValue
 
           andarFirstCount.setText(String.valueOf(t2.intValue()))
-//          baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
-//          andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+          baharFirstTrend.setText(String.valueOf(baharTrendValue).concat("%"))
+          andarFirstTrend.setText(String.valueOf(andarTrendValue).concat("%"))
 
         } else {
           andarFirstCount.setText("0")
-//          andarTrend.setText("0%")
+          andarFirstTrend.setText("0%")
         }
       }
     })
@@ -323,11 +328,11 @@ class AppController(
           val andarTrendValue = 100 - baharTrendValue
 
           baharSecondCount.setText(String.valueOf(t2.intValue()))
-//          baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
-//          andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+          baharSecondTrend.setText(String.valueOf(baharTrendValue).concat("%"))
+          andarSecondTrend.setText(String.valueOf(andarTrendValue).concat("%"))
         } else {
           baharSecondCount.setText("0")
-//          baharTrend.setText("0%")
+          baharSecondTrend.setText("0%")
         }
       }
     })
@@ -342,12 +347,12 @@ class AppController(
           val baharTrendValue = 100 - andarTrendValue
 
           andarSecondCount.setText(String.valueOf(t2.intValue()))
-//          baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
-//          andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+          baharSecondTrend.setText(String.valueOf(baharTrendValue).concat("%"))
+          andarSecondTrend.setText(String.valueOf(andarTrendValue).concat("%"))
 
         } else {
           andarSecondCount.setText("0")
-//          andarTrend.setText("0%")
+          andarSecondTrend.setText("0%")
         }
       }
     })

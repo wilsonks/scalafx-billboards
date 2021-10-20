@@ -40,6 +40,39 @@ public class BeadRoadTilePane extends TilePane {
     }
 
 
+    /*
+        Adding 1st and 2nd car win support
+     */
+    private IntegerProperty playerWinFirstCount = new SimpleIntegerProperty(0);
+
+    public IntegerProperty getPlayerWinFirstCount() {
+        return playerWinFirstCount;
+    }
+
+
+    private IntegerProperty bankerWinFirstCount = new SimpleIntegerProperty(0);
+
+    public IntegerProperty getBankerWinFirstCount() {
+        return bankerWinFirstCount;
+    }
+
+    private IntegerProperty playerWinSecondCount = new SimpleIntegerProperty(0);
+
+    public IntegerProperty getPlayerWinSecondCount() {
+        return playerWinSecondCount;
+    }
+
+
+    private IntegerProperty bankerWinSecondCount = new SimpleIntegerProperty(0);
+
+    public IntegerProperty getBankerWinSecondCount() {
+        return bankerWinSecondCount;
+    }
+
+    /*
+        End of Adding 1st and 2nd car win support
+     */
+
     private ListProperty<AndarBaharBeadRoadResult> beadRoadList = new SimpleListProperty<AndarBaharBeadRoadResult>(FXCollections.observableList(new ArrayList<AndarBaharBeadRoadResult>()));
     public ListProperty<AndarBaharBeadRoadResult> getBeadRoadListProperty() {
         return beadRoadList;
@@ -75,6 +108,18 @@ public class BeadRoadTilePane extends TilePane {
                 break;
             case PLAYER_WIN:
                 playerWinCount.setValue(playerWinCount.getValue() + 1);
+                break;
+            case BANKER_WIN_FIRST:
+                bankerWinFirstCount.setValue(bankerWinFirstCount.getValue() + 1);
+                break;
+            case PLAYER_WIN_FIRST:
+                playerWinFirstCount.setValue(playerWinFirstCount.getValue() + 1);
+                break;
+            case BANKER_WIN_SECOND:
+                bankerWinSecondCount.setValue(bankerWinSecondCount.getValue() + 1);
+                break;
+            case PLAYER_WIN_SECOND:
+                playerWinSecondCount.setValue(playerWinSecondCount.getValue() + 1);
                 break;
             default:
                 break;
@@ -112,6 +157,22 @@ public class BeadRoadTilePane extends TilePane {
 
             case PLAYER_WIN:
                 playerWinCount.setValue(playerWinCount.getValue() - 1);
+                break;
+
+            case BANKER_WIN_FIRST:
+                bankerWinFirstCount.setValue(bankerWinFirstCount.getValue() - 1);
+                break;
+
+            case PLAYER_WIN_FIRST:
+                playerWinFirstCount.setValue(playerWinFirstCount.getValue() - 1);
+                break;
+
+            case BANKER_WIN_SECOND:
+                bankerWinSecondCount.setValue(bankerWinSecondCount.getValue() - 1);
+                break;
+
+            case PLAYER_WIN_SECOND:
+                playerWinSecondCount.setValue(playerWinSecondCount.getValue() - 1);
                 break;
 
             default:
@@ -184,7 +245,7 @@ public class BeadRoadTilePane extends TilePane {
         if (isCurrentWinRed()) return "bWin";
         else if (isCurrentWinBlue()) return "pWin";
         else {
-            return "tWin";
+            return "bWin";
         }
     }
 
@@ -213,6 +274,10 @@ public class BeadRoadTilePane extends TilePane {
         beadRoadList.clear();
         bankerWinCount.setValue(0);
         playerWinCount.setValue(0);
+        bankerWinFirstCount.setValue(0);
+        playerWinFirstCount.setValue(0);
+        bankerWinSecondCount.setValue(0);
+        playerWinSecondCount.setValue(0);
         count.setValue(0);
         column = 0;
         row = -1;

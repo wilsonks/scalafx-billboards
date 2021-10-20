@@ -270,6 +270,86 @@ class AppController(
       }
     })
 
+
+  beadRoad.getBankerWinFirstCount
+    .addListener(new ChangeListener[Number] {
+      override def changed(observableValue: ObservableValue[_ <: Number], t1: Number, t2: Number): Unit = {
+        if (t2.intValue() > 0) {
+          lastWinUpdates()
+          val baharTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarTrendValue = 100 - baharTrendValue
+
+//          baharCount.setText(String.valueOf(t2.intValue()))
+//          baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
+//          andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+        } else {
+//          baharCount.setText("")
+//          baharTrend.setText("0%")
+        }
+      }
+    })
+
+  beadRoad.getPlayerWinFirstCount
+    .addListener(new ChangeListener[Number] {
+      override def changed(observableValue: ObservableValue[_ <: Number], t1: Number, t2: Number): Unit = {
+        if (t2.intValue() > 0) {
+          lastWinUpdates()
+
+          val andarTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val baharTrendValue = 100 - andarTrendValue
+
+//          andarCount.setText(String.valueOf(t2.intValue()))
+//          baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
+//          andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+
+        } else {
+//          andarCount.setText("")
+//          andarTrend.setText("0%")
+        }
+      }
+    })
+
+
+  beadRoad.getBankerWinSecondCount
+    .addListener(new ChangeListener[Number] {
+      override def changed(observableValue: ObservableValue[_ <: Number], t1: Number, t2: Number): Unit = {
+        if (t2.intValue() > 0) {
+          lastWinUpdates()
+          val baharTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarTrendValue = 100 - baharTrendValue
+
+//          baharCount.setText(String.valueOf(t2.intValue()))
+//          baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
+//          andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+        } else {
+//          baharCount.setText("")
+//          baharTrend.setText("0%")
+        }
+      }
+    })
+
+  beadRoad.getPlayerWinSecondCount
+    .addListener(new ChangeListener[Number] {
+      override def changed(observableValue: ObservableValue[_ <: Number], t1: Number, t2: Number): Unit = {
+        if (t2.intValue() > 0) {
+          lastWinUpdates()
+
+          val andarTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val baharTrendValue = 100 - andarTrendValue
+
+//          andarCount.setText(String.valueOf(t2.intValue()))
+//          baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
+//          andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+
+        } else {
+//          andarCount.setText("")
+//          andarTrend.setText("0%")
+        }
+      }
+    })
+
+
+
   theme.textProperty().addListener(new ChangeListener[String] {
     override def changed(observableValue: ObservableValue[_ <: String], t1: String, t2: String): Unit = {
       t2 match {
@@ -385,7 +465,6 @@ class AppController(
           case AndarBaharBeadRoadResult.CLEAR => beadRoad.Reset()
           case _ => {
             beadRoad.AddElement(result)
-            println(s"Adding ${result}")
           }
         }
         model.saveData()

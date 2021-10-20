@@ -36,6 +36,8 @@ public class BigRoadTilePane extends TilePane {
     private boolean isCurrentWinRed() {
         switch (((AndarBaharBigRoadLabel) super.getChildren().get(getCurrentPosition())).getResult()) {
             case BANKER_WIN:
+            case BANKER_WIN_FIRST:
+            case BANKER_WIN_SECOND:
                 return true;
             default:
                 return false;
@@ -45,6 +47,8 @@ public class BigRoadTilePane extends TilePane {
     private boolean isCurrentWinBlue() {
         switch (((AndarBaharBigRoadLabel) super.getChildren().get(getCurrentPosition())).getResult()) {
             case PLAYER_WIN:
+            case PLAYER_WIN_FIRST:
+            case PLAYER_WIN_SECOND:
                 return true;
             default:
                 return false;
@@ -54,6 +58,8 @@ public class BigRoadTilePane extends TilePane {
     private boolean isNextWinRed(AndarBaharBeadRoadResult win) {
         switch (win) {
             case BANKER_WIN:
+            case BANKER_WIN_FIRST:
+            case BANKER_WIN_SECOND:
                 return true;
             default:
                 return false;
@@ -63,6 +69,8 @@ public class BigRoadTilePane extends TilePane {
     private boolean isNextWinBlue(AndarBaharBeadRoadResult win) {
         switch (win) {
             case PLAYER_WIN:
+            case PLAYER_WIN_FIRST:
+            case PLAYER_WIN_SECOND:
                 return true;
             default:
                 return false;
@@ -170,6 +178,22 @@ public class BigRoadTilePane extends TilePane {
 
             case PLAYER_WIN:
                 ((AndarBaharBigRoadLabel) super.getChildren().get(getCurrentPosition())).setResult(AndarBaharBigRoadResult.PLAYER_WIN);
+                break;
+
+            case BANKER_WIN_FIRST:
+                ((AndarBaharBigRoadLabel) super.getChildren().get(getCurrentPosition())).setResult(AndarBaharBigRoadResult.BANKER_WIN_FIRST);
+                break;
+
+            case PLAYER_WIN_FIRST:
+                ((AndarBaharBigRoadLabel) super.getChildren().get(getCurrentPosition())).setResult(AndarBaharBigRoadResult.PLAYER_WIN_FIRST);
+                break;
+
+            case BANKER_WIN_SECOND:
+                ((AndarBaharBigRoadLabel) super.getChildren().get(getCurrentPosition())).setResult(AndarBaharBigRoadResult.BANKER_WIN_SECOND);
+                break;
+
+            case PLAYER_WIN_SECOND:
+                ((AndarBaharBigRoadLabel) super.getChildren().get(getCurrentPosition())).setResult(AndarBaharBigRoadResult.PLAYER_WIN_SECOND);
                 break;
 
 

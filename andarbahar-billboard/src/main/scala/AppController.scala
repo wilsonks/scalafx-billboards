@@ -36,6 +36,10 @@ class AppController(
 
   val andarCount: Label,
   val baharCount: Label,
+  val andarFirstCount: Label,
+  val baharFirstCount: Label,
+  val andarSecondCount: Label,
+  val baharSecondCount: Label,
   val andarTrend: Label,
   val baharTrend: Label,
 
@@ -244,7 +248,7 @@ class AppController(
           baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
           andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
         } else {
-          baharCount.setText("")
+          baharCount.setText("0")
           baharTrend.setText("0%")
         }
       }
@@ -264,7 +268,7 @@ class AppController(
           andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
 
         } else {
-          andarCount.setText("")
+          andarCount.setText("0")
           andarTrend.setText("0%")
         }
       }
@@ -279,11 +283,11 @@ class AppController(
           val baharTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
           val andarTrendValue = 100 - baharTrendValue
 
-//          baharCount.setText(String.valueOf(t2.intValue()))
+          baharFirstCount.setText(String.valueOf(t2.intValue()))
 //          baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
 //          andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
         } else {
-//          baharCount.setText("")
+          baharFirstCount.setText("0")
 //          baharTrend.setText("0%")
         }
       }
@@ -298,12 +302,12 @@ class AppController(
           val andarTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
           val baharTrendValue = 100 - andarTrendValue
 
-//          andarCount.setText(String.valueOf(t2.intValue()))
+          andarFirstCount.setText(String.valueOf(t2.intValue()))
 //          baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
 //          andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
 
         } else {
-//          andarCount.setText("")
+          andarFirstCount.setText("0")
 //          andarTrend.setText("0%")
         }
       }
@@ -318,11 +322,11 @@ class AppController(
           val baharTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
           val andarTrendValue = 100 - baharTrendValue
 
-//          baharCount.setText(String.valueOf(t2.intValue()))
+          baharSecondCount.setText(String.valueOf(t2.intValue()))
 //          baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
 //          andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
         } else {
-//          baharCount.setText("")
+          baharSecondCount.setText("0")
 //          baharTrend.setText("0%")
         }
       }
@@ -337,12 +341,12 @@ class AppController(
           val andarTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
           val baharTrendValue = 100 - andarTrendValue
 
-//          andarCount.setText(String.valueOf(t2.intValue()))
+          andarSecondCount.setText(String.valueOf(t2.intValue()))
 //          baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
 //          andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
 
         } else {
-//          andarCount.setText("")
+          andarSecondCount.setText("0")
 //          andarTrend.setText("0%")
         }
       }

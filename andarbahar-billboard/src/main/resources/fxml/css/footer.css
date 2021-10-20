@@ -13,8 +13,54 @@
 	-fx-font-size: 37;
 }
 
-.legendTexts {
+.legendHeader {
+    -fx-font-family: 'Barlow';
+	-fx-font-size: 40;
+	-fx-text-fill: white;
+	-fx-text-alignment: center;
+    -fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 1 , 0 );
+}
+
+.legendRow {
     -fx-font-family: 'Barlow';
 	-fx-font-size: 37;
 }
 
+
+.legendBaharTexts {
+    -fx-background-radius:10;
+    -fx-background-color: #fce47f;
+    -fx-font-family: 'Barlow';
+	-fx-font-size: 20;
+	-fx-text-fill: #010fc6;
+}
+
+.legendAndarTexts {
+    -fx-background-radius:10;
+    -fx-background-color: #fce47f;
+    -fx-font-family: 'Barlow';
+	-fx-font-size: 20;
+	-fx-text-fill: #bc0502;
+}
+
+.statsRow {
+    -fx-font-family: 'Barlow';
+	-fx-font-size: 37;
+}
+
+
+.statsBaharTexts {
+    -fx-background-radius:10;
+    -fx-background-color: #fce47f;
+    -fx-font-family: 'Barlow';
+	-fx-font-size: 28;
+	-fx-text-fill: #010fc6;
+}
+
+.statsAndarTexts {
+    -fx-background-radius:10;
+    -fx-background-color: #fce47f;
+    -fx-font-family: 'Barlow';
+	-fx-font-size: 28;
+	-fx-text-fill: #bc0502;
+}

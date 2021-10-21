@@ -48,6 +48,23 @@ class AppController(
   val andarSecondTrend: Label,
   val baharSecondTrend: Label,
 
+  val limits: Label,
+  val trends: Label,
+  val last: Label,
+  val stats: Label,
+  val symbols: Label,
+  val min: Label,
+  val max: Label,
+  val firstBet: Label,
+  val secondBet: Label,
+                   
+  val symbolsA: Label,
+  val symbolsB: Label,
+  val symbolsA1: Label,
+  val symbolsB1: Label,
+  val symbolsA2: Label,
+  val symbolsB2: Label,
+
   val menuPane: BorderPane,
   val promoPane: Pane,
   val promoMediaView: MediaView,
@@ -178,17 +195,53 @@ class AppController(
 
   def lastWinUpdates(): Unit = {
     var lastWin = beadRoad.LastWinAudio()
+
     language.textProperty().get() match {
-      case "Hindi" => lastWin = s"/sounds/Hindi/${lastWin}"
-      case "Kannada" => lastWin = s"/sounds/Kannada/${lastWin}"
-      case "Punjabi" => lastWin = s"/sounds/Punjabi/${lastWin}"
-      case _ => lastWin = s"/sounds/English/${lastWin}"
+      case "Hindi" =>
+        lastWin = s"/sounds/Hindi/${lastWin}"
+        beadRoad.LastWin() match {
+          case "bWin" => lastWinResultLabel.setText("बहार\n जीत गया")
+          case "pWin" => lastWinResultLabel.setText("आंदर\n जीत गया")
+        }
+
+      case "Kannada" =>
+        lastWin = s"/sounds/Kannada/${lastWin}"
+        beadRoad.LastWin() match {
+          case "bWin" => lastWinResultLabel.setText("ಬಹಾರ್\n ಗೆಲ್ಲುತ್ತದೆ")
+          case "pWin" => lastWinResultLabel.setText("ಅಂದರ್\n ಗೆಲ್ಲುತ್ತಾನೆ")
+        }
+
+      case "Telugu" =>
+        lastWin = s"/sounds/Telugu/${lastWin}"
+        beadRoad.LastWin() match {
+          case "bWin" => lastWinResultLabel.setText("బహార్\n గెలిచింది")
+          case "pWin" => lastWinResultLabel.setText("అందర్\n గెలిచాడు")
+        }
+
+      case "Tamil" =>
+        lastWin = s"/sounds/Tamil/${lastWin}"
+        beadRoad.LastWin() match {
+          case "bWin" => lastWinResultLabel.setText("பஹார்\n வென்றது")
+          case "pWin" => lastWinResultLabel.setText("அந்தர்\n வென்றார்")
+        }
+
+      case "Punjabi" =>
+        lastWin = s"/sounds/Punjabi/${lastWin}"
+        beadRoad.LastWin() match {
+          case "bWin" => lastWinResultLabel.setText("ਬਹਾਰ\n ਜਿੱਤ ਗਿਆ")
+          case "pWin" => lastWinResultLabel.setText("ਅੰਡਰ\n ਜਿੱਤ ਗਿਆ")
+        }
+
+      case _ =>
+        lastWin = s"/sounds/English/${lastWin}"
+        lastWinResultLabel.setText(res.get.getString(beadRoad.LastWin()))
+
     }
 
     new AudioClip(getClass.getResource(lastWin).toExternalForm).play(1)
 
     lastWinResultLabel.setResult(beadRoad.LastWinResult())
-    lastWinResultLabel.setText(res.get.getString(beadRoad.LastWin()))
+
     dynamicResult.setVisible(true)
     lastWinPause.stop()
     lastWinPause.play()
@@ -246,12 +299,23 @@ class AppController(
       override def changed(observableValue: ObservableValue[_ <: Number], t1: Number, t2: Number): Unit = {
         if (t2.intValue() > 0) {
           lastWinUpdates()
+
           baharCount.setText(String.valueOf(t2.intValue()))
+
           val baharTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
-          val andarTrendValue = 100 - baharTrendValue
+          val andarTrendValue = (beadRoad.getPlayerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val baharFirstTrendValue = (beadRoad.getBankerWinFirstCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val baharSecondTrendValue = (beadRoad.getBankerWinSecondCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarFirstTrendValue = (beadRoad.getPlayerWinFirstCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarSecondTrendValue = (beadRoad.getPlayerWinSecondCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
 
           baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
           andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+          baharFirstTrend.setText(String.valueOf(baharFirstTrendValue).concat("%"))
+          andarFirstTrend.setText(String.valueOf(andarFirstTrendValue).concat("%"))
+          baharSecondTrend.setText(String.valueOf(baharSecondTrendValue).concat("%"))
+          andarSecondTrend.setText(String.valueOf(andarSecondTrendValue).concat("%"))
+
         } else {
           baharCount.setText("0")
           baharTrend.setText("0%")
@@ -264,13 +328,22 @@ class AppController(
       override def changed(observableValue: ObservableValue[_ <: Number], t1: Number, t2: Number): Unit = {
         if (t2.intValue() > 0) {
           lastWinUpdates()
+
           andarCount.setText(String.valueOf(t2.intValue()))
 
+          val baharTrendValue = (beadRoad.getBankerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
           val andarTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
-          val baharTrendValue = 100 - andarTrendValue
+          val baharFirstTrendValue = (beadRoad.getBankerWinFirstCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val baharSecondTrendValue = (beadRoad.getBankerWinSecondCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarFirstTrendValue = (beadRoad.getPlayerWinFirstCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarSecondTrendValue = (beadRoad.getPlayerWinSecondCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
 
           baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
           andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+          baharFirstTrend.setText(String.valueOf(baharFirstTrendValue).concat("%"))
+          andarFirstTrend.setText(String.valueOf(andarFirstTrendValue).concat("%"))
+          baharSecondTrend.setText(String.valueOf(baharSecondTrendValue).concat("%"))
+          andarSecondTrend.setText(String.valueOf(andarSecondTrendValue).concat("%"))
 
         } else {
           andarCount.setText("0")
@@ -285,12 +358,23 @@ class AppController(
       override def changed(observableValue: ObservableValue[_ <: Number], t1: Number, t2: Number): Unit = {
         if (t2.intValue() > 0) {
           lastWinUpdates()
-          val baharTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
-          val andarTrendValue = 100 - baharTrendValue
 
           baharFirstCount.setText(String.valueOf(t2.intValue()))
-          baharFirstTrend.setText(String.valueOf(baharTrendValue).concat("%"))
-          andarFirstTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+
+          val baharTrendValue = (beadRoad.getBankerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarTrendValue = (beadRoad.getPlayerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val baharFirstTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val baharSecondTrendValue = (beadRoad.getBankerWinSecondCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarFirstTrendValue = (beadRoad.getPlayerWinFirstCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarSecondTrendValue = (beadRoad.getPlayerWinSecondCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+
+          baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
+          andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+          baharFirstTrend.setText(String.valueOf(baharFirstTrendValue).concat("%"))
+          andarFirstTrend.setText(String.valueOf(andarFirstTrendValue).concat("%"))
+          baharSecondTrend.setText(String.valueOf(baharSecondTrendValue).concat("%"))
+          andarSecondTrend.setText(String.valueOf(andarSecondTrendValue).concat("%"))
+
         } else {
           baharFirstCount.setText("0")
           baharFirstTrend.setText("0%")
@@ -304,12 +388,22 @@ class AppController(
         if (t2.intValue() > 0) {
           lastWinUpdates()
 
-          val andarTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
-          val baharTrendValue = 100 - andarTrendValue
-
           andarFirstCount.setText(String.valueOf(t2.intValue()))
-          baharFirstTrend.setText(String.valueOf(baharTrendValue).concat("%"))
-          andarFirstTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+
+
+          val baharTrendValue = (beadRoad.getBankerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarTrendValue = (beadRoad.getPlayerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val baharFirstTrendValue = (beadRoad.getBankerWinFirstCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val baharSecondTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarFirstTrendValue = (beadRoad.getPlayerWinFirstCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarSecondTrendValue = (beadRoad.getPlayerWinSecondCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+
+          baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
+          andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+          baharFirstTrend.setText(String.valueOf(baharFirstTrendValue).concat("%"))
+          andarFirstTrend.setText(String.valueOf(andarFirstTrendValue).concat("%"))
+          baharSecondTrend.setText(String.valueOf(baharSecondTrendValue).concat("%"))
+          andarSecondTrend.setText(String.valueOf(andarSecondTrendValue).concat("%"))
 
         } else {
           andarFirstCount.setText("0")
@@ -324,12 +418,24 @@ class AppController(
       override def changed(observableValue: ObservableValue[_ <: Number], t1: Number, t2: Number): Unit = {
         if (t2.intValue() > 0) {
           lastWinUpdates()
-          val baharTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
-          val andarTrendValue = 100 - baharTrendValue
 
           baharSecondCount.setText(String.valueOf(t2.intValue()))
-          baharSecondTrend.setText(String.valueOf(baharTrendValue).concat("%"))
-          andarSecondTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+
+
+          val baharTrendValue = (beadRoad.getBankerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarTrendValue = (beadRoad.getPlayerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val baharFirstTrendValue = (beadRoad.getBankerWinFirstCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val baharSecondTrendValue = (beadRoad.getBankerWinSecondCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarFirstTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarSecondTrendValue = (beadRoad.getPlayerWinSecondCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+
+          baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
+          andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+          baharFirstTrend.setText(String.valueOf(baharFirstTrendValue).concat("%"))
+          andarFirstTrend.setText(String.valueOf(andarFirstTrendValue).concat("%"))
+          baharSecondTrend.setText(String.valueOf(baharSecondTrendValue).concat("%"))
+          andarSecondTrend.setText(String.valueOf(andarSecondTrendValue).concat("%"))
+
         } else {
           baharSecondCount.setText("0")
           baharSecondTrend.setText("0%")
@@ -343,12 +449,22 @@ class AppController(
         if (t2.intValue() > 0) {
           lastWinUpdates()
 
-          val andarTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
-          val baharTrendValue = 100 - andarTrendValue
-
           andarSecondCount.setText(String.valueOf(t2.intValue()))
-          baharSecondTrend.setText(String.valueOf(baharTrendValue).concat("%"))
-          andarSecondTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+
+
+          val baharTrendValue = (beadRoad.getBankerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarTrendValue = (beadRoad.getPlayerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val baharFirstTrendValue = (beadRoad.getBankerWinFirstCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val baharSecondTrendValue = (beadRoad.getBankerWinSecondCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarFirstTrendValue = (beadRoad.getPlayerWinFirstCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+          val andarSecondTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
+
+          baharTrend.setText(String.valueOf(baharTrendValue).concat("%"))
+          andarTrend.setText(String.valueOf(andarTrendValue).concat("%"))
+          baharFirstTrend.setText(String.valueOf(baharFirstTrendValue).concat("%"))
+          andarFirstTrend.setText(String.valueOf(andarFirstTrendValue).concat("%"))
+          baharSecondTrend.setText(String.valueOf(baharSecondTrendValue).concat("%"))
+          andarSecondTrend.setText(String.valueOf(andarSecondTrendValue).concat("%"))
 
         } else {
           andarSecondCount.setText("0")
@@ -397,17 +513,161 @@ class AppController(
     override def changed(observableValue: ObservableValue[_ <: String], t1: String, t2: String): Unit = {
       t2 match {
         case "English" => {
+          limits.setText("LIMITS")
+          trends.setText("TRENDS")
+          last.setText("LAST WIN")
+          stats.setText("STATS")
+          symbols.setText("SYMBOLS")
+
+          min.setText("Min")
+          max.setText("Max")
+          firstBet.setText("1st Bet")
+          secondBet.setText("2nd Bet")
+
+          symbolsA.setText("Andar Win")
+          symbolsB.setText("Bahar Win")
+          symbolsA1.setText("1st Card Win")
+          symbolsB1.setText("1st Card Win")
+          symbolsA2.setText("2nd Card Win")
+          symbolsB2.setText("2nd Card Win")
+
+          lastGame.setText(res.get.getString(beadRoad.LastWin()))
 
         }
+
+
+
         case "Hindi" => {
+          limits.setText("सीमाएं")
+          trends.setText("प्रवृत्तियों")
+          last.setText("पिछली जीत")
+          stats.setText("अंक-विवरन")
+          symbols.setText("प्रतीक")
+
+          min.setText("न्यूनतम")
+          max.setText("अधिकतम")
+          firstBet.setText("पहली शर्त")
+          secondBet.setText("दूसरा दांव")
+
+
+          symbolsA.setText("अंदर जीत")
+          symbolsB.setText("बहार जीत")
+          symbolsA1.setText("पहला कार्ड जीत")
+          symbolsB1.setText("पहला कार्ड जीत")
+          symbolsA2.setText("दूसरा कार्ड जीत")
+          symbolsB2.setText("दूसरा कार्ड जीत")
+
+          beadRoad.LastWin() match {
+            case "bWin" => lastGame.setText("बहार\n जीत गया")
+            case "pWin" => lastGame.setText("आंदर\n जीत गया")
+          }
 
         }
         case "Punjabi" => {
+          limits.setText("ਲਿਮਿਟਸ")
+          trends.setText("ਰੁਝਾਨ")
+          last.setText("ਪਿਛਲੀ ਜਿੱਤ")
+          stats.setText("ਅੰਕੜੇ")
+          symbols.setText("ਸਿੰਬਲਸ")
+
+          min.setText("ਘੱਟੋ ਘੱਟ")
+          max.setText("ਅਧਿਕਤਮ")
+          firstBet.setText("ਪਹਿਲੀ ਬਾਜ਼ੀ")
+          secondBet.setText("2 ਵੀਂ ਬਾਜ਼ੀ")
+
+
+          symbolsA.setText("ਅੰਡਰ ਜਿੱਤ")
+          symbolsB.setText("ਬਹਾਰ ਜੀਤ")
+          symbolsA1.setText("ਪਹਿਲਾ ਕਾਰਡ ਜਿੱਤਿਆ")
+          symbolsB1.setText("ਪਹਿਲਾ ਕਾਰਡ ਜਿੱਤਿਆ")
+          symbolsA2.setText("ਦੂਜਾ ਕਾਰਡ ਜਿੱਤ")
+          symbolsB2.setText("ਦੂਜਾ ਕਾਰਡ ਜਿੱਤ")
+
+          beadRoad.LastWin() match {
+            case "bWin" => lastGame.setText("ਬਹਾਰ\n ਜਿੱਤ ਗਿਆ")
+            case "pWin" => lastGame.setText("ਅੰਡਰ\n ਜਿੱਤ ਗਿਆ")
+          }
 
         }
         case "Kannada" => {
+          limits.setText("ಮಿತಿಗಳು")
+          trends.setText("ಟ್ರೆಂಡ್ಸ್")
+          last.setText("ಕೊನೆಯ ಗೆಲುವು")
+          stats.setText("ಅಂಕಿಅಂಶಗಳು")
+          symbols.setText("ಸಿಂಬಲ್ಸ್")
+
+          min.setText("ಕನಿಷ್ಠ")
+          max.setText("ಗರಿಷ್ಠ")
+          firstBet.setText("1 ನೇ ಪಂತ")
+          secondBet.setText("2 ನೇ ಪಂತ")
+
+
+          symbolsA.setText("ಅಂದರ್ ಗೆಲ್ಲುತ್ತಾನೆ")
+          symbolsB.setText("ಬಹಾರ್ ಗೆಲ್ಲುತ್ತದೆ")
+          symbolsA1.setText("1 ನೇ ಕಾರ್ಡ್ ಗೆಲುವು")
+          symbolsB1.setText("1 ನೇ ಕಾರ್ಡ್ ಗೆಲುವು")
+          symbolsA2.setText("2 ನೇ ಕಾರ್ಡ್ ಗೆಲುವು")
+          symbolsB2.setText("2 ನೇ ಕಾರ್ಡ್ ಗೆಲುವು")
+
+          beadRoad.LastWin() match {
+            case "bWin" => lastGame.setText("ಬಹಾರ್\n ಗೆಲ್ಲುತ್ತದೆ")
+            case "pWin" => lastGame.setText("ಅಂದರ್\n ಗೆಲ್ಲುತ್ತಾನೆ")
+          }
 
         }
+
+        case "Telugu" => {
+          limits.setText("పరిమితులు")
+          trends.setText("పోకడలు")
+          last.setText("చివరి విజయం")
+          stats.setText("గణాంకాలు")
+          symbols.setText("చిహ్నాలు")
+
+          min.setText("కనీస")
+          max.setText("గరిష్టత")
+          firstBet.setText("1 వ పందెం")
+          secondBet.setText("2 వ పందెం")
+
+          symbolsA.setText("అందర్ విజయం")
+          symbolsB.setText("బహార్ విజయం")
+          symbolsA1.setText("మొదటి కార్డు విజయం")
+          symbolsB1.setText("మొదటి కార్డు విజయం")
+          symbolsA2.setText("రెండవ కార్డు విజయం")
+          symbolsB2.setText("రెండవ కార్డు విజయం")
+
+          beadRoad.LastWin() match {
+            case "bWin" => lastGame.setText("బహార్\n గెలిచింది")
+            case "pWin" => lastGame.setText("అందర్\n గెలిచాడు")
+          }
+
+        }
+
+        case "Tamil" => {
+          limits.setText("வரம்புகள்")
+          trends.setText("போக்குகள்")
+          last.setText("கடைசி வெற்றி")
+          stats.setText("புள்ளி விவரம்")
+          symbols.setText("சின்னங்கள்")
+
+          min.setText("குறைந்தபட்ச")
+          max.setText("அதிகபட்சம்")
+          firstBet.setText("முதல் பந்தயம்")
+          secondBet.setText("இரண்டாவது பந்தயம்")
+
+          symbolsA.setText("அந்தர் வெற்றி")
+          symbolsB.setText("பஹார் வெற்றி")
+          symbolsA1.setText("முதல் அட்டை")
+          symbolsB1.setText("முதல் அட்டை")
+          symbolsA2.setText("2 வது அட்டை")
+          symbolsB2.setText("2 வது அட்டை")
+
+          beadRoad.LastWin() match {
+            case "bWin" => lastGame.setText("அந்தர்\n வெற்றி")
+            case "pWin" => lastGame.setText("பஹார்\n வெற்றி")
+          }
+
+        }
+
         case _ => {
 
         }
@@ -484,7 +744,56 @@ class AppController(
   lastWinPause.setOnFinished { e =>
     dynamicResult.setVisible(false)
     lastGame.setResult(beadRoad.LastWinResult())
-    lastGame.setText(res.get.getString(beadRoad.LastWin()))
+
+    language.textProperty().get() match {
+      case "English" => {
+        lastGame.setText(res.get.getString(beadRoad.LastWin()))
+      }
+
+      case "Hindi" => {
+        beadRoad.LastWin() match {
+          case "bWin" => lastGame.setText("बहार\n जीत गया")
+          case "pWin" => lastGame.setText("आंदर\n जीत गया")
+        }
+
+      }
+      case "Punjabi" => {
+        beadRoad.LastWin() match {
+          case "bWin" => lastGame.setText("ਬਹਾਰ\n ਜਿੱਤ ਗਿਆ")
+          case "pWin" => lastGame.setText("ਅੰਡਰ\n ਜਿੱਤ ਗਿਆ")
+        }
+
+      }
+      case "Kannada" => {
+
+        beadRoad.LastWin() match {
+          case "bWin" => lastGame.setText("ಬಹಾರ್\n ಗೆಲ್ಲುತ್ತದೆ")
+          case "pWin" => lastGame.setText("ಅಂದರ್\n ಗೆಲ್ಲುತ್ತಾನೆ")
+        }
+
+      }
+
+      case "Telugu" => {
+
+        beadRoad.LastWin() match {
+          case "bWin" => lastGame.setText("బహార్\n గెలిచింది")
+          case "pWin" => lastGame.setText("అందర్\n గెలిచాడు")
+        }
+
+      }
+
+      case "Tamil" => {
+        beadRoad.LastWin() match {
+          case "bWin" => lastGame.setText("அந்தர்\n வெற்றி")
+          case "pWin" => lastGame.setText("பஹார்\n வெற்றி")
+        }
+
+      }
+
+      case _ => {
+        lastGame.setText(res.get.getString(beadRoad.LastWin()))
+      }
+    }
   }
 
   //Load the saved results

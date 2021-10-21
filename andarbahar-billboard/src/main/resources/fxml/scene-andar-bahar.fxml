@@ -20,6 +20,8 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <StackPane fx:id="root" styleClass="Theme1" stylesheets="@css/theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppController">
@@ -150,14 +152,65 @@
                                     <Insets />
                                 </HBox.margin>
                             </ImageView>
-                            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                <image>
-                                    <Image url="@images/CasinoPrideLogo.png" />
-                                </image>
-                                <HBox.margin>
-                                    <Insets bottom="10.0" top="10.0" />
-                                </HBox.margin>
-                            </ImageView>
+                     <HBox spacing="20.0">
+                        <HBox.margin>
+                           <Insets bottom="10.0" top="10.0" />
+                        </HBox.margin>
+                        <children>
+                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@images/CasinoPrideLogo.png" />
+                                      </image>
+                                  </ImageView>
+                           <VBox alignment="CENTER_LEFT">
+                              <children>
+                                 <Label prefHeight="50.0" prefWidth="108.0" styleClass="bettingTexts" textAlignment="CENTER">
+                                    <font>
+                                       <Font name="Barlow Bold" size="31.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="1.0" endY="1.0">
+                                          <stops>
+                                             <Stop color="#b9af03" />
+                                             <Stop color="WHITE" offset="1.0" />
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                                 <HBox alignment="CENTER_RIGHT">
+                                    <children>
+                                       <Label alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="108.0" styleClass="tableId" text="FT-">
+                                          <font>
+                                             <Font name="Barlow Bold" size="35.0" />
+                                          </font>
+                                          <textFill>
+                                             <LinearGradient endX="1.0" endY="1.0">
+                                                <stops>
+                                                   <Stop color="#b9af03" />
+                                                   <Stop color="WHITE" offset="1.0" />
+                                                </stops>
+                                             </LinearGradient>
+                                          </textFill>
+                                       </Label>
+                                       <Label fx:id="tableId" prefHeight="48.0" prefWidth="133.0" styleClass="tableId" text="1234">
+                                          <font>
+                                             <Font name="Barlow Bold" size="35.0" />
+                                          </font>
+                                          <textFill>
+                                             <LinearGradient endX="1.0" endY="1.0">
+                                                <stops>
+                                                   <Stop color="#b9af03" />
+                                                   <Stop color="WHITE" offset="1.0" />
+                                                </stops>
+                                             </LinearGradient>
+                                          </textFill>
+                                       </Label>
+                                    </children>
+                                 </HBox>
+                              </children>
+                           </VBox>
+                        </children>
+                     </HBox>
                         </children>
                         <padding>
                             <Insets left="150.0" />
@@ -597,52 +650,90 @@
                                 <children>
                                     <ImageView fitHeight="310.0" pickOnBounds="true" preserveRatio="true">
                                         <image>
-                                            <Image url="@images/footer/ab-footing-pane-betting-rev1.png" />
+                                            <Image url="@images/footer/ab-footing-table-limit.png" />
                                         </image>
                                     </ImageView>
                                     <GridPane prefHeight="312.0" prefWidth="345.0">
                                         <columnConstraints>
-                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" prefWidth="134.0" />
-                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="343.0" minWidth="10.0" prefWidth="73.0" />
-                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="343.0" minWidth="10.0" prefWidth="17.0" />
-                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="343.0" minWidth="10.0" prefWidth="111.0" />
-                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="343.0" minWidth="10.0" prefWidth="47.0" />
+                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" prefWidth="132.0" />
+                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="343.0" minWidth="10.0" prefWidth="99.0" />
+                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="343.0" minWidth="10.0" prefWidth="130.0" />
+                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="343.0" minWidth="6.0" prefWidth="18.0" />
                                         </columnConstraints>
                                         <rowConstraints>
-                                            <RowConstraints maxHeight="186.0" minHeight="10.0" prefHeight="113.0" vgrow="SOMETIMES" />
-                                            <RowConstraints maxHeight="189.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
-                                            <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
-                                            <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
-                                            <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="16.0" vgrow="SOMETIMES" />
-                                            <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
-                                            <RowConstraints maxHeight="161.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                 <RowConstraints maxHeight="186.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                                            <RowConstraints maxHeight="186.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                                 <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                                            <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                                            <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                                            <RowConstraints maxHeight="161.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
                                         </rowConstraints>
                                         <children>
-                                            <Label fx:id="tableId" prefHeight="34.0" prefWidth="198.0" styleClass="bettingTexts" text="1234" textFill="#7c0707" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="1">
+                                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label fx:id="limits" alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="67.0" prefWidth="397.0" styleClass="legendHeader" stylesheets="@css/footer.css" text="LIMITS" />
+                                    </children>
+                                 </HBox>
+                                            <Label fx:id="firstBetMin" prefHeight="52.0" prefWidth="95.0" styleClass="tableLimits" text="200" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                                 <font>
                                                     <Font name="Barlow" size="37.0" />
                                                 </font>
+                                    <opaqueInsets>
+                                       <Insets />
+                                    </opaqueInsets>
+                                    <GridPane.margin>
+                                       <Insets />
+                                    </GridPane.margin>
+                                    <padding>
+                                       <Insets left="2.0" />
+                                    </padding>
                                             </Label>
-                                            <Label fx:id="firstBetMin" prefHeight="36.0" prefWidth="70.0" styleClass="bettingTexts" text="100" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                            <Label fx:id="firstBetMax" prefHeight="52.0" prefWidth="140.0" styleClass="tableLimits" text="20000" textFill="#7c0707" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                                 <font>
                                                     <Font name="Barlow" size="37.0" />
                                                 </font>
+                                    <opaqueInsets>
+                                       <Insets />
+                                    </opaqueInsets>
+                                    <GridPane.margin>
+                                       <Insets />
+                                    </GridPane.margin>
+                                    <padding>
+                                       <Insets left="2.0" />
+                                    </padding>
                                             </Label>
-                                            <Label fx:id="firstBetMax" prefHeight="36.0" prefWidth="120.0" styleClass="bettingTexts" text="2000" textFill="#7c0707" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                            <Label fx:id="secondBetMin" prefHeight="52.0" prefWidth="95.0" styleClass="tableLimits" text="200" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                                 <font>
                                                     <Font name="Barlow" size="37.0" />
                                                 </font>
+                                    <opaqueInsets>
+                                       <Insets />
+                                    </opaqueInsets>
+                                    <GridPane.margin>
+                                       <Insets />
+                                    </GridPane.margin>
+                                    <padding>
+                                       <Insets left="2.0" />
+                                    </padding>
                                             </Label>
-                                            <Label fx:id="secondBetMin" prefHeight="36.0" prefWidth="70.0" styleClass="bettingTexts" text="100" textFill="#7c0707" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                            <Label fx:id="secondBetMax" prefHeight="52.0" prefWidth="140.0" styleClass="tableLimits" text="100000" textFill="#7c0707" GridPane.columnIndex="2" GridPane.rowIndex="4">
                                                 <font>
                                                     <Font name="Barlow" size="37.0" />
                                                 </font>
+                                    <opaqueInsets>
+                                       <Insets />
+                                    </opaqueInsets>
+                                    <GridPane.margin>
+                                       <Insets />
+                                    </GridPane.margin>
+                                    <padding>
+                                       <Insets left="2.0" />
+                                    </padding>
                                             </Label>
-                                            <Label fx:id="secondBetMax" prefHeight="36.0" prefWidth="120.0" styleClass="bettingTexts" text="1000" textFill="#7c0707" GridPane.columnIndex="3" GridPane.rowIndex="5">
-                                                <font>
-                                                    <Font name="Barlow" size="37.0" />
-                                                </font>
-                                            </Label>
+                                 <Label fx:id="min" alignment="TOP_LEFT" prefHeight="56.0" prefWidth="102.0" styleClass="tableLimitsHeader" text="Min" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                 <Label fx:id="max" alignment="TOP_LEFT" prefHeight="60.0" prefWidth="111.0" styleClass="tableLimitsHeader" text="Max" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                 <Label fx:id="firstBet" alignment="TOP_RIGHT" prefHeight="43.0" prefWidth="128.0" styleClass="tableLimitsHeader" text="1st Bet" GridPane.rowIndex="3" />
+                                 <Label fx:id="secondBet" alignment="TOP_RIGHT" prefHeight="43.0" prefWidth="129.0" styleClass="tableLimitsHeader" text="2nd Bet" GridPane.rowIndex="4" />
                                         </children>
                                     </GridPane>
                                 </children>
@@ -672,7 +763,7 @@
                               <children>
                                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                                     <children>
-                                       <Label fx:id="symbols11" alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="397.0" styleClass="legendHeader" stylesheets="@css/footer.css" text="TRENDS" />
+                                       <Label fx:id="trends" alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="397.0" styleClass="legendHeader" stylesheets="@css/footer.css" text="TRENDS" />
                                     </children>
                                  </HBox>
                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="2">
@@ -782,7 +873,7 @@
                         <children>
                                   <ImageView fitHeight="310.0" pickOnBounds="true" preserveRatio="true">
                                       <image>
-                                          <Image url="@images/footer/ab-footing-pane-last-game.png" />
+                                          <Image url="@images/footer/ab-footing-last-game.png" />
                                       </image>
                                   </ImageView>
                            <GridPane>
@@ -792,12 +883,18 @@
                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="365.0" minWidth="10.0" prefWidth="95.0" />
                              </columnConstraints>
                              <rowConstraints>
-                               <RowConstraints maxHeight="112.0" minHeight="10.0" prefHeight="104.0" vgrow="SOMETIMES" />
-                               <RowConstraints maxHeight="196.0" minHeight="10.0" prefHeight="191.0" vgrow="SOMETIMES" />
+                                 <RowConstraints maxHeight="112.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                               <RowConstraints maxHeight="112.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                               <RowConstraints maxHeight="215.0" minHeight="10.0" prefHeight="215.0" vgrow="SOMETIMES" />
                                <RowConstraints maxHeight="121.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
                              </rowConstraints>
                               <children>
-                                 <AndarBaharLastWinResultLabel fx:id="lastGame" alignment="CENTER" contentDisplay="CENTER" prefHeight="175.0" prefWidth="150.0" result="EMPTY" stylesheets="@css/last.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label fx:id="last" alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="397.0" styleClass="legendHeader" stylesheets="@css/footer.css" text="LAST WIN" />
+                                    </children>
+                                 </HBox>
+                                 <AndarBaharLastWinResultLabel fx:id="lastGame" alignment="CENTER" contentDisplay="CENTER" prefHeight="175.0" prefWidth="150.0" result="EMPTY" stylesheets="@css/last.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               </children>
                            </GridPane>
                         </children>
@@ -827,7 +924,7 @@
                               <children>
                                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                                     <children>
-                                       <Label fx:id="symbols1" alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="397.0" styleClass="legendHeader" stylesheets="@css/footer.css" text="STATS" />
+                                       <Label fx:id="stats" alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="397.0" styleClass="legendHeader" stylesheets="@css/footer.css" text="STATS" />
                                     </children>
                                  </HBox>
                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="2">
@@ -963,7 +1060,7 @@
                                  </HBox>
                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="2">
                                     <children>
-                                       <Label alignment="CENTER" prefHeight="53.0" prefWidth="111.0" styleClass="legendAndarTexts" text="ANDAR 1st">
+                                       <Label fx:id="symbolsA1" alignment="CENTER" prefHeight="53.0" prefWidth="111.0" styleClass="legendAndarTexts" text="1st Card Win">
                                           <padding>
                                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                                           </padding>
@@ -980,7 +1077,7 @@
                                              <Insets left="7.0" right="5.0" />
                                           </HBox.margin>
                                        </AndarBaharBigRoadLabel>
-                                       <Label prefHeight="53.0" prefWidth="111.0" styleClass="legendBaharTexts" text="BAHAR 1st">
+                                       <Label fx:id="symbolsB1" prefHeight="53.0" prefWidth="111.0" styleClass="legendBaharTexts" text="1st Card Win">
                                           <padding>
                                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                                           </padding>
@@ -994,7 +1091,7 @@
                                  </HBox>
                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="3">
                                     <children>
-                                       <Label alignment="CENTER" prefHeight="53.0" prefWidth="111.0" styleClass="legendAndarTexts" text="ANDAR 2nd">
+                                       <Label fx:id="symbolsA2" alignment="CENTER" prefHeight="53.0" prefWidth="111.0" styleClass="legendAndarTexts" text="2nd Card Win">
                                           <padding>
                                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                                           </padding>
@@ -1011,7 +1108,7 @@
                                              <Insets left="7.0" right="5.0" />
                                           </HBox.margin>
                                        </AndarBaharBigRoadLabel>
-                                       <Label prefHeight="53.0" prefWidth="111.0" styleClass="legendBaharTexts" text="BAHAR 2nd">
+                                       <Label fx:id="symbolsB2" prefHeight="53.0" prefWidth="111.0" styleClass="legendBaharTexts" text="2nd Card Win">
                                           <padding>
                                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                                           </padding>
@@ -1025,7 +1122,7 @@
                                  </HBox>
                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="4">
                                     <children>
-                                       <Label alignment="CENTER" prefHeight="53.0" prefWidth="111.0" styleClass="legendAndarTexts" text="ANDAR Win">
+                                       <Label fx:id="symbolsA" alignment="CENTER" prefHeight="53.0" prefWidth="111.0" styleClass="legendAndarTexts" text="Andar Win">
                                           <padding>
                                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                                           </padding>
@@ -1042,7 +1139,7 @@
                                              <Insets left="7.0" right="5.0" />
                                           </HBox.margin>
                                        </AndarBaharBigRoadLabel>
-                                       <Label prefHeight="53.0" prefWidth="111.0" styleClass="legendBaharTexts" text="BAHAR Win">
+                                       <Label fx:id="symbolsB" prefHeight="53.0" prefWidth="111.0" styleClass="legendBaharTexts" text="Bahar Win">
                                           <padding>
                                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                                           </padding>
@@ -1069,8 +1166,8 @@
         </children>
     </Pane>
 
-                                                            
-                                                            <!--Last Win Result-->
+                                                                                    
+                                                                                    <!--Last Win Result-->
     <BorderPane fx:id="dynamicResult" prefHeight="200.0" prefWidth="1749.0" StackPane.alignment="CENTER">
         <center>
 <!--            Scaling of 1.5 used here to show the result -->

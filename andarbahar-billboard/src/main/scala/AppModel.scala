@@ -52,7 +52,7 @@ class AppModel {
   def beadRoadListProperty: ListProperty[AndarBaharBeadRoadResult] = beadRoadList
 
 
-  val languages: Array[String] = Array("English", "Hindi", "Punjabi", "Kannada")
+  val languages: Array[String] = Array("English", "Hindi", "Punjabi", "Kannada", "Telugu", "Tamil")
 //  var languageIndex: Int = languages.indexOf(language.get())
   var languageIndex: Int = 0
 

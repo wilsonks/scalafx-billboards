@@ -3,6 +3,22 @@
 	-fx-font-size: 37;
 }
 
+.tableLimits {
+    -fx-font-family: 'Barlow';
+	-fx-font-size: 40;
+	-fx-text-fill: radial-gradient(center 50% 50% , radius 10% , #ffebcd, #008080);
+	-fx-text-alignment: center;
+	-fx-background-color: #fce47f;
+	-fx-effect: dropshadow( one-pass-box , #F3F2C9 , 4 , 0.0 , 1 , 0 );
+}
+.tableLimitsHeader {
+    -fx-font-family: 'Barlow';
+	-fx-font-size: 26 ;
+	-fx-text-fill: #fce47f;
+	-fx-text-alignment: center;
+	-fx-effect: dropshadow( one-pass-box , #F3F2C9 , 4 , 0.0 , 1 , 0 );
+}
+
 .trendTexts {
     -fx-font-family: 'Barlow';
 	-fx-font-size: 37;
@@ -15,10 +31,10 @@
 
 .legendHeader {
     -fx-font-family: 'Barlow';
-	-fx-font-size: 40;
+	-fx-font-size: 38;
 	-fx-text-fill: white;
+	-fx-effect: dropshadow( one-pass-box , #F3F2C9 , 4 , 0.0 , 1 , 0 );
 	-fx-text-alignment: center;
-    -fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 1 , 0 );
 }
 
 .legendRow {
@@ -31,15 +47,16 @@
     -fx-background-radius:10;
     -fx-background-color: #fce47f;
     -fx-font-family: 'Barlow';
-	-fx-font-size: 20;
+	-fx-font-size: 18;
 	-fx-text-fill: #010fc6;
+
 }
 
 .legendAndarTexts {
     -fx-background-radius:10;
     -fx-background-color: #fce47f;
     -fx-font-family: 'Barlow';
-	-fx-font-size: 20;
+	-fx-font-size: 18;
 	-fx-text-fill: #bc0502;
 }
 
@@ -52,6 +69,7 @@
 .statsBaharTexts {
     -fx-background-radius:10;
     -fx-background-color: #fce47f;
+    -fx-effect: dropshadow( one-pass-box , #fce47f , 4 , 0.0 , 1 , 0 );
     -fx-font-family: 'Barlow';
 	-fx-font-size: 28;
 	-fx-text-fill: #010fc6;
@@ -60,6 +78,7 @@
 .statsAndarTexts {
     -fx-background-radius:10;
     -fx-background-color: #fce47f;
+    -fx-effect: dropshadow( one-pass-box , #fce47f , 4 , 0.0 , 1 , 0 );
     -fx-font-family: 'Barlow';
 	-fx-font-size: 28;
 	-fx-text-fill: #bc0502;

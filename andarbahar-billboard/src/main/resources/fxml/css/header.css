@@ -1,3 +1,10 @@
 .gameHeaderBox {
     -fx-background-color: header-bg-color;
 }
+
+.tableId {
+    -fx-font-family: 'Barlow';
+    -fx-font-size: 35;
+    -fx-text-fill: #FFD700;
+    -fx-effect: dropshadow( one-pass-box , #FFD700 , 4 , 0.0 , 1 , 0 );
+}

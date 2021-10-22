@@ -12,8 +12,9 @@ public enum AndarBaharBeadRoadResult {
     CLEAR,
     UNDO,
     THEME,
-    LANGUAGE,
-    LANGUAGE_BACK,
+    LANGUAGE_NEXT,
+    LANGUAGE_PREV,
+    LANGUAGE_AUTO,
     EMPTY;
 }
 

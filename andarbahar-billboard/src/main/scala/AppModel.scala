@@ -1,12 +1,13 @@
 import better.files.File
 import better.files.File._
 import customjavafx.scene.control.AndarBaharBeadRoadResult
-import javafx.beans.property.{ListProperty, SimpleListProperty, SimpleStringProperty, StringProperty}
+import javafx.beans.property.{ListProperty, SimpleBooleanProperty, SimpleListProperty, SimpleStringProperty, StringProperty, BooleanProperty}
 import javafx.collections.FXCollections
 import javafx.scene.input.KeyCode
 import pureconfig.ConfigReader
 import pureconfig.generic.auto._
 import tykhe.billboard.ab.{TableHistory, TableSettings}
+
 import scala.collection.JavaConverters._
 
 class AppModel {
@@ -31,25 +32,20 @@ class AppModel {
   private val secondBetMax: StringProperty = new SimpleStringProperty("")
   private val language: StringProperty = new SimpleStringProperty("")
   private val theme: StringProperty = new SimpleStringProperty("")
-
   private val beadRoadList: ListProperty[AndarBaharBeadRoadResult] = new SimpleListProperty(FXCollections.observableArrayList[AndarBaharBeadRoadResult])
 
+  private val autoLang: SimpleBooleanProperty = new SimpleBooleanProperty(false)
 
   def tableIdProperty: StringProperty = tableId
-
   def firstBetMinProperty: StringProperty = firstBetMin
-
   def firstBetMaxProperty: StringProperty = firstBetMax
-
   def secondBetMinProperty: StringProperty = secondBetMin
-
   def secondBetMaxProperty: StringProperty = secondBetMax
-
   def languageProperty: StringProperty = language
-
   def themeProperty: StringProperty = theme
-
   def beadRoadListProperty: ListProperty[AndarBaharBeadRoadResult] = beadRoadList
+
+  def langAutoProperty: SimpleBooleanProperty = autoLang
 
 
   val languages: Array[String] = Array("English", "Hindi", "Punjabi", "Kannada", "Telugu", "Tamil")
@@ -59,6 +55,8 @@ class AppModel {
   val themes: Array[String] = Array("Theme1", "Theme2", "Theme3", "Theme4", "Theme5")
 //  var themeIndex: Int = themes.indexOf(theme.get())
   var themeIndex: Int = 0
+
+
 
   var header: TableSettings = null
   //Load Data From Database

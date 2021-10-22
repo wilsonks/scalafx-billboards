@@ -65,6 +65,8 @@ class AppController(
   val symbolsA2: Label,
   val symbolsB2: Label,
 
+  val footingText: Label,
+
   val menuPane: BorderPane,
   val promoPane: Pane,
   val promoMediaView: MediaView,
@@ -514,6 +516,9 @@ class AppController(
 
   language.textProperty().addListener(new ChangeListener[String] {
     override def changed(observableValue: ObservableValue[_ <: String], t1: String, t2: String): Unit = {
+      lastGame.setResult(beadRoad.LastWinResult())
+      lastWinResultLabel.setResult(beadRoad.LastWinResult())
+
       t2 match {
         case "English" => {
           limits.setText("LIMITS")
@@ -535,6 +540,7 @@ class AppController(
           symbolsB2.setText("2nd Card Win")
 
           lastGame.setText(res.get.getString(beadRoad.LastWin()))
+
 
         }
 
@@ -738,10 +744,13 @@ class AppController(
             beadRoad.RemoveElement()
           case AndarBaharBeadRoadResult.CLEAR =>
             beadRoad.Reset()
-          case AndarBaharBeadRoadResult.LANGUAGE =>
+          case AndarBaharBeadRoadResult.LANGUAGE_NEXT =>
             model.selectNext("Language");
-          case AndarBaharBeadRoadResult.LANGUAGE_BACK =>
+          case AndarBaharBeadRoadResult.LANGUAGE_PREV =>
             model.selectPrev("Language");
+          case AndarBaharBeadRoadResult.LANGUAGE_AUTO =>
+            println(timerA.getStatus);
+
           case _ => {
             beadRoad.AddElement(result)
           }
@@ -754,6 +763,7 @@ class AppController(
   lastWinPause.setOnFinished { e =>
     dynamicResult.setVisible(false)
     lastGame.setResult(beadRoad.LastWinResult())
+    lastWinResultLabel.setResult(beadRoad.LastWinResult())
 
     language.textProperty().get() match {
       case "English" => {
@@ -811,8 +821,19 @@ class AppController(
     beadRoad.AddElement(result)
   }
 
-//  footing.setText("Powered By Tykhe Gaming Pvt. Ltd.")
+  footingText.setText("Powered By Tykhe Gaming Pvt Ltd.")
 
+  val timerA = new PauseTransition(Duration(3000))
+
+  // When the timer goes off, show the alert.
+  timerA.onFinished = {_ =>
+    println("Select Next Language")
+    model.selectNext("Language");
+    timerA.playFromStart()
+  }
+
+  // Start the timer for the first time.
+  timerA.play
 
 
   display.root.setOnCloseRequest(_ => {

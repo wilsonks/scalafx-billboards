@@ -234,7 +234,10 @@ class AppController(
 
       case _ =>
         lastWin = s"/sounds/English/${lastWin}"
-        lastWinResultLabel.setText(res.get.getString(beadRoad.LastWin()))
+        beadRoad.LastWin() match {
+          case "bWin" => lastWinResultLabel.setText("Bahar\n Wins")
+          case "pWin" => lastWinResultLabel.setText("Andar\n Wins")
+        }
 
     }
 
@@ -729,9 +732,16 @@ class AppController(
     .foreach { result =>
       {
         result match {
-          case AndarBaharBeadRoadResult.EXIT  => display.exit()
-          case AndarBaharBeadRoadResult.UNDO  => beadRoad.RemoveElement()
-          case AndarBaharBeadRoadResult.CLEAR => beadRoad.Reset()
+          case AndarBaharBeadRoadResult.EXIT  =>
+            display.exit()
+          case AndarBaharBeadRoadResult.UNDO  =>
+            beadRoad.RemoveElement()
+          case AndarBaharBeadRoadResult.CLEAR =>
+            beadRoad.Reset()
+          case AndarBaharBeadRoadResult.LANGUAGE =>
+            model.selectNext("Language");
+          case AndarBaharBeadRoadResult.LANGUAGE_BACK =>
+            model.selectPrev("Language");
           case _ => {
             beadRoad.AddElement(result)
           }

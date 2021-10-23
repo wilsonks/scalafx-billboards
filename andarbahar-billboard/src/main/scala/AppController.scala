@@ -98,6 +98,9 @@ class AppController(
   val model = new AppModel()
   val data: TableHistory = model.loadData()
   val header: TableSettings = model.loadHeader()
+  val langTimerFeature = model.langTimerOnProperty
+
+
 
   dynamicResult.setVisible(false)
   beadRoad.setVisible(false)
@@ -516,8 +519,10 @@ class AppController(
 
   language.textProperty().addListener(new ChangeListener[String] {
     override def changed(observableValue: ObservableValue[_ <: String], t1: String, t2: String): Unit = {
-      lastGame.setResult(beadRoad.LastWinResult())
-      lastWinResultLabel.setResult(beadRoad.LastWinResult())
+      if(!beadRoad.isEmpty) {
+        lastGame.setResult(beadRoad.LastWinResult())
+        lastWinResultLabel.setResult(beadRoad.LastWinResult())
+      }
 
       t2 match {
         case "English" => {
@@ -569,6 +574,8 @@ class AppController(
           beadRoad.LastWin() match {
             case "bWin" => lastGame.setText("बहार\n जीत गया")
             case "pWin" => lastGame.setText("आंदर\n जीत गया")
+            case _ => lastGame.setText("")
+
           }
 
         }
@@ -595,6 +602,8 @@ class AppController(
           beadRoad.LastWin() match {
             case "bWin" => lastGame.setText("ਬਹਾਰ\n ਜਿੱਤ ਗਿਆ")
             case "pWin" => lastGame.setText("ਅੰਡਰ\n ਜਿੱਤ ਗਿਆ")
+            case _ => lastGame.setText("")
+
           }
 
         }
@@ -621,6 +630,8 @@ class AppController(
           beadRoad.LastWin() match {
             case "bWin" => lastGame.setText("ಬಹಾರ್\n ಗೆಲ್ಲುತ್ತದೆ")
             case "pWin" => lastGame.setText("ಅಂದರ್\n ಗೆಲ್ಲುತ್ತಾನೆ")
+            case _ => lastGame.setText("")
+
           }
 
         }
@@ -647,6 +658,8 @@ class AppController(
           beadRoad.LastWin() match {
             case "bWin" => lastGame.setText("బహార్\n గెలిచింది")
             case "pWin" => lastGame.setText("అందర్\n గెలిచాడు")
+            case _ => lastGame.setText("")
+
           }
 
         }
@@ -673,6 +686,8 @@ class AppController(
           beadRoad.LastWin() match {
             case "bWin" => lastGame.setText("அந்தர்\n வெற்றி")
             case "pWin" => lastGame.setText("பஹார்\n வெற்றி")
+            case _ => lastGame.setText("")
+
           }
 
         }
@@ -749,8 +764,9 @@ class AppController(
           case AndarBaharBeadRoadResult.LANGUAGE_PREV =>
             model.selectPrev("Language");
           case AndarBaharBeadRoadResult.LANGUAGE_AUTO =>
-            println(timerA.getStatus);
-
+            langTimer.stop()
+            langTimerFeature.set(!langTimerFeature.get())
+            if(model.langTimerOnProperty.get()) langTimer.play()
           case _ => {
             beadRoad.AddElement(result)
           }
@@ -762,8 +778,8 @@ class AppController(
 
   lastWinPause.setOnFinished { e =>
     dynamicResult.setVisible(false)
-    lastGame.setResult(beadRoad.LastWinResult())
-    lastWinResultLabel.setResult(beadRoad.LastWinResult())
+      lastGame.setResult(beadRoad.LastWinResult())
+      lastWinResultLabel.setResult(beadRoad.LastWinResult())
 
     language.textProperty().get() match {
       case "English" => {
@@ -774,6 +790,7 @@ class AppController(
         beadRoad.LastWin() match {
           case "bWin" => lastGame.setText("बहार\n जीत गया")
           case "pWin" => lastGame.setText("आंदर\n जीत गया")
+          case _ => lastGame.setText("")
         }
 
       }
@@ -781,6 +798,7 @@ class AppController(
         beadRoad.LastWin() match {
           case "bWin" => lastGame.setText("ਬਹਾਰ\n ਜਿੱਤ ਗਿਆ")
           case "pWin" => lastGame.setText("ਅੰਡਰ\n ਜਿੱਤ ਗਿਆ")
+          case _ => lastGame.setText("")
         }
 
       }
@@ -789,6 +807,8 @@ class AppController(
         beadRoad.LastWin() match {
           case "bWin" => lastGame.setText("ಬಹಾರ್\n ಗೆಲ್ಲುತ್ತದೆ")
           case "pWin" => lastGame.setText("ಅಂದರ್\n ಗೆಲ್ಲುತ್ತಾನೆ")
+          case _ => lastGame.setText("")
+
         }
 
       }
@@ -798,6 +818,8 @@ class AppController(
         beadRoad.LastWin() match {
           case "bWin" => lastGame.setText("బహార్\n గెలిచింది")
           case "pWin" => lastGame.setText("అందర్\n గెలిచాడు")
+          case _ => lastGame.setText("")
+
         }
 
       }
@@ -806,6 +828,7 @@ class AppController(
         beadRoad.LastWin() match {
           case "bWin" => lastGame.setText("அந்தர்\n வெற்றி")
           case "pWin" => lastGame.setText("பஹார்\n வெற்றி")
+          case _ => lastGame.setText("")
         }
 
       }
@@ -823,17 +846,15 @@ class AppController(
 
   footingText.setText("Powered By Tykhe Gaming Pvt Ltd.")
 
-  val timerA = new PauseTransition(Duration(3000))
+  val langTimer = new PauseTransition(Duration(3000))
 
   // When the timer goes off, show the alert.
-  timerA.onFinished = {_ =>
-    println("Select Next Language")
-    model.selectNext("Language");
-    timerA.playFromStart()
+  langTimer.onFinished = {_ =>
+    if(langTimerFeature.get()) {
+      model.selectNext("Language");
+      langTimer.playFromStart()
+    }
   }
-
-  // Start the timer for the first time.
-  timerA.play
 
 
   display.root.setOnCloseRequest(_ => {

@@ -34,7 +34,8 @@ class AppModel {
   private val theme: StringProperty = new SimpleStringProperty("")
   private val beadRoadList: ListProperty[AndarBaharBeadRoadResult] = new SimpleListProperty(FXCollections.observableArrayList[AndarBaharBeadRoadResult])
 
-  private val autoLang: SimpleBooleanProperty = new SimpleBooleanProperty(false)
+  private val langTimerOn: SimpleBooleanProperty = new SimpleBooleanProperty(false)
+  def langTimerOnProperty: SimpleBooleanProperty = langTimerOn
 
   def tableIdProperty: StringProperty = tableId
   def firstBetMinProperty: StringProperty = firstBetMin
@@ -45,7 +46,6 @@ class AppModel {
   def themeProperty: StringProperty = theme
   def beadRoadListProperty: ListProperty[AndarBaharBeadRoadResult] = beadRoadList
 
-  def langAutoProperty: SimpleBooleanProperty = autoLang
 
 
   val languages: Array[String] = Array("English", "Hindi", "Punjabi", "Kannada", "Telugu", "Tamil")

@@ -237,15 +237,23 @@ public class BeadRoadTilePane extends TilePane {
         else return "andar-won.mp3";
     }
 
+    public boolean isEmpty() {
+        return getSize() > 0;
+    }
+
     public AndarBaharBeadRoadResult LastWinResult() {
-        return ((AndarBaharBeadRoadLabel) getChildren().get(getPosition())).getResult();
+        if(getSize() > 0) {
+            return ((AndarBaharBeadRoadLabel) getChildren().get(getPosition())).getResult();
+        } else {
+            return AndarBaharBeadRoadResult.EMPTY;
+        }
     }
 
     public String LastWin() {
-        if (isCurrentWinRed()) return "bWin";
-        else if (isCurrentWinBlue()) return "pWin";
+        if ((getSize() > 0) && isCurrentWinRed()) return "bWin";
+        else if ((getSize() > 0) && isCurrentWinBlue()) return "pWin";
         else {
-            return "bWin";
+            return "";
         }
     }
 

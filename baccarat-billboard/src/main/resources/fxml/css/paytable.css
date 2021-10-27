@@ -2,10 +2,10 @@
 
 
 .betsLogo {
-	-fx-background-image: url("../images/logo-cm-n2.png");
+	-fx-background-image: url("../images/logo-cp.png");
 	-fx-background-position:center;
 	-fx-background-repeat: no-repeat ;
-	-fx-background-size: none;
+	-fx-background-size: contain;
 	-fx-min-width:248;
     -fx-min-height:82;
 }

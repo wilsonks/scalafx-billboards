@@ -1,13 +1,15 @@
 import customjavafx.scene.control._
 import customjavafx.scene.layout._
 import fx2.io.FxReader
+import javafx.animation.{Interpolator, TranslateTransitionBuilder}
 import javafx.beans.value.{ChangeListener, ObservableValue}
 import javafx.collections.ObservableList
+import javafx.event.ActionEvent
 import javafx.scene.control.{Button, Label, TextField}
 import javafx.scene.input.{KeyCode, KeyEvent}
 import javafx.scene.layout.{BorderPane, HBox, Pane, StackPane, VBox}
 import javafx.scene.media.{Media, MediaPlayer, MediaView}
-import scalafx.animation.PauseTransition
+import scalafx.animation.{PauseTransition, TranslateTransition}
 import scalafx.geometry.Pos
 import scalafx.scene.media.AudioClip
 import scalafx.util.Duration
@@ -66,6 +68,8 @@ class AppController(
   val symbolsB2: Label,
 
   val footingText: Label,
+  val marqueeText: Label,
+  val marqueeContainer: Pane,
 
   val menuPane: BorderPane,
   val promoPane: Pane,
@@ -856,6 +860,13 @@ class AppController(
     }
   }
 
+
+//  private def recalculateTransition(): Unit = {
+//    marqueeTrans.setToX(marqueeText.getBoundsInLocal.getMaxX * -1 - 100)
+//    marqueeTrans.setFromX(marqueeContainer.widthProperty.get + 100)
+//    val distance = marqueeContainer.widthProperty.get + 2 * marqueeText.getBoundsInLocal.getMaxX
+//    marqueeTrans.setDuration(new Nothing(distance / 1))
+//  }
 
   display.root.setOnCloseRequest(_ => {
     display.exit()

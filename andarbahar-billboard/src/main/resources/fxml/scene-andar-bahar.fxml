@@ -21,6 +21,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
@@ -640,6 +641,27 @@
                                     <Image url="@images/CasinoPrideLogo.png" />
                                 </image>
                             </ImageView>
+                     <BorderPane prefHeight="200.0" prefWidth="200.0" StackPane.alignment="CENTER">
+                        <top>
+                           <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+                              <children>
+                                 <Label fx:id="marqueeText" alignment="CENTER" contentDisplay="CENTER" textAlignment="CENTER">
+                                    <font>
+                                       <Font name="Barlow ExtraBold" size="22.0" />
+                                    </font>
+                                    <textFill>
+                                       <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                          <stops>
+                                             <Stop color="BLACK" />
+                                             <Stop color="#4e6f68" offset="1.0" />
+                                          </stops>
+                                       </RadialGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </HBox>
+                        </top>
+                     </BorderPane>
                         </children>
                     </StackPane>
                 </center>
@@ -768,7 +790,7 @@
                                              <Label fx:id="trends" alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="397.0" styleClass="legendHeader" stylesheets="@css/footer.css" text="TRENDS" />
                                           </children>
                                        </HBox>
-                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="2">
+                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="3">
                                           <children>
                                              <Label fx:id="andarFirstTrend" alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="80.0" styleClass="statsAndarTexts" text="0%">
                                                 <padding>
@@ -801,7 +823,7 @@
                                              <Insets left="48.0" right="17.0" />
                                           </GridPane.margin>
                                        </HBox>
-                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="3">
+                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="4">
                                           <children>
                                              <Label fx:id="andarSecondTrend" alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="80.0" styleClass="statsAndarTexts" text="0%">
                                                 <padding>
@@ -834,7 +856,7 @@
                                              <Insets left="48.0" right="17.0" />
                                           </GridPane.margin>
                                        </HBox>
-                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="4">
+                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="2">
                                           <children>
                                              <Label fx:id="andarTrend" alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="80.0" styleClass="statsAndarTexts" text="0%">
                                                 <padding>
@@ -929,7 +951,7 @@
                                              <Label fx:id="stats" alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="397.0" styleClass="legendHeader" stylesheets="@css/footer.css" text="STATS" />
                                           </children>
                                        </HBox>
-                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="2">
+                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="3">
                                           <children>
                                              <Label fx:id="andarFirstCount" alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="70.0" styleClass="statsAndarTexts" text="0">
                                                 <padding>
@@ -962,7 +984,7 @@
                                              <Insets left="58.0" right="17.0" />
                                           </GridPane.margin>
                                        </HBox>
-                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="3">
+                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="4">
                                           <children>
                                              <Label fx:id="andarSecondCount" alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="70.0" styleClass="statsAndarTexts" text="0">
                                                 <padding>
@@ -995,7 +1017,7 @@
                                              <Insets left="58.0" right="17.0" />
                                           </GridPane.margin>
                                        </HBox>
-                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="4">
+                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="2">
                                           <children>
                                              <Label fx:id="andarCount" alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="70.0" styleClass="statsAndarTexts" text="0">
                                                 <padding>
@@ -1060,7 +1082,7 @@
                                              <Label fx:id="symbols" alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="397.0" styleClass="legendHeader" stylesheets="@css/footer.css" text="SYMBOLS" />
                                           </children>
                                        </HBox>
-                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="2">
+                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="3">
                                           <children>
                                              <Label fx:id="symbolsA1" alignment="CENTER" prefHeight="53.0" prefWidth="111.0" styleClass="legendAndarTexts" text="1st Card Win">
                                                 <padding>
@@ -1093,7 +1115,7 @@
                                              <Insets left="17.0" right="17.0" />
                                           </GridPane.margin>
                                        </HBox>
-                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="3">
+                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="4">
                                           <children>
                                              <Label fx:id="symbolsA2" alignment="CENTER" prefHeight="53.0" prefWidth="111.0" styleClass="legendAndarTexts" text="2nd Card Win">
                                                 <padding>
@@ -1126,7 +1148,7 @@
                                              <Insets left="17.0" right="17.0" />
                                           </GridPane.margin>
                                        </HBox>
-                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="4">
+                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="legendRow" GridPane.columnSpan="4" GridPane.rowIndex="2">
                                           <children>
                                              <Label fx:id="symbolsA" alignment="CENTER" prefHeight="53.0" prefWidth="111.0" styleClass="legendAndarTexts" text="Andar Win">
                                                 <padding>

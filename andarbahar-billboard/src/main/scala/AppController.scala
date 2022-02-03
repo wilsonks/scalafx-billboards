@@ -36,6 +36,7 @@ class AppController(
   val secondBetMin: Label,
   val secondBetMax: Label,
 
+  val totalCount: Label,
   val andarCount: Label,
   val baharCount: Label,
   val andarFirstCount: Label,
@@ -297,11 +298,15 @@ class AppController(
           } else {
             bigRoad.RemoveElement(beadRoad.getBeadRoadListProperty)
           }
+          totalCount.setText(String.valueOf(t2.intValue()));
 
         } else {
           bigRoad.Reset()
           lastGame.setResult(AndarBaharBeadRoadResult.EMPTY)
-          lastGame.setText("")
+          lastGame.setText("");
+          totalCount.setText("0");
+          andarCount.setText("0");
+          baharCount.setText("0");
         }
       }
     })
@@ -312,7 +317,11 @@ class AppController(
         if (t2.intValue() > 0) {
           lastWinUpdates()
 
-          baharCount.setText(String.valueOf(t2.intValue()))
+          baharCount.setText(String.valueOf(
+              t2.intValue() +
+              beadRoad.getBankerWinFirstCount.intValue() +
+              beadRoad.getBankerWinSecondCount.intValue()
+          ));
 
           val baharTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
           val andarTrendValue = (beadRoad.getPlayerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
@@ -329,7 +338,6 @@ class AppController(
           andarSecondTrend.setText(String.valueOf(andarSecondTrendValue).concat("%"))
 
         } else {
-          baharCount.setText("0")
           baharTrend.setText("0%")
         }
       }
@@ -341,7 +349,11 @@ class AppController(
         if (t2.intValue() > 0) {
           lastWinUpdates()
 
-          andarCount.setText(String.valueOf(t2.intValue()))
+          andarCount.setText(String.valueOf(
+            t2.intValue() +
+              beadRoad.getPlayerWinFirstCount.intValue() +
+              beadRoad.getPlayerWinSecondCount.intValue()
+          ));
 
           val baharTrendValue = (beadRoad.getBankerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
           val andarTrendValue = (t2.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
@@ -358,7 +370,6 @@ class AppController(
           andarSecondTrend.setText(String.valueOf(andarSecondTrendValue).concat("%"))
 
         } else {
-          andarCount.setText("0")
           andarTrend.setText("0%")
         }
       }
@@ -371,7 +382,12 @@ class AppController(
         if (t2.intValue() > 0) {
           lastWinUpdates()
 
-          baharFirstCount.setText(String.valueOf(t2.intValue()))
+
+          baharCount.setText(String.valueOf(
+              beadRoad.getBankerWinCount.intValue() +
+                t2.intValue() +
+              beadRoad.getBankerWinSecondCount.intValue()
+          ));
 
           val baharTrendValue = (beadRoad.getBankerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
           val andarTrendValue = (beadRoad.getPlayerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
@@ -388,7 +404,6 @@ class AppController(
           andarSecondTrend.setText(String.valueOf(andarSecondTrendValue).concat("%"))
 
         } else {
-          baharFirstCount.setText("0")
           baharFirstTrend.setText("0%")
         }
       }
@@ -400,8 +415,11 @@ class AppController(
         if (t2.intValue() > 0) {
           lastWinUpdates()
 
-          andarFirstCount.setText(String.valueOf(t2.intValue()))
-
+          andarCount.setText(String.valueOf(
+            beadRoad.getPlayerWinCount.intValue() +
+              t2.intValue() +
+              beadRoad.getPlayerWinSecondCount.intValue()
+          ));
 
           val baharTrendValue = (beadRoad.getBankerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
           val andarTrendValue = (beadRoad.getPlayerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
@@ -418,7 +436,6 @@ class AppController(
           andarSecondTrend.setText(String.valueOf(andarSecondTrendValue).concat("%"))
 
         } else {
-          andarFirstCount.setText("0")
           andarFirstTrend.setText("0%")
         }
       }
@@ -431,8 +448,11 @@ class AppController(
         if (t2.intValue() > 0) {
           lastWinUpdates()
 
-          baharSecondCount.setText(String.valueOf(t2.intValue()))
-
+          baharCount.setText(String.valueOf(
+            beadRoad.getBankerWinCount.intValue() +
+              beadRoad.getBankerWinFirstCount.intValue() +
+              t2.intValue()
+          ));
 
           val baharTrendValue = (beadRoad.getBankerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
           val andarTrendValue = (beadRoad.getPlayerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
@@ -449,7 +469,6 @@ class AppController(
           andarSecondTrend.setText(String.valueOf(andarSecondTrendValue).concat("%"))
 
         } else {
-          baharSecondCount.setText("0")
           baharSecondTrend.setText("0%")
         }
       }
@@ -461,8 +480,11 @@ class AppController(
         if (t2.intValue() > 0) {
           lastWinUpdates()
 
-          andarSecondCount.setText(String.valueOf(t2.intValue()))
-
+          andarCount.setText(String.valueOf(
+            beadRoad.getPlayerWinCount.intValue() +
+              beadRoad.getPlayerWinFirstCount.intValue() +
+              t2.intValue()
+          ));
 
           val baharTrendValue = (beadRoad.getBankerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
           val andarTrendValue = (beadRoad.getPlayerWinCount.intValue() * 100)/beadRoad.getCountProperty.intValue() ;
@@ -479,7 +501,6 @@ class AppController(
           andarSecondTrend.setText(String.valueOf(andarSecondTrendValue).concat("%"))
 
         } else {
-          andarSecondCount.setText("0")
           andarSecondTrend.setText("0%")
         }
       }

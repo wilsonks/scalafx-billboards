@@ -957,7 +957,7 @@
                                              <Insets left="58.0" right="17.0" />
                                           </GridPane.margin>
                                           <children>
-                                             <Label prefHeight="48.0" prefWidth="321.0" text="TOTAL GAMES" textAlignment="CENTER" textFill="#ee0909">
+                                             <Label prefHeight="48.0" prefWidth="321.0" text="TOTAL GAMES" textAlignment="CENTER" textFill="WHITE">
                                                 <HBox.margin>
                                                    <Insets left="18.0" />
                                                 </HBox.margin>

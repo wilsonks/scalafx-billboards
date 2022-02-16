@@ -3,6 +3,7 @@
 
 .betsLogo {
 	-fx-background-image: url("../images/logo-cp.png");
+	-fx-background-image: url("../images/big-daddy-logo-small.png");
 	-fx-background-position:center;
 	-fx-background-repeat: no-repeat ;
 	-fx-background-size: contain;

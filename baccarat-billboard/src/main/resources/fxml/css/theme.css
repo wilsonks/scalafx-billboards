@@ -13,12 +13,12 @@
     cockroachroad-bg-color: rgb(108,116,118,.5);
     cockroachroad-tile-color: white;
 
-    paytable-bg-color: #2D4350;
-    paytable-header-text-color: goldenrod;
-    paytable-text-color: white;
+    paytable-bg-color: #000;
+    paytable-header-text-color: rgb(181,81,81);
+    paytable-text-color: rgb(217,191,151);
 
-    footer-border-color: goldenrod;
-    footer-text-color: white;
+    footer-border-color: rgb(181,81,81);
+    footer-text-color: rgb(217,191,151);
     footer-bg-color: rgb(255, 255, 255, .1)
 
 }
